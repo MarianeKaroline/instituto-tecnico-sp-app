@@ -1,0 +1,16 @@
+<mat-card class="bg-white! shadow-sm!">
+
+    <mat-card-content>
+
+        <div class="w-full h-80 bg-top" [style]="'background-image:url('+ curso()?.urlImagem +');'">&nbsp;</div>
+
+        <!-- <img mat-card-image [src]="curso()?.urlImagem" [alt]="'Imagem curso ' + curso()?.nome"> -->
+        <mat-card-title class="!mt-4 !font-bold">{{ curso()?.nome }}</mat-card-title>
+
+        <div class="!mt-4 bg-secondary py-1 rounded-full w-24 flex justify-center">
+            <span class="text-white text-sm font-medium">{{ curso()?.categoria }}</span>
+        </div>
+
+    </mat-card-content>
+
+</mat-card>
