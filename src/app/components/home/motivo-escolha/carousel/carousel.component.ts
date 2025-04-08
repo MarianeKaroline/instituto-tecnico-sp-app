@@ -1,40 +1,31 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, signal, viewChild } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
 
 import { EmblaCarouselDirective, EmblaCarouselType, EmblaEventType, EmblaOptionsType } from 'embla-carousel-angular';
-import Autoplay from 'embla-carousel-autoplay'
+import AutoScroll from 'embla-carousel-auto-scroll'
 
 @Component({
-    selector: 'app-home-carousel',
+    selector: 'app-home-motivo-escolha-carousel',
     templateUrl: './carousel.component.html',
     styleUrl: './carousel.component.scss',
     imports: [
         CommonModule,
-        EmblaCarouselDirective,
-        MatIconModule
+        EmblaCarouselDirective
     ],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomeCarouselComponent {
+export class HomeMotivoEscolhaCarouselComponent {
 
-    slides = [
-        { image: 'assets/images/Tecnico_Enfermagem.png' },
-        { image: 'assets/images/Tecnico_Radiologia.png' },
-        { image: '', number: '3' },
-        { image: '', number: '4' },
-        { image: '', number: '5' }
-    ]
+    slides = [...Array(30).keys()]
 
     emblaRef = viewChild(EmblaCarouselDirective)
 
     public emblaApi?: EmblaCarouselType
     public options: EmblaOptionsType = {
-        axis: 'y',
         loop: true
     }
 
-    // public plugins = [Autoplay()]
+    public plugins = [AutoScroll()]
     scrollSnaps = signal<number[]>([])
     prevBtnEnabled = signal(false)
     nextBtnEnabled = signal(false)

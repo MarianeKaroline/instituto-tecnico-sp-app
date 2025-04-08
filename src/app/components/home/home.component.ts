@@ -6,6 +6,7 @@ import { HomeCursosComponent } from './cursos/cursos.component';
 import { HomeMatriculaComponent } from './matricula/matricula.component';
 import { HomeFormularioComponent } from './formulario/formulario.component';
 import { HomeSobreNosComponent } from './sobre-nos/sobre-nos.component';
+import { HomeMotivoEscolhaComponent } from './motivo-escolha/motivo-escolha.component';
 
 @Component({
     selector: 'app-home',
@@ -15,7 +16,8 @@ import { HomeSobreNosComponent } from './sobre-nos/sobre-nos.component';
         HomeCursosComponent,
         HomeMatriculaComponent,
         HomeFormularioComponent,
-        HomeSobreNosComponent
+        HomeSobreNosComponent,
+        HomeMotivoEscolhaComponent
     ],
     templateUrl: './home.component.html',
     styleUrl: './home.component.scss'
