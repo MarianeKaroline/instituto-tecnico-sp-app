@@ -5,6 +5,7 @@ import { HomeCarouselComponent } from './carousel/carousel.component';
 import { HomeCursosComponent } from './cursos/cursos.component';
 import { HomeMatriculaComponent } from './matricula/matricula.component';
 import { HomeFormularioComponent } from './formulario/formulario.component';
+import { HomeSobreNosComponent } from './sobre-nos/sobre-nos.component';
 
 @Component({
     selector: 'app-home',
@@ -13,7 +14,8 @@ import { HomeFormularioComponent } from './formulario/formulario.component';
         HomeCarouselComponent,
         HomeCursosComponent,
         HomeMatriculaComponent,
-        HomeFormularioComponent
+        HomeFormularioComponent,
+        HomeSobreNosComponent
     ],
     templateUrl: './home.component.html',
     styleUrl: './home.component.scss'
