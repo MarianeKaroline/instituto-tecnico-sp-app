@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@layer base {
+    :root {
+        --color-primary: #0E9549;
+        --color-secondary: #65A322;
+        --color-danger: #FF3B30;
+        --color-warning: #FF9500;
+    }
+
+    .fa,
+    .fas,
+    .far,
+    .fal,
+    .fab {
+        @apply block;
+    }
+}
+
+@layer utilities {
+    .bg-primary {
+        background-color: var(--color-primary) !important;
+    }
+
+    .text-primary {
+        color: var(--color-primary) !important;
+    }
+
+    .border-primary {
+        border-color: var(--color-primary) !important;
+    }
+
+    .bg-secondary {
+        background-color: var(--color-secondary) !important;
+    }
+
+    .text-secondary {
+        color: var(--color-secondary) !important;
+    }
+
+    .border-secondary {
+        border-color: var(--color-secondary) !important;
+    }
+
+    .bg-danger {
+        background-color: var(--color-danger) !important;
+    }
+
+    .text-danger {
+        color: var(--color-danger) !important;
+    }
+
+    .border-danger {
+        border-color: var(--color-danger) !important;
+    }
+
+    .bg-warning {
+        background-color: var(--color-warning) !important;
+    }
+
+    .text-warning {
+        color: var(--color-warning) !important;
+    }
+
+    .border-warning {
+        border-color: var(--color-warning) !important;
+    }
+
+    .animate-slide-down {
+        animation: slideDown 0.6s ease-out;
+    }
+
+    .animate-fade-in {
+        animation: fade-in 0.8s ease-out;
+    }
+
+    .animate-fade-in-left {
+        animation: fade-in-left 0.8s ease-out;
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
