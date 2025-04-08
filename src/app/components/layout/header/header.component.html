@@ -1,0 +1,49 @@
+<div class="flex items-center justify-between p-8 h-28 w-full text-sm shadow-md bg-white">
+
+    <div class="flex gap-8 items-center">
+
+        <div class="w-20 h-20">
+            <img src="https://wozcodelms2.s3.amazonaws.com/plataformas/42/logotipo.png" alt="logo">
+        </div>
+
+        <a class="py-2 px-4 rounded-sm hover:bg-gray-100 cursor-pointer" [routerLink]="['./']">
+            <span class="uppercase">Home</span>
+        </a>
+
+        <a class="py-2 px-4 rounded-sm hover:bg-gray-100 cursor-pointer">
+            <span class="uppercase">Cursos</span>
+        </a>
+
+        <a class="py-2 px-4 rounded-sm hover:bg-gray-100 cursor-pointer">
+            <span class="uppercase">Editais</span>
+        </a>
+
+        <a class="py-2 px-4 rounded-sm hover:bg-gray-100 cursor-pointer">
+            <span class="uppercase">Contato</span>
+        </a>
+
+    </div>
+
+    <div class="flex gap-12">
+        
+        <button class="group relative h-12 overflow-hidden overflow-x-hidden rounded-full bg-linear-65 from-[#65A322] to-[#0E9549] px-8 py-2 text-neutral-50 cursor-pointer">
+            <span class="relative z-10">Matricule-se</span>
+            <span class="absolute inset-0 overflow-hidden rounded-full">
+                <span class="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-secondary transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
+            </span>
+        </button>
+
+        <button mat-icon-button
+            [matMenuTriggerFor]="actionsMenu">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #actionsMenu="matMenu">                                        
+            <!-- Log -->
+            <button mat-menu-item>
+                <mat-icon>school</mat-icon>
+                <span>Portal Acadêmico</span>
+            </button>
+        </mat-menu>
+    </div>
+
+</div>
