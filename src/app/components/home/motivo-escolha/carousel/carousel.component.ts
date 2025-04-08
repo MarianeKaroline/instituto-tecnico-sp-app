@@ -16,7 +16,7 @@ import AutoScroll from 'embla-carousel-auto-scroll'
 })
 export class HomeMotivoEscolhaCarouselComponent {
 
-    slides = [...Array(30).keys()]
+    slides = [...Array(30).keys()];
 
     emblaRef = viewChild(EmblaCarouselDirective)
 

@@ -7,6 +7,7 @@ import { HomeMatriculaComponent } from './matricula/matricula.component';
 import { HomeFormularioComponent } from './formulario/formulario.component';
 import { HomeSobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { HomeMotivoEscolhaComponent } from './motivo-escolha/motivo-escolha.component';
+import { HomeDepoimentosComponent } from './depoimentos/depoimentos.component';
 
 @Component({
     selector: 'app-home',
@@ -17,7 +18,8 @@ import { HomeMotivoEscolhaComponent } from './motivo-escolha/motivo-escolha.comp
         HomeMatriculaComponent,
         HomeFormularioComponent,
         HomeSobreNosComponent,
-        HomeMotivoEscolhaComponent
+        HomeMotivoEscolhaComponent,
+        HomeDepoimentosComponent
     ],
     templateUrl: './home.component.html',
     styleUrl: './home.component.scss'

@@ -30,13 +30,13 @@ export class HomeCursosService {
                 urlImagem: "https://wozcodelms2.s3.amazonaws.com/plataformas/42/trilhas/731/foto_miniatura.png"
             },
             {
-                cursoId: 1,
+                cursoId: 3,
                 nome: "Técnico em enfermagem",
                 categoria: "Saúde",
                 urlImagem: "https://wozcodelms2.s3.amazonaws.com/plataformas/42/trilhas/729/foto_miniatura.jpg"
             },
             {
-                cursoId: 2,
+                cursoId: 4,
                 nome: "Técnico em radiologia",
                 categoria: "Saúde",
                 urlImagem: "https://wozcodelms2.s3.amazonaws.com/plataformas/42/trilhas/731/foto_miniatura.png"
