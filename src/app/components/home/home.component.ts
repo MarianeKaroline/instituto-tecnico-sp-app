@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { HomeCarouselComponent } from './carousel/carousel.component';
 import { HomeCursosComponent } from './cursos/cursos.component';
 import { HomeMatriculaComponent } from './matricula/matricula.component';
+import { HomeFormularioComponent } from './formulario/formulario.component';
 
 @Component({
     selector: 'app-home',
@@ -11,7 +12,8 @@ import { HomeMatriculaComponent } from './matricula/matricula.component';
         CommonModule,
         HomeCarouselComponent,
         HomeCursosComponent,
-        HomeMatriculaComponent
+        HomeMatriculaComponent,
+        HomeFormularioComponent
     ],
     templateUrl: './home.component.html',
     styleUrl: './home.component.scss'

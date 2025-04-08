@@ -27,6 +27,7 @@
     "embla-carousel-angular": "^19.0.0",
     "embla-carousel-autoplay": "^8.5.2",
     "express": "^4.18.2",
+    "ngx-mask": "^19.0.6",
     "postcss": "^8.5.3",
     "rxjs": "~7.8.0",
     "tailwindcss": "^4.1.2",
