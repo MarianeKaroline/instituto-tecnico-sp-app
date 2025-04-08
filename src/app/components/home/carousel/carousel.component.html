@@ -1,0 +1,45 @@
+<section class="embla relative">
+    <div class="embla__viewport" emblaCarousel [options]="options" [subscribeToEvents]="subscribeToEvents" (emblaChange)="onEmblaChange($event, emblaRef()?.emblaApi!)">
+        <div class="embla__container">
+            @for (slide of slides; track $index; let i = $index ) {
+                <div class="embla__slide">
+                    <div class="embla__slide__number relative">
+                        <img src="assets/images/Tecnico_Enfermagem.png" class="w-full h-full">
+    
+                        @if (i === selectedIndex()) {
+                            <div class="absolute left-48 top-16 animate-slide-down">
+                                <div class="text-white uppercase text-center animate-[slideDown_0.6s_ease-in-out]">
+                                    <span class="font-normal text-5xl block">Técnico em</span>
+                                    <span class="-mt-1 block">Enfermagem</span>
+                                </div>
+                        
+                                <div class="flex gap-2 mt-4 text-white animate-fade-in-left">
+                                    <span class="flex items-center gap-2 text-sm border rounded-md p-4 shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                                        <mat-icon>schedule</mat-icon>
+                                        Formação rápida
+                                    </span>
+                                    <span class="flex items-center gap-2 text-sm border rounded-md p-4">
+                                        <mat-icon>workspace_premium</mat-icon>
+                                        Certificação
+                                    </span>
+                                    <span class="flex items-center gap-2 text-sm border rounded-md p-4">
+                                        <mat-icon>verified</mat-icon>
+                                        Reconhecido pelo MEC
+                                    </span>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="embla__controls absolute top-6 right-0">
+        <div class="embla__dots flex flex-col">
+            @for (item of scrollSnaps(); track item) {
+                <button [ngClass]="'embla__dot'.concat($index === selectedIndex() ? ' embla__dot--selected' : '')" type="button" (click)="scrollTo($index)"></button>
+            }
+        </div>
+    </div>
+</section>
