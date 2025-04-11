@@ -2,10 +2,14 @@
 
 @layer base {
     :root {
-        --color-primary: #0E9549;
-        --color-secondary: #65A322;
-        --color-danger: #FF3B30;
-        --color-warning: #FF9500;
+        --color-primary: #005200;
+        --color-secondary: #648d00;
+        --color-secondary-100: #a7b682;
+        --color-tertiary: #f18500;
+        --color-tertiary-100: #e9b87b;
+        --color-neutral: #ffca01;
+        --color-neutral-variant: #240c00;
+        --color-danger: #f0050f;
     }
 
     .fa,
@@ -42,6 +46,66 @@
         border-color: var(--color-secondary) !important;
     }
 
+    .bg-secondary-100 {
+        background-color: var(--color-secondary-100) !important;
+    }
+
+    .text-secondary-100 {
+        color: var(--color-secondary-100) !important;
+    }
+
+    .border-secondary-100 {
+        border-color: var(--color-secondary-100) !important;
+    }
+
+    .bg-tertiary-100 {
+        background-color: var(--color-tertiary-100) !important;
+    }
+
+    .text-tertiary-100 {
+        color: var(--color-tertiary-100) !important;
+    }
+
+    .border-tertiary-100 {
+        border-color: var(--color-tertiary-100) !important;
+    }
+
+    .bg-tertiary {
+        background-color: var(--color-tertiary) !important;
+    }
+
+    .text-tertiary {
+        color: var(--color-tertiary) !important;
+    }
+
+    .border-tertiary {
+        border-color: var(--color-tertiary) !important;
+    }
+
+    .bg-neutral {
+        background-color: var(--color-neutral) !important;
+    }
+
+    .text-neutral {
+        color: var(--color-neutral) !important;
+    }
+
+    .border-neutral {
+        border-color: var(--color-neutral) !important;
+    }
+
+    .bg-neutral-variant {
+        background-color: var(--color-neutral-variant) !important;
+    }
+
+    .text-neutral-variant {
+        color: var(--color-neutral-variant) !important;
+    }
+
+    .border-neutral-variant {
+        border-color: var(--color-neutral-variant) !important;
+    }
+
     .bg-danger {
         background-color: var(--color-danger) !important;
     }
@@ -52,18 +116,6 @@
 
     .border-danger {
         border-color: var(--color-danger) !important;
-    }
-
-    .bg-warning {
-        background-color: var(--color-warning) !important;
-    }
-
-    .text-warning {
-        color: var(--color-warning) !important;
-    }
-
-    .border-warning {
-        border-color: var(--color-warning) !important;
     }
 
     .animate-slide-down {

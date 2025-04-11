@@ -50,7 +50,6 @@
 .embla__container {
     display: flex;
     touch-action: pan-x pinch-zoom;
-    margin-top: calc(var(--slide-spacing) * -1);
     height: calc(var(--slide-spacing) + var(--slide-height));
     flex-direction: column;
     height: 100%;
