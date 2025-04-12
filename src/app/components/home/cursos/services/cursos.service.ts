@@ -20,26 +20,16 @@ export class HomeCursosService {
             {
                 cursoId: 1,
                 nome: "Técnico em enfermagem",
+                descricao: "Formação prática e humanizada para atuar na promoção, prevenção e cuidados com a saúde em hospitais, clínicas e unidades de saúde.",
                 categoria: "Saúde",
-                urlImagem: "https://wozcodelms2.s3.amazonaws.com/plataformas/42/trilhas/729/foto_miniatura.jpg"
+                urlImagem: "assets/images/Enfermeira-1.png"
             },
             {
                 cursoId: 2,
                 nome: "Técnico em radiologia",
+                descricao: "Capacita profissionais para operar equipamentos de diagnóstico por imagem, como raio-X, tomografia e ressonância, com foco em segurança e precisão.",
                 categoria: "Saúde",
-                urlImagem: "https://wozcodelms2.s3.amazonaws.com/plataformas/42/trilhas/731/foto_miniatura.png"
-            },
-            {
-                cursoId: 3,
-                nome: "Técnico em enfermagem",
-                categoria: "Saúde",
-                urlImagem: "https://wozcodelms2.s3.amazonaws.com/plataformas/42/trilhas/729/foto_miniatura.jpg"
-            },
-            {
-                cursoId: 4,
-                nome: "Técnico em radiologia",
-                categoria: "Saúde",
-                urlImagem: "https://wozcodelms2.s3.amazonaws.com/plataformas/42/trilhas/731/foto_miniatura.png"
+                urlImagem: "assets/images/Radiologista-1.png"
             }
         ];
 

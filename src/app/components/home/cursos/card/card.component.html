@@ -1,16 +1,20 @@
-<mat-card class="bg-white! shadow-sm!">
+<div class="flex items-center gap-4 w-full">
+    <div class="flex justify-center h-52 bg-linear-140 from-[#65A322] to-[#0E9549] w-80 rounded-md">
+        <img [src]="curso()?.urlImagem" alt="Enfermeiro" class="h-full">
+    </div>
 
-    <mat-card-content>
+    <div class="flex flex-col">
+        <span class="font-black text-lg">{{ curso()?.nome }}</span>
+        
+        <span class="text-sm text-gray-400">{{ curso()?.descricao }}</span>
 
-        <div class="w-full h-80 bg-top" [style]="'background-image:url('+ curso()?.urlImagem +');'">&nbsp;</div>
+        <button class="!mt-4 text-sm group relative h-12 w-52 overflow-hidden overflow-x-hidden rounded-full bg-linear-140 from-[#65A322] to-[#0E9549] px-8 py-2 text-neutral-50 cursor-pointer">
+            <span class="relative z-10 font-medium">Saiba mais</span>
+            <span class="absolute inset-0 overflow-hidden rounded-full">
+                <span class="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-secondary transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
+            </span>
+        </button>
 
-        <!-- <img mat-card-image [src]="curso()?.urlImagem" [alt]="'Imagem curso ' + curso()?.nome"> -->
-        <mat-card-title class="!mt-4 !font-bold">{{ curso()?.nome }}</mat-card-title>
+    </div>
+</div>
 
-        <div class="!mt-4 bg-secondary py-1 rounded-full w-24 flex justify-center">
-            <span class="text-white text-sm font-medium">{{ curso()?.categoria }}</span>
-        </div>
-
-    </mat-card-content>
-
-</mat-card>

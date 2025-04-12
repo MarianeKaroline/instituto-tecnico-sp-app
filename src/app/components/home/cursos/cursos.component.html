@@ -3,7 +3,7 @@
 
     <div class="w-full flex flex-row gap-8">
         @for (curso of cursos; track curso.cursoId) {
-            <div class="w-80">
+            <div class="w-1/2">
                 <app-home-cursos-card [curso]="curso"></app-home-cursos-card>
             </div>
         }
