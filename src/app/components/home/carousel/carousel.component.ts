@@ -1,3 +1,4 @@
+import { trigger, transition, useAnimation } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, signal, viewChild } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
@@ -5,10 +6,38 @@ import { MatIconModule } from '@angular/material/icon';
 import { EmblaCarouselDirective, EmblaCarouselType, EmblaEventType, EmblaOptionsType } from 'embla-carousel-angular';
 import Autoplay from 'embla-carousel-autoplay'
 
+import { fadeIn, fadeInUp, slideInLeft, slideInRight, slideInUp } from 'ngx-animate';
+
 @Component({
     selector: 'app-home-carousel',
     templateUrl: './carousel.component.html',
     styleUrl: './carousel.component.scss',
+    animations: [
+        trigger('fadeInUpOnEnter', [
+            transition('* => in', useAnimation(fadeInUp, {
+                params: { timing: '0.8' }
+            })),
+            transition('* => out', [])
+        ]),
+        trigger('slideInRightOnEnter', [
+            transition('* => in', useAnimation(slideInRight, {
+                params: { timing: '0.8' }
+            })),
+            transition('* => out', [])
+        ]),
+        trigger('slideInLeftOnEnter', [
+            transition('* => in', useAnimation(slideInLeft, {
+                params: { timing: '0.8' }
+            })),
+            transition('* => out', [])
+        ]),
+        trigger('fadeInOnEnter', [
+            transition('* => in', useAnimation(fadeIn, {
+                params: { timing: '0.8' }
+            })),
+            transition('* => out', [])
+        ]),
+    ],
     imports: [
         CommonModule,
         EmblaCarouselDirective,
