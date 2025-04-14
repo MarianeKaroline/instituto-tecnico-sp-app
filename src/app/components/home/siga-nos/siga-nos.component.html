@@ -1,6 +1,11 @@
 <div class="flex items-center justify-center gap-12 p-8 h-[57rem] relative">
 
-    <div class="w-[25rem] h-[37rem] bg-white flex flex-col gap-4 p-8 relative z-10 rounded-lg" [style]="{'box-shadow': '0 4px 18px 0 hsla(0, 0%, 0%, 0.2)'}">
+    <div 
+        class="w-[25rem] h-[37rem] bg-white flex flex-col gap-4 p-8 relative z-10 rounded-lg" 
+        [style]="{'box-shadow': '0 4px 18px 0 hsla(0, 0%, 0%, 0.2)'}"
+        [@slideInLeftOnEnter]="animateCard" 
+        (visible)="animateCard = 'in'"
+        appAnimateOnScroll>
 
         <!-- header -->
         <div class="flex items-center gap-4">
@@ -26,7 +31,11 @@
 
     </div>
 
-    <div class="flex flex-col space-y-3 w-[28rem] justify-center items-center">
+    <div 
+        class="flex flex-col space-y-3 w-[28rem] justify-center items-center"
+        [@fadeInUpOnEnter]="animateText" 
+        (visible)="animateText = 'in'"
+        appAnimateOnScroll>
 
         <div class="flex gap-4 items-center">
             <a href="https://www.facebook.com/itspriopreto/" target="_blank"><img src="assets/icons/icon-facebook.svg" class="w-16 h-16"></a>

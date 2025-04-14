@@ -6,7 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { EmblaCarouselDirective, EmblaCarouselType, EmblaEventType, EmblaOptionsType } from 'embla-carousel-angular';
 import Autoplay from 'embla-carousel-autoplay'
 
-import { fadeIn, fadeInUp, slideInLeft, slideInRight, slideInUp } from 'ngx-animate';
+import { fadeIn, fadeInUp, slideInLeft, slideInRight } from 'ngx-animate';
 
 @Component({
     selector: 'app-home-carousel',

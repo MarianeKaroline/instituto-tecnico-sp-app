@@ -5,22 +5,39 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 import { filter, of, Subject, switchMap, takeUntil } from 'rxjs';
 
 import { NgxMaskDirective } from "ngx-mask";
+import { fadeInDown, fadeInUp } from 'ngx-animate';
 
 import { HomeFormularioService } from './services/formulario.service';
 import { HomeFormularioFormService } from './services/formulario-form.service';
 import { MasksDb } from '../../../common/domain/masks/masks';
 import { EstadoModel } from './models/estado.model';
 import { CidadeModel } from './models/cidade.model';
-import { MatButtonModule } from '@angular/material/button';
+import { AnimateOnScrollDirective } from '../../../shared/directives/animate-on-scroll.directive';
+import { trigger, transition, useAnimation } from '@angular/animations';
 
 @Component({
     selector: 'app-home-formulario',
     templateUrl: './formulario.component.html',
     styleUrl: './formulario.component.scss',
+    animations: [
+        trigger('fadeInUpOnEnter', [
+            transition('* => in', useAnimation(fadeInUp, {
+                params: { timing: '0.8' }
+            })),
+            transition('* => out', [])
+        ]),
+        trigger('fadeInDownOnEnter', [
+            transition('* => in', useAnimation(fadeInDown, {
+                params: { timing: '0.8' }
+            })),
+            transition('* => out', [])
+        ]),
+    ],
     imports: [
         CommonModule,
         MatInputModule,
@@ -29,12 +46,17 @@ import { MatButtonModule } from '@angular/material/button';
         MatIconModule,
         MatSelectModule,
         NgxMaskDirective,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+
+        AnimateOnScrollDirective
     ],
     providers: [HomeFormularioService, HomeFormularioFormService],
     encapsulation: ViewEncapsulation.None
 })
 export class HomeFormularioComponent implements OnInit, OnDestroy {
+
+    animateImage = 'out';
+    animateForm = 'out';
 
     public form = this._formService.form;
     public mask = MasksDb.telefone.celular.ddd;

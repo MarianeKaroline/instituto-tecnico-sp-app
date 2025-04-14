@@ -24,6 +24,7 @@
     "@angular/router": "^19.2.0",
     "@angular/ssr": "^19.2.6",
     "@tailwindcss/postcss": "^4.1.2",
+    "countup.js": "^2.8.0",
     "embla-carousel-angular": "^19.0.0",
     "embla-carousel-auto-scroll": "^8.6.0",
     "embla-carousel-autoplay": "^8.5.2",

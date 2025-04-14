@@ -1,10 +1,13 @@
 <section class="flex flex-col gap-12 items-center">
-    <h2 class="uppercase font-extrabold text-4xl">Por Que Escolher a ITSP?</h2>
+    <h2 class="uppercase font-extrabold text-4xl" [@fadeInUpOnEnter]="animateText" (visible)="animateText = 'in'" appAnimateOnScroll>Por Que Escolher a ITSP?</h2>
 
     <div class="flex gap-12">
 
         <div class="flex flex-col gap-4 items-center w-72 h-60 p-8 shadow-lg rounded-md border-b border-primary bg-white"
-            [style]="{'box-shadow': '0 4px 6px 0 hsla(0, 0%, 0%, 0.2)'}">
+            [style]="{'box-shadow': '0 4px 6px 0 hsla(0, 0%, 0%, 0.2)'}"
+            [@slideInLeftOnEnterFourth]="animateCards"
+            (visible)="animateCards = 'in'"
+            appAnimateOnScroll>
             <img src="assets/icons/lab.png" class="w-12">
             <span class="font-black text-secondary text-lg">Laboratórios Modernos</span>
             <span class="text-sm text-gray-500 text-center">
@@ -13,7 +16,10 @@
         </div>
 
         <div class="flex flex-col gap-4 items-center w-72 h-60 p-8 shadow-lg rounded-md border-b border-primary bg-white"
-            [style]="{'box-shadow': '0 4px 6px 0 hsla(0, 0%, 0%, 0.2)'}">
+            [style]="{'box-shadow': '0 4px 6px 0 hsla(0, 0%, 0%, 0.2)'}"
+            [@slideInLeftOnEnterThird]="animateCards"
+            (visible)="animateCards = 'in'"
+            appAnimateOnScroll>
             <img src="assets/icons/higher-education.png" class="w-12">
             <span class="font-black text-secondary text-lg">Professores Qualificados</span>
             <span class="text-sm text-gray-500 text-center">
@@ -22,7 +28,10 @@
         </div>
 
         <div class="flex flex-col gap-4 items-center w-72 h-60 p-8 rounded-md border-b border-primary bg-white"
-            [style]="{'box-shadow': '0 4px 6px 0 hsla(0, 0%, 0%, 0.2)'}">
+            [style]="{'box-shadow': '0 4px 6px 0 hsla(0, 0%, 0%, 0.2)'}"
+            [@slideInLeftOnEnterSecond]="animateCards"
+            (visible)="animateCards = 'in'"
+            appAnimateOnScroll>
             <img src="assets/icons/presentation.png" class="w-12">
             <span class="font-black text-secondary text-lg">Infraestrutura Completa</span>
             <span class="text-sm text-gray-500 text-center">
@@ -30,8 +39,12 @@
             </span>
         </div>
 
-        <div class="flex flex-col gap-4 items-center w-72 h-60 p-8 rounded-md border-b border-primary bg-white"
-            [style]="{'box-shadow': '0 4px 6px 0 hsla(0, 0%, 0%, 0.2)'}">
+        <div 
+            class="flex flex-col gap-4 items-center w-72 h-60 p-8 rounded-md border-b border-primary bg-white"
+            [style]="{'box-shadow': '0 4px 6px 0 hsla(0, 0%, 0%, 0.2)'}"
+            [@slideInLeftOnEnterFirst]="animateCards"
+            (visible)="animateCards = 'in'"
+            appAnimateOnScroll>
             <img src="assets/icons/around-the-world.png" class="w-12">
             <span class="font-black text-secondary text-lg">Conexão com o Mercado</span>
             <span class="text-sm text-gray-500 text-center">

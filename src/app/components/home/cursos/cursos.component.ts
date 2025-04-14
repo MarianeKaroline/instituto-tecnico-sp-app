@@ -1,23 +1,48 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { trigger, transition, useAnimation } from '@angular/animations';
+
+import { fadeInDown, slideInLeft } from 'ngx-animate';
+
+import { Subject, takeUntil } from 'rxjs';
+
 import { HomeCursosCardComponent } from './card/card.component';
 import { HomeCursosService } from './services/cursos.service';
-import { Subject, takeUntil } from 'rxjs';
 import { CursoListaModel } from '../../../common/domain/models/curso-lista.model';
+import { AnimateOnScrollDirective } from '../../../shared/directives/animate-on-scroll.directive';
 
 @Component({
     selector: 'app-home-cursos',
-    imports: [
-        CommonModule,
-        HomeCursosCardComponent
-    ],
     templateUrl: './cursos.component.html',
     styleUrl: './cursos.component.scss',
+    animations: [
+        trigger('fadeInDownOnEnter', [
+            transition('* => in', useAnimation(fadeInDown, {
+                params: { timing: '0.8' }
+            })),
+            transition('* => out', [])
+        ]),
+        trigger('slideInLeftOnEnter', [
+            transition('* => in', useAnimation(slideInLeft, {
+                params: { timing: '0.8' }
+            })),
+            transition('* => out', [])
+        ]),
+    ],
+    imports: [
+        CommonModule,
+        HomeCursosCardComponent,
+
+        AnimateOnScrollDirective
+    ],
     providers: [
         HomeCursosService
     ]
 })
 export class HomeCursosComponent implements OnInit, OnDestroy {
+
+    animateCard = 'out';
+    animateText = 'out';
 
     public cursos: CursoListaModel[] = [];
 

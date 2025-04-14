@@ -1,7 +1,13 @@
 <section class="flex flex-col gap-12 items-center">
-    <h2 class="uppercase font-extrabold text-4xl">Nossos cursos</h2>
+    <h2 class="uppercase font-extrabold text-4xl" 
+    [@fadeInDownOnEnter]="animateText" 
+    (visible)="animateText = 'in'"
+    appAnimateOnScroll>Nossos cursos</h2>
 
-    <div class="w-full flex flex-row gap-8">
+    <div class="w-full flex flex-row gap-8" 
+        [@slideInLeftOnEnter]="animateCard" 
+        (visible)="animateCard = 'in'"
+        appAnimateOnScroll>
         @for (curso of cursos; track curso.cursoId) {
             <div class="w-1/2">
                 <app-home-cursos-card [curso]="curso"></app-home-cursos-card>

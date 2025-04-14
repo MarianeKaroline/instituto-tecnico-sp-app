@@ -1,13 +1,22 @@
 <div class="flex flex-col gap-12 items-center p-8">
     
     <div class="flex flex-col gap-8">
-        <h2 class="uppercase font-extrabold text-4xl text-black">O que falam de nós?</h2>
+        <h2 
+            class="uppercase font-extrabold text-4xl text-black"
+            [@fadeInDownOnEnter]="animateText" 
+            (visible)="animateText = 'in'"
+            appAnimateOnScroll>O que falam de nós?</h2>
     
         <hr class="text-primary w-60 h-4">
     </div>
     
     <!-- Elfsight Google Reviews | Untitled Google Reviews -->
-    <div class="elfsight-app-a36fa6cc-8cc8-4c1c-a4e5-d3b5bd95202e" data-elfsight-app-lazy></div>
+    <div 
+        class="elfsight-app-a36fa6cc-8cc8-4c1c-a4e5-d3b5bd95202e" 
+        data-elfsight-app-lazy
+        [@slideInRightOnEnter]="animateDepoiments" 
+        (visible)="animateDepoiments = 'in'"
+        appAnimateOnScroll></div>
 
 
 </div>
@@ -24,7 +33,10 @@
                 frameborder="0" 
                 allowfullscreen="true" 
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
-                allowFullScreen="true">
+                allowFullScreen="true"
+                [@fadeInDownOnEnter]="animateVideo" 
+                (visible)="animateVideo = 'in'"
+                appAnimateOnScroll>
             </iframe>
         }
         @case (2) {
@@ -36,7 +48,10 @@
                 frameborder="0" 
                 allowfullscreen="true" 
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
-                allowFullScreen="true">
+                allowFullScreen="true"
+                [@fadeInDownOnEnter]="animateVideo" 
+                (visible)="animateVideo = 'in'"
+                appAnimateOnScroll>
             </iframe>
         }
         @case (3) {
@@ -48,7 +63,10 @@
                 frameborder="0" 
                 allowfullscreen="true" 
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
-                allowFullScreen="true">
+                allowFullScreen="true"
+                [@fadeInDownOnEnter]="animateVideo" 
+                (visible)="animateVideo = 'in'"
+                appAnimateOnScroll>
             </iframe>
         }
         @case (4) {
@@ -60,7 +78,10 @@
                 frameborder="0" 
                 allowfullscreen="true" 
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
-                allowFullScreen="true">
+                allowFullScreen="true"
+                [@fadeInDownOnEnter]="animateVideo" 
+                (visible)="animateVideo = 'in'"
+                appAnimateOnScroll>
             </iframe>
         }
     }
@@ -70,7 +91,10 @@
         <div 
             [class]="'col-start-3 col-end-5 row-start-1 self-start rounded-md cursor-pointer relative'" 
             (click)="videoSelecionado = 1"
-            [ngClass]="{'border-2 border-secondary': videoSelecionado == 1}">
+            [ngClass]="{'border-2 border-secondary': videoSelecionado == 1}"
+            [@fadeInUpOnEnterFirst]="animateCards" 
+            (visible)="animateCards = 'in'"
+            appAnimateOnScroll>
             <img [src]="'assets/images/Depoimento-1.jpg'" class="w-full h-full object-cover rounded-md">
             @if (videoSelecionado != 1) {
                 <mat-icon class="absolute top-28 left-14 w-16! h-16! text-[4rem]! text-[#f0050f]! shadow-lg z-30">play_circle</mat-icon>
@@ -83,7 +107,10 @@
         <div 
             [class]="'col-start-1 col-end-3 row-start-2 self-start rounded-md cursor-pointer relative'"
             (click)="videoSelecionado = 2"
-            [ngClass]="{'border-2 border-secondary': videoSelecionado == 2}">
+            [ngClass]="{'border-2 border-secondary': videoSelecionado == 2}"
+            [@fadeInUpOnEnterSecond]="animateCards" 
+            (visible)="animateCards = 'in'"
+            appAnimateOnScroll>
             <img [src]="'assets/images/Depoimento-2.jpg'" class="w-full h-full object-cover rounded-md">
             @if (videoSelecionado != 2) {
                 <mat-icon class="absolute top-28 left-14 w-16! h-16! text-[4rem]! text-[#f0050f]! shadow-lg z-30">play_circle</mat-icon>
@@ -96,7 +123,10 @@
         <div 
             [class]="'col-start-3 col-end-5 row-start-5 self-start rounded-md cursor-pointer relative'"
             (click)="videoSelecionado = 3"
-            [ngClass]="{'border-2 border-secondary': videoSelecionado == 3}">
+            [ngClass]="{'border-2 border-secondary': videoSelecionado == 3}"
+            [@fadeInUpOnEnterThird]="animateCards" 
+            (visible)="animateCards = 'in'"
+            appAnimateOnScroll>
             <img [src]="'assets/images/Depoimento-3.jpg'" class="w-full h-full object-cover rounded-md">
             @if (videoSelecionado != 3) {
                 <mat-icon class="absolute top-28 left-14 w-16! h-16! text-[4rem]! text-[#f0050f]! shadow-lg z-30">play_circle</mat-icon>
@@ -109,7 +139,10 @@
         <div 
             [class]="'col-start-1 col-end-3 row-start-6 self-start rounded-md cursor-pointer relative'"
             (click)="videoSelecionado = 4"
-            [ngClass]="{'border-2 border-secondary': videoSelecionado == 4}">
+            [ngClass]="{'border-2 border-secondary': videoSelecionado == 4}"
+            [@fadeInUpOnEnterFourth]="animateCards" 
+            (visible)="animateCards = 'in'"
+            appAnimateOnScroll>
             <img [src]="'assets/images/Depoimento-4.jpg'" class="w-full h-full object-cover rounded-md">
             @if (videoSelecionado != 4) {
                 <mat-icon class="absolute top-28 left-14 w-16! h-16! text-[4rem]! text-[#f0050f]! shadow-lg z-30">play_circle</mat-icon>
