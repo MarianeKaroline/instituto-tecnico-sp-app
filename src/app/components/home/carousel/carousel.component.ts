@@ -26,7 +26,7 @@ export class HomeCarouselComponent {
         loop: true
     }
 
-    // public plugins = [Autoplay()]
+    public plugins = [Autoplay()]
     scrollSnaps = signal<number[]>([])
     prevBtnEnabled = signal(false)
     nextBtnEnabled = signal(false)
