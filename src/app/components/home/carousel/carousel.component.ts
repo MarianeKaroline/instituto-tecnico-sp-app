@@ -18,14 +18,6 @@ import Autoplay from 'embla-carousel-autoplay'
 })
 export class HomeCarouselComponent {
 
-    slides = [
-        { image: 'assets/images/Tecnico_Enfermagem.png' },
-        { image: 'assets/images/Tecnico_Radiologia.png' },
-        { image: '', number: '3' },
-        { image: '', number: '4' },
-        { image: '', number: '5' }
-    ]
-
     emblaRef = viewChild(EmblaCarouselDirective)
 
     public emblaApi?: EmblaCarouselType

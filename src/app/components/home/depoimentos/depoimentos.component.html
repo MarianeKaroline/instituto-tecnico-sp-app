@@ -1,8 +1,7 @@
-<div class="bg-linear-140 from-[#051E22] to-[#5A944D] flex flex-col gap-12 items-center p-8"
-    [style]="{'box-shadow': '0 4px 6px 0 hsla(0, 0%, 0%, 0.2)'}">
+<div class="flex flex-col gap-12 items-center p-8">
     
     <div class="flex flex-col gap-8">
-        <h2 class="uppercase font-extrabold text-4xl text-white">O que falam de nós?</h2>
+        <h2 class="uppercase font-extrabold text-4xl text-black">O que falam de nós?</h2>
     
         <hr class="text-primary w-60 h-4">
     </div>
@@ -13,37 +12,117 @@
 
 </div>
 
-<div class="flex gap-12 items-center justify-center p-8 h-[57rem]">
+<div class="flex gap-12 items-center justify-center p-8 h-[57rem] relative">
 
-    <div class="flex gap-4 w-[28%] relative h-full">
+    @switch (videoSelecionado) {
+        @case (1) {
+            <iframe 
+                src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1027439255262295%2F&show_text=false&width=267&t=0" 
+                class="w-[30rem] h-full rounded-lg z-10"
+                style="border:none;overflow:hidden" 
+                scrolling="no" 
+                frameborder="0" 
+                allowfullscreen="true" 
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
+                allowFullScreen="true">
+            </iframe>
+        }
+        @case (2) {
+            <iframe 
+                src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1279546936361928%2F&show_text=false&width=267&t=0" 
+                class="w-[30rem] h-full rounded-lg z-10"
+                style="border:none;overflow:hidden" 
+                scrolling="no" 
+                frameborder="0" 
+                allowfullscreen="true" 
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
+                allowFullScreen="true">
+            </iframe>
+        }
+        @case (3) {
+            <iframe 
+                src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F886602330187884%2F&show_text=false&width=267&t=0" 
+                class="w-[30rem] h-full rounded-lg z-10"
+                style="border:none;overflow:hidden" 
+                scrolling="no" 
+                frameborder="0" 
+                allowfullscreen="true" 
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
+                allowFullScreen="true">
+            </iframe>
+        }
+        @case (4) {
+            <iframe 
+                src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F390712050711642%2F&show_text=false&width=267&t=0" 
+                class="w-[30rem] h-full rounded-lg z-10"
+                style="border:none;overflow:hidden" 
+                scrolling="no" 
+                frameborder="0" 
+                allowfullscreen="true" 
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
+                allowFullScreen="true">
+            </iframe>
+        }
+    }
 
-        <div [class]="'border-4 border-primary rounded-md h-80 absolute top-0 right-0'"
-            [style]="{'box-shadow': '0 4px 6px 0 hsla(0, 0%, 0%, 0.2)'}">
-            <img [src]="'assets/images/Depoimento-1.jpg'" class="w-full h-full object-cover">
+    <div class="grid grid-cols-4 grid-rows-8 gap-x-4 w-[28%] relative h-[40rem] z-10">
+
+        <div 
+            [class]="'col-start-3 col-end-5 row-start-1 self-start rounded-md cursor-pointer relative'" 
+            (click)="videoSelecionado = 1"
+            [ngClass]="{'border-2 border-secondary': videoSelecionado == 1}">
+            <img [src]="'assets/images/Depoimento-1.jpg'" class="w-full h-full object-cover rounded-md">
+            @if (videoSelecionado != 1) {
+                <mat-icon class="absolute top-28 left-14 w-16! h-16! text-[4rem]! text-[#f0050f]! shadow-lg z-30">play_circle</mat-icon>
+            }
+            <div 
+                class="absolute top-0 right-0 h-full w-full bg-black/50 z-10 rounded-md"
+                [ngClass]="{'bg-transparent': videoSelecionado == 1}"></div>
         </div>
 
-        <div [class]="'rounded-md h-80 absolute top-40 left-0'">
-            <img [src]="'assets/images/Depoimento-2.jpg'" class="w-full h-full object-cover">
+        <div 
+            [class]="'col-start-1 col-end-3 row-start-2 self-start rounded-md cursor-pointer relative'"
+            (click)="videoSelecionado = 2"
+            [ngClass]="{'border-2 border-secondary': videoSelecionado == 2}">
+            <img [src]="'assets/images/Depoimento-2.jpg'" class="w-full h-full object-cover rounded-md">
+            @if (videoSelecionado != 2) {
+                <mat-icon class="absolute top-28 left-14 w-16! h-16! text-[4rem]! text-[#f0050f]! shadow-lg z-30">play_circle</mat-icon>
+            }
+            <div 
+                class="absolute top-0 right-0 h-full w-full bg-black/50 z-10 rounded-md"
+                [ngClass]="{'bg-transparent': videoSelecionado == 2}"></div>
         </div>
 
-        <div [class]="'rounded-md h-80 absolute top-[23rem] right-0'">
-            <img [src]="'assets/images/Depoimento-3.jpg'" class="w-full h-full object-cover">
+        <div 
+            [class]="'col-start-3 col-end-5 row-start-5 self-start rounded-md cursor-pointer relative'"
+            (click)="videoSelecionado = 3"
+            [ngClass]="{'border-2 border-secondary': videoSelecionado == 3}">
+            <img [src]="'assets/images/Depoimento-3.jpg'" class="w-full h-full object-cover rounded-md">
+            @if (videoSelecionado != 3) {
+                <mat-icon class="absolute top-28 left-14 w-16! h-16! text-[4rem]! text-[#f0050f]! shadow-lg z-30">play_circle</mat-icon>
+            }
+            <div 
+                class="absolute top-0 right-0 h-full w-full bg-black/50 z-10 rounded-md"
+                [ngClass]="{'bg-transparent': videoSelecionado == 3}"></div>
         </div>
 
-        <div [class]="'rounded-md h-80 absolute top-[33rem] left-0'">
-            <img [src]="'assets/images/Depoimento-4.jpg'" class="w-full h-full object-cover">
+        <div 
+            [class]="'col-start-1 col-end-3 row-start-6 self-start rounded-md cursor-pointer relative'"
+            (click)="videoSelecionado = 4"
+            [ngClass]="{'border-2 border-secondary': videoSelecionado == 4}">
+            <img [src]="'assets/images/Depoimento-4.jpg'" class="w-full h-full object-cover rounded-md">
+            @if (videoSelecionado != 4) {
+                <mat-icon class="absolute top-28 left-14 w-16! h-16! text-[4rem]! text-[#f0050f]! shadow-lg z-30">play_circle</mat-icon>
+            }
+            <div 
+                class="absolute top-0 right-0 h-full w-full bg-black/50 z-10 rounded-md"
+                [ngClass]="{'bg-transparent': videoSelecionado == 4}"></div>
         </div>
 
     </div>
+    
+    <div class="absolute top-0 right-0 w-[40%] h-full bg-linear-140 from-[#65A322] to-[#0E9549] z-0"></div>
 
-    <iframe 
-        src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1027439255262295%2F&show_text=false&width=267&t=0" 
-        class="w-[30rem] h-full"
-        style="border:none;overflow:hidden" 
-        scrolling="no" 
-        frameborder="0" 
-        allowfullscreen="true" 
-        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
-        allowFullScreen="true">
-    </iframe>
+    <img src="assets/images/quotation-right-mark-svgrepo-com.svg" class="z-10 absolute top-4 right-4 w-16 h-16">
 </div>
+

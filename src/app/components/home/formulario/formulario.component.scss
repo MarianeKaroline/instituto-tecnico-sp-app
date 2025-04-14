@@ -1,3 +1,14 @@
 .mdc-text-field--outlined {
     --mdc-outlined-text-field-container-shape: 28px !important;
 }
+
+.mat-mdc-text-field-wrapper {
+    border-radius: 28px !important;
+    background-color: white !important;
+    border-bottom: none !important;
+}
+
+.mat-mdc-form-field-focus-overlay {
+    --mdc-outlined-text-field-container-shape: 28px !important;
+  background-color: white !important;
+}
