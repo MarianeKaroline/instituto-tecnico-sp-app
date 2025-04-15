@@ -15,25 +15,25 @@ import { fadeIn, fadeInUp, slideInLeft, slideInRight } from 'ngx-animate';
     animations: [
         trigger('fadeInUpOnEnter', [
             transition('* => in', useAnimation(fadeInUp, {
-                params: { timing: '0.8' }
+                params: { timing: '0.8', easing: 'ease-out' }
             })),
             transition('* => out', [])
         ]),
         trigger('slideInRightOnEnter', [
             transition('* => in', useAnimation(slideInRight, {
-                params: { timing: '0.8' }
+                params: { timing: '0.8', easing: 'ease-out' }
             })),
             transition('* => out', [])
         ]),
         trigger('slideInLeftOnEnter', [
             transition('* => in', useAnimation(slideInLeft, {
-                params: { timing: '0.8' }
+                params: { timing: '0.8', easing: 'ease-out' }
             })),
             transition('* => out', [])
         ]),
         trigger('fadeInOnEnter', [
             transition('* => in', useAnimation(fadeIn, {
-                params: { timing: '0.8' }
+                params: { timing: '0.8', easing: 'ease-out' }
             })),
             transition('* => out', [])
         ]),

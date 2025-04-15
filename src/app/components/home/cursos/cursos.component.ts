@@ -18,13 +18,13 @@ import { AnimateOnScrollDirective } from '../../../shared/directives/animate-on-
     animations: [
         trigger('fadeInDownOnEnter', [
             transition('* => in', useAnimation(fadeInDown, {
-                params: { timing: '0.8' }
+                params: { timing: '0.8', easing: 'ease-out' }
             })),
             transition('* => out', [])
         ]),
         trigger('slideInLeftOnEnter', [
             transition('* => in', useAnimation(slideInLeft, {
-                params: { timing: '0.8' }
+                params: { timing: '0.8', easing: 'ease-out' }
             })),
             transition('* => out', [])
         ]),

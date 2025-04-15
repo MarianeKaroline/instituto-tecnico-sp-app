@@ -13,13 +13,13 @@ import { CountUpOnScrollDirective } from '../../../shared/directives/count-up-on
     animations: [
         trigger('fadeInUpOnEnter', [
             transition('* => in', useAnimation(fadeInUp, {
-                params: { timing: '0.8' }
+                params: { timing: '0.8', easing: 'ease-out' }
             })),
             transition('* => out', [])
         ]),
         trigger('slideInRightOnEnter', [
             transition('* => in', useAnimation(slideInRight, {
-                params: { timing: '0.8' }
+                params: { timing: '0.8', easing: 'ease-out' }
             })),
             transition('* => out', [])
         ]),

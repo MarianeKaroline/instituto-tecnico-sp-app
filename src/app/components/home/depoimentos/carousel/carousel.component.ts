@@ -1,22 +1,35 @@
+import { trigger, transition, useAnimation } from '@angular/animations';
 import { CommonModule } from '@angular/common';
-import { Component, signal, viewChild } from '@angular/core';
+import { Component, output, signal, viewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 
 import { EmblaCarouselDirective, EmblaCarouselType, EmblaOptionsType, EmblaEventType } from 'embla-carousel-angular';
 import Autoplay from 'embla-carousel-autoplay';
+import { fadeInUp } from 'ngx-animate';
+import { AnimateOnScrollDirective } from '../../../../shared/directives/animate-on-scroll.directive';
 
 @Component({
     selector: 'app-home-depoimentos-carousel',
     templateUrl: './carousel.component.html',
     styleUrl: './carousel.component.scss',
+    animations: [
+        trigger('fadeInUpOnEnter', [
+            transition('* => in', useAnimation(fadeInUp, {
+                params: { timing: '0.8' }
+            })),
+            transition('* => out', [])
+        ]),
+    ],
     imports: [
         CommonModule,
         EmblaCarouselDirective,
+        AnimateOnScrollDirective,
         MatButtonModule
     ]
 })
 export class HomeDepoimentosCarouselComponent {
 
+    animateCard = 'out';
     emblaRef = viewChild(EmblaCarouselDirective)
 
     public options: EmblaOptionsType = {
@@ -28,7 +41,7 @@ export class HomeDepoimentosCarouselComponent {
     prevBtnEnabled = signal(false)
     nextBtnEnabled = signal(false)
     selectedIndex = signal(0)
-    subscribeToEvents: EmblaEventType[] = ['init', 'reInit', 'select', 'scroll']
+    subscribeToEvents: EmblaEventType[] = ['init', 'reInit', 'select', 'scroll'];
 
     scrollPrev() {
         this.emblaRef()?.scrollPrev()
@@ -92,7 +105,7 @@ export class HomeDepoimentosCarouselComponent {
             });
 
         });
-
+        
         if (type === 'select' || type === 'init' || type === 'reInit') {
             this.selectedIndex?.set(emblaApi?.selectedScrollSnap())
             this.prevBtnEnabled?.set(emblaApi?.canScrollPrev())

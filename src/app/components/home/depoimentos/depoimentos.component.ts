@@ -1,6 +1,6 @@
 import { trigger, transition, useAnimation } from '@angular/animations';
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 
 import { fadeInDown, fadeInUp, slideInRight } from 'ngx-animate';
@@ -65,13 +65,18 @@ export class HomeDepoimentosComponent implements OnInit {
     animateText = 'out';
     animateVideo = 'out';
 
-    public videoSelecionado = 1;
+    public videoSelecionado = 0;
     
     public images = [...Array(4).keys()]
 
     constructor() { }
 
     ngOnInit() {
+    }
+
+    public setVideoSelecionado(index: number): void {
+        console.log(index)
+        this.videoSelecionado = index;
     }
 
 }
