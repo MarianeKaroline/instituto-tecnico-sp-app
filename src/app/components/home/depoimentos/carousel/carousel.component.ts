@@ -19,7 +19,6 @@ export class HomeDepoimentosCarouselComponent {
 
     emblaRef = viewChild(EmblaCarouselDirective)
 
-    public emblaApi?: EmblaCarouselType
     public options: EmblaOptionsType = {
         loop: true
     }
@@ -45,9 +44,54 @@ export class HomeDepoimentosCarouselComponent {
 
     onEmblaChange(type: EmblaEventType, emblaApi: EmblaCarouselType) {
         if (type === 'init') {
-            console.log(type)
             this.scrollSnaps?.set(emblaApi?.scrollSnapList())
         }
+
+        const TWEEN_FACTOR_BASE = 0.52;
+        const TWEEN_FACTOR_SCALE = 0.52;
+        const engine = emblaApi?.internalEngine();
+        const scrollProgress = emblaApi.scrollProgress();
+        const tweenFactor = TWEEN_FACTOR_BASE * emblaApi.scrollSnapList().length;
+        const tweenFactorScale = TWEEN_FACTOR_SCALE * emblaApi.scrollSnapList().length;
+
+        emblaApi.scrollSnapList().forEach((scrollSnap, snapIndex) => {
+            let diffToTarget = scrollSnap - scrollProgress;
+            const slidesInSnap = engine.slideRegistry[snapIndex];
+
+            slidesInSnap.forEach((slideIndex) => {
+
+                if (engine.options.loop) {
+                    engine.slideLooper.loopPoints.forEach((loopItem) => {
+                        const target = loopItem.target();
+    
+                        if (slideIndex === loopItem.index && target !== 0) {
+                            const sign = Math.sign(target);
+    
+                            if (sign === -1) {
+                                diffToTarget = scrollSnap - (1 + scrollProgress);
+                            }
+                            if (sign === 1) {
+                                diffToTarget = scrollSnap + (1 - scrollProgress);
+                            }
+                        }
+                    });
+                }
+    
+                const tweenValue = 1 - Math.abs(diffToTarget * tweenFactor);
+                const opacity = this.numberWithinRange(tweenValue, 0, 1).toString();
+                emblaApi.slideNodes()[slideIndex].style.opacity = opacity;
+
+                const tweenValueScale = 1 - Math.abs(diffToTarget * tweenFactorScale);
+                const scale = this.numberWithinRange(tweenValueScale, 0, 1).toString();
+                const tweenNodes = emblaApi.slideNodes().map((slideNode) => {
+                    return slideNode.querySelector('.embla__slide__img') as HTMLElement
+                });
+
+                const tweenNode = tweenNodes[slideIndex];
+                tweenNode.style.transform = `scale(${scale})`;
+            });
+
+        });
 
         if (type === 'select' || type === 'init' || type === 'reInit') {
             this.selectedIndex?.set(emblaApi?.selectedScrollSnap())
@@ -55,6 +99,10 @@ export class HomeDepoimentosCarouselComponent {
             this.nextBtnEnabled?.set(emblaApi?.canScrollNext())
             return
         }
+    }
+
+    numberWithinRange(number: number, min: number, max: number): number {
+        return Math.min(Math.max(number, min), max);
     }
 
 }

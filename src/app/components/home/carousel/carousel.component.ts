@@ -76,7 +76,6 @@ export class HomeCarouselComponent {
 
     onEmblaChange(type: EmblaEventType, emblaApi: EmblaCarouselType) {
         if (type === 'init') {
-            console.log(type)
             this.scrollSnaps?.set(emblaApi?.scrollSnapList())
         }
 
