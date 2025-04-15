@@ -25,7 +25,9 @@ export class CountUpOnScrollDirective implements OnInit, OnDestroy {
                             const countUp = new CountUp(this.el.nativeElement, this.endValue, {
                                 duration: this.duration,
                                 prefix: this.prefix,
-                                suffix: this.suffix
+                                suffix: this.suffix,
+                                separator: '.',
+                                decimal: ','
                             });
 
                             if (!countUp.error) {
