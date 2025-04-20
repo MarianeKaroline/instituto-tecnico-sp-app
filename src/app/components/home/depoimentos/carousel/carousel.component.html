@@ -1,4 +1,4 @@
-<div class="flex gap-12 justify-center">
+<div class="flex flex-col md:flex-row gap-12 justify-center items-center md:items-baseline">
     <section class="embla w-1/2 relative">
         <div class="embla__viewport" emblaCarousel [options]="options" [subscribeToEvents]="subscribeToEvents" (emblaChange)="onEmblaChange($event, emblaRef()?.emblaApi!)">
             <div class="embla__container">
@@ -81,7 +81,7 @@
         </div>
     </section>    
 
-    <div class="self-center relative flex flex-col gap-4 items-center justify-center w-72 h-60 p-8 shadow-lg rounded-md border-b border-primary bg-white"
+    <div class="self-center relative flex flex-col gap-4 items-center justify-center w-72 h-60 p-8 shadow-lg rounded-md border-b border-primary bg-white z-10"
         [style]="{'box-shadow': '0 4px 6px 0 hsla(0, 0%, 0%, 0.2)'}"
         [@fadeInUpOnEnter]="animateCard" 
         (visible)="animateCard = 'in'"
