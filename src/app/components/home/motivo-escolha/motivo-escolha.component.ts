@@ -18,7 +18,7 @@ import { AnimateOnScrollDirective } from '../../../shared/directives/animate-on-
                 params: { timing: '0.8' }
             })),
             transition('* => out', [])
-        ]),
+        ]),        
         trigger('slideInLeftOnEnterFirst', [
             transition('* => in', useAnimation(slideInLeft, {
                 params: { timing: '0.5' }
