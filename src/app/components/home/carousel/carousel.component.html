@@ -1,13 +1,13 @@
 <section class="embla relative">
-    <div class="embla__viewport" emblaCarousel [options]="options" [plugins]="plugins" [subscribeToEvents]="subscribeToEvents" (emblaChange)="onEmblaChange($event, emblaRef()?.emblaApi!)">
+    <div class="embla__viewport" emblaCarousel [options]="options" [subscribeToEvents]="subscribeToEvents" (emblaChange)="onEmblaChange($event, emblaRef()?.emblaApi!)">
         <div class="embla__container">
             <div class="embla__slide bg-linear-140 from-[#dbe9ea] to-[#7dc387]">
                 <div class="embla__slide__number p-8">
 
-                    <div class="flex flex-col gap-4 w-1/2" [@fadeInUpOnEnter]="selectedIndex() === 0 ? 'in' : 'out'">
+                    <div class="flex flex-col gap-4 w-full md:w-1/2" [@fadeInUpOnEnter]="selectedIndex() === 0 ? 'in' : 'out'">
                         <div class="flex flex-col space-y-3">
-                            <div class="font-medium text-5xl">
-                                Transforme seu <span class="font-black text-tertiary text-5xl">futuro</span> com cursos técnicos de qualidade!
+                            <div class="font-medium text-2xl md:text-3xl lg:text-5xl">
+                                Transforme seu <span class="font-black text-tertiary text-2xl md:text-3xl lg:text-5xl">futuro</span> com cursos técnicos de qualidade!
                             </div>
                 
                             <span class="text-sm text-gray-800 font-medium">Faça agora o seu cadastro e garanta uma oferta super especial para se matricular.</span>
@@ -23,9 +23,9 @@
 
                     <div class="ml-4 grid items-start gap-[30px] relative z-10 h-full" [@slideInRightOnEnter]="selectedIndex() === 0 ? 'in' : 'out'" [style]="{'grid-template-columns': '1fr 1fr'}">
 
-                        <div class="w-[250px] h-[300px] bg-primary rounded-tr-[50px] rounded-bl-[90px]" [style]="'background-image:url(assets/images/Enfermeira.png); background-repeat: no-repeat; background-size: cover;'"></div>
+                        <div class="w-[130] h-[180px] md:w-[160px] md:h-[200px] lg:w-[250px] lg:h-[300px] bg-primary rounded-tr-[50px] rounded-bl-[90px]" [style]="'background-image:url(assets/images/Enfermeira.png); background-repeat: no-repeat; background-size: cover;'"></div>
 
-                        <div class="w-[200px] h-[230px] bg-tertiary rounded-tl-[50px] rounded-br-[90px] my-[80px]" [style]="'background-image:url(assets/images/Radiologista.png); background-repeat: no-repeat; background-size: cover;'"></div>
+                        <div class="w-[152px] h-[210px] md:w-[150px] md:h-[225px] lg:w-[200px] lg:h-[230px] bg-tertiary rounded-tl-[50px] rounded-br-[90px] my-[80px]" [style]="'background-image:url(assets/images/Radiologista.png); background-repeat: no-repeat; background-size: cover;'"></div>
 
                     </div>
 
@@ -33,12 +33,12 @@
             </div>
 
             <div class="embla__slide bg-linear-90 from-[#FFC670] to-[#B0D685]">
-                <div class="embla__slide__number gap-4">
+                <div class="embla__slide__number gap-4 p-8">
 
-                    <div class="flex flex-col gap-4 w-1/2" [@slideInLeftOnEnter]="selectedIndex() === 1 ? 'in' : 'out'">
+                    <div class="flex flex-col gap-4 w-full md:w-1/2" [@slideInLeftOnEnter]="selectedIndex() === 1 ? 'in' : 'out'">
                         <div class="flex flex-col space-y-3">
-                            <div class="font-medium text-5xl">
-                                Aulas práticas, conteúdo atualizado e <span class="font-black text-tertiary text-5xl">certificação reconhecida</span>
+                            <div class="font-medium text-2xl md:text-3xl lg:text-5xl">
+                                Aulas práticas, conteúdo atualizado e <span class="font-black text-tertiary text-2xl md:text-3xl lg:text-5xl">certificação reconhecida</span>
                             </div>
                 
                             <span class="text-sm text-gray-800 font-medium">Desenvolva habilidades reais com uma formação que valoriza o seu crescimento pessoal e profissional.</span>
@@ -52,10 +52,10 @@
                         </button>
                     </div>
 
-                    <div class="z-10 h-full">
+                    <div class="z-10 h-full self-center">
 
-                        <div class="flex justify-center h-full bg-primary w-56">
-                            <img src="assets/images/Enfermeiro.png" alt="Enfermeiro" class="absolute bottom-0 h-[20rem]" [@fadeInUpOnEnter]="selectedIndex() === 1 ? 'in' : 'out'">
+                        <div class="flex justify-center h-full w-56">
+                            <img src="assets/images/Enfermeiro.png" alt="Enfermeiro" class="absolute bottom-0 h-72 lg:h-[20rem]" [@fadeInUpOnEnter]="selectedIndex() === 1 ? 'in' : 'out'">
                         </div>
 
                     </div>
@@ -66,10 +66,10 @@
             <div class="embla__slide bg-linear-65 from-[#a9d67a] to-[#4a996c]">
                 <div class="embla__slide__number p-8">
 
-                    <div class="flex flex-col gap-4 w-1/2" [@fadeInUpOnEnter]="selectedIndex() === 2 ? 'in' : 'out'">
+                    <div class="flex flex-col gap-4 w-full md:w-1/2" [@fadeInUpOnEnter]="selectedIndex() === 2 ? 'in' : 'out'">
                         <div class="flex flex-col space-y-3">
-                            <div class="font-medium text-5xl">
-                                <span class="font-black text-tertiary text-5xl">Inscreva-se agora</span> e comece a construir sua carreira hoje mesmo!
+                            <div class="font-medium text-2xl md:text-3xl lg:text-5xl">
+                                <span class="font-black text-tertiary text-2xl md:text-3xl lg:text-5xl">Inscreva-se agora</span> e comece a construir sua carreira hoje mesmo!
                             </div>
                 
                             <span class="text-sm text-gray-800 font-medium">As vagas são limitadas! Escolha seu curso, garanta sua matrícula online e dê o primeiro passo rumo ao seu futuro profissional.</span>
@@ -83,10 +83,10 @@
                         </button>
                     </div>
 
-                    <div class="ml-4 relative z-10 h-full" [@fadeInOnEnter]="selectedIndex() === 2 ? 'in' : 'out'">
+                    <div class="md:ml-4 relative z-10 h-full flex items-center" [@fadeInOnEnter]="selectedIndex() === 2 ? 'in' : 'out'">
 
-                        <div class="bg-primary absolute -z-10 left-4 top-4 h-72 w-[432px]"></div>
-                        <img src="assets/images/grupo-estudantes.png" alt="Enfermeiro" class="h-72">
+                        <div class="bg-primary absolute -z-10 left-4 top-16 lg:top-6 h-52 lg:h-72 w-full lg:w-[432px]"></div>
+                        <img src="assets/images/grupo-estudantes.png" alt="Grupo de estudantes" class="h-52 lg:h-72">
 
                     </div>
 

@@ -1,6 +1,6 @@
 .embla {
     margin: auto;
-    height: 23rem;
+    height: calc(100vh - 5rem);
     --slide-height: 19rem;
     --slide-spacing: 1rem;
     --slide-size: 100%;
@@ -37,6 +37,9 @@
     --admonition-warning-rgb-value: 255, 196, 9;
     --admonition-danger-rgb-value: 220, 38, 38;
 
+    @media (width >= 48rem) {
+        height: 23rem;        
+    }
     @media (width >= 96rem) {
         height: 35rem;        
     }
@@ -65,10 +68,17 @@
     font-size: 4rem;
     font-weight: 600;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: start;
     justify-content: center;
+    gap: 1rem;
     height: 100%;
     user-select: none;
+
+    @media (width >= 48rem) {
+        flex-direction: row;  
+        align-items: center;   
+    }
 }
 
 .embla__controls {
