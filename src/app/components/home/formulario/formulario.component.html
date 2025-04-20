@@ -3,12 +3,12 @@
 
     <form 
         [formGroup]="form" 
-        class="flex flex-col w-1/2 p-8"
+        class="flex flex-col w-full md:w-1/2 p-8"
         [@fadeInDownOnEnter]="animateForm" 
         (visible)="animateForm = 'in'"
         appAnimateOnScroll>
 
-        <span class="font-black text-4xl text-center text-black">Entraremos em contato com você</span>
+        <span class="font-black text-2xl md?text-4xl text-center text-black">Entraremos em contato com você</span>
 
         <!-- Nome -->
         <div class="flex flex-col mt-6">
@@ -55,10 +55,10 @@
             </mat-form-field>
         </div>
 
-        <div class="flex gap-4">            
+        <div class="flex flex-col md:flex-row gap-4">            
 
             <!-- Estado -->
-            <div class="flex flex-col mt-4 w-2/4">
+            <div class="flex flex-col mt-4 w-full md:w-2/4">
                 <mat-form-field class="flex-auto" appearance="outline">
 
                     <mat-select formControlName="uf" placeholder="Estado">
@@ -75,7 +75,7 @@
             </div>            
 
             <!-- Cidade -->
-            <div class="flex flex-col mt-4 w-full">
+            <div class="flex flex-col mt-0 md:mt-4 w-full">
                 <mat-form-field class="flex-auto" appearance="outline">
 
                     <mat-select formControlName="cidade" placeholder="Cidade">
@@ -92,7 +92,7 @@
             </div>
         </div>
 
-        <button class="mt-6 text-sm group relative h-12 w-52 overflow-hidden overflow-x-hidden rounded-full bg-linear-65 from-[#65A322] to-[#0E9549] px-8 py-2 text-neutral-50 cursor-pointer">
+        <button class="mt-6 text-sm group relative h-12 w-full md:w-52 overflow-hidden overflow-x-hidden rounded-full bg-linear-65 from-[#65A322] to-[#0E9549] px-8 py-2 text-neutral-50 cursor-pointer">
             <span class="relative z-10 font-medium">Solicitar atendimento</span>
             <span class="absolute inset-0 overflow-hidden rounded-full">
                 <span class="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-secondary transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
@@ -102,7 +102,7 @@
     </form>
 
     <div 
-        class="flex flex-col absolute items-center w-1/2 h-96 p-8 rounded-lg top-28 -right-12" 
+        class="md:flex hidden flex-col absolute items-center w-1/2 h-96 p-8 rounded-lg top-28 -right-12" 
         [style]="'background-image:url(assets/images/Telemarketing.jpg); background-repeat: no-repeat; background-size: cover;'"
         [@fadeInUpOnEnter]="animateImage" 
         (visible)="animateImage = 'in'"
