@@ -9,7 +9,6 @@ import { CountUpOnScrollDirective } from '../../../shared/directives/count-up-on
 @Component({
     selector: 'app-home-sobre-nos',
     templateUrl: './sobre-nos.component.html',
-    styleUrl: './sobre-nos.component.scss',
     animations: [
         trigger('fadeInUpOnEnter', [
             transition('* => in', useAnimation(fadeInUp, {
