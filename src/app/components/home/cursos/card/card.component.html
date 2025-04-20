@@ -1,12 +1,12 @@
-<div class="flex items-center gap-4 w-full">
+<div class="flex flex-col md:flex-row justify-center md:justify-normal items-center gap-4 w-full">
     <div class="flex justify-center h-52 bg-linear-140 from-[#65A322] to-[#0E9549] w-80 rounded-md">
         <img [src]="curso()?.urlImagem" alt="Enfermeiro" class="h-full">
     </div>
 
-    <div class="flex flex-col">
+    <div class="flex flex-col w-80 h-44">
         <span class="font-black text-lg">{{ curso()?.nome }}</span>
         
-        <span class="text-sm text-gray-500">{{ curso()?.descricao }}</span>
+        <span class="text-sm text-gray-500 h-20">{{ curso()?.descricao }}</span>
 
         <button class="!mt-4 text-sm group relative h-12 w-52 overflow-hidden overflow-x-hidden rounded-full bg-linear-140 from-[#65A322] to-[#0E9549] px-8 py-2 text-neutral-50 cursor-pointer">
             <span class="relative z-10 font-medium">Saiba mais</span>
