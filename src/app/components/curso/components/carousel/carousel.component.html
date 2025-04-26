@@ -1,0 +1,13 @@
+<section class="embla">
+    <div class="embla__viewport" emblaCarousel [options]="options" [plugins]="plugins" [subscribeToEvents]="subscribeToEvents" (emblaChange)="onEmblaChange($event, emblaRef()?.emblaApi!)">
+        <div class="embla__container">
+            @for (slide of slides; track $index; let i = $index ) {
+                <div class="embla__slide">
+                    <div class="embla__slide__number">
+                        <img [src]="'assets/images/porque-itsp-' + (slide + 1) + '.jpg'" class="w-full h-full rounded-md object-cover">
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

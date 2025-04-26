@@ -22,14 +22,16 @@ export class HomeCursosService {
                 nome: "Técnico em enfermagem",
                 descricao: "Formação prática e humanizada para atuar na promoção, prevenção e cuidados com a saúde em hospitais, clínicas e unidades de saúde.",
                 categoria: "Saúde",
-                urlImagem: "assets/images/Enfermeira-1.png"
+                urlImagem: "assets/images/Enfermeira-1.png",
+                nomeCursoUrl: 'tecnico-em-enfermagem'
             },
             {
                 cursoId: 2,
                 nome: "Técnico em radiologia",
                 descricao: "Capacita profissionais para operar equipamentos de diagnóstico por imagem, como raio-X, tomografia e ressonância, com foco em segurança e precisão.",
                 categoria: "Saúde",
-                urlImagem: "assets/images/Radiologista-1.png"
+                urlImagem: "assets/images/Radiologista-1.png",
+                nomeCursoUrl: 'tecnico-em-radiologia'
             }
         ];
 

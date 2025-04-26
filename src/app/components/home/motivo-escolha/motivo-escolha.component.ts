@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { trigger, transition, useAnimation } from '@angular/animations';
 
@@ -7,11 +7,11 @@ import { fadeInUp, slideInLeft } from 'ngx-animate';
 
 import { HomeMotivoEscolhaCarouselComponent } from './carousel/carousel.component';
 import { AnimateOnScrollDirective } from '../../../shared/directives/animate-on-scroll.directive';
+import { CardComponent, DataCard } from '../../../shared/components/card/card.component';
 
 @Component({
     selector: 'app-home-motivo-escolha',
     templateUrl: './motivo-escolha.component.html',
-    styleUrl: './motivo-escolha.component.scss',
     animations: [
         trigger('fadeInUpOnEnter', [
             transition('* => in', useAnimation(fadeInUp, {
@@ -19,47 +19,65 @@ import { AnimateOnScrollDirective } from '../../../shared/directives/animate-on-
             })),
             transition('* => out', [])
         ]),        
-        trigger('slideInLeftOnEnterFirst', [
+        trigger('slideInLeftOnEnter', [
             transition('* => in', useAnimation(slideInLeft, {
-                params: { timing: '0.5' }
+                params: { 
+                    timing: '0.8',
+                    delay: '{{ delay }}'
+                }
             })),
             transition('* => out', [])
-        ]),
-        trigger('slideInLeftOnEnterSecond', [
-            transition('* => in', useAnimation(slideInLeft, {
-                params: { timing: '1.0' }
-            })),
-            transition('* => out', [])
-        ]),
-        trigger('slideInLeftOnEnterThird', [
-            transition('* => in', useAnimation(slideInLeft, {
-                params: { timing: '1.5' }
-            })),
-            transition('* => out', [])
-        ]),
-        trigger('slideInLeftOnEnterFourth', [
-            transition('* => in', useAnimation(slideInLeft, {
-                params: { timing: '2.0' }
-            })),
-            transition('* => out', [])
-        ]),
+        ])
     ],
     imports: [
         CommonModule, 
         MatIconModule,
         AnimateOnScrollDirective,
         
+        CardComponent,
         HomeMotivoEscolhaCarouselComponent
     ]
 })
-export class HomeMotivoEscolhaComponent implements OnInit {
+export class HomeMotivoEscolhaComponent {
 
     animateText = 'out';
     animateCards = 'out';
 
-    constructor() { }
+    cards: DataCard[] = [
+        {
+            cor: '#005200',
+            icone: false,
+            titulo: 'Laboratórios Modernos',
+            descricao: 'Equipados com tecnologia de ponta para aulas práticas.',
+            img: 'assets/icons/lab.png',
+            tipoCard: 1
+        },
+        {
+            cor: '#8BC34A',
+            icone: false,
+            titulo: 'Professores Qualificados',
+            descricao: 'Corpo docente experiente e atualizado com as demandas do mercado.',
+            img: 'assets/icons/higher-education.png',
+            tipoCard: 1
+        },
+        {
+            cor: '#005200',
+            icone: false,
+            titulo: 'Infraestrutura Completa',
+            descricao: 'Salas climatizadas e adaptadas para melhor aprendizado.',
+            img: 'assets/icons/presentation.png',
+            tipoCard: 1
+        },
+        {
+            cor: '#8BC34A',
+            icone: false,
+            titulo: 'Conexão com o Mercado',
+            descricao: 'Parcerias estratégicas para estágio e empregabilidade.',
+            img: 'assets/icons/around-the-world.png',
+            tipoCard: 1
+        }
+    ]
 
-    ngOnInit() {
-    }
+    delays = this.cards.map((_, i) => i * 0.2).sort((a, b) => b - a);
 
 }

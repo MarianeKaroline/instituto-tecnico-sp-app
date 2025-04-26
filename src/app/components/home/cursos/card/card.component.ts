@@ -3,15 +3,16 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 
 import { CursoListaModel } from '../../../../common/domain/models/curso-lista.model';
+import { RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-home-cursos-card',
     imports: [
         CommonModule,
+        RouterModule,
         MatCardModule
     ],
     templateUrl: './card.component.html',
-    styleUrl: './card.component.scss'
 })
 export class HomeCursosCardComponent implements OnInit {
 

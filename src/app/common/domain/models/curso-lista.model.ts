@@ -4,4 +4,5 @@ export interface CursoListaModel {
     descricao: string;
     categoria: string;
     urlImagem: string;
+    nomeCursoUrl: string;
 }

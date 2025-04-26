@@ -1,0 +1,42 @@
+@if (data()?.tipoCard == 1) {
+
+    <div class="flex flex-col gap-4 items-center w-full h-full p-8 shadow-lg rounded-3xl border-b-4 bg-white" [style]="{'box-shadow': '0 4px 6px 0 hsla(0, 0%, 0%, 0.2)', 'border-color': data()?.cor }">
+        @if (data()?.img) {
+
+            @if (data()?.icone) {
+                <mat-icon class="w-12 h-12 text-5xl" [style]="{'color': data()?.cor}">{{ data()?.img }}</mat-icon>
+            } 
+            @else {
+                <img [src]="data()?.img" class="w-12">
+            }
+
+        }
+        @else {
+            <div class="w-12 h-12 rounded-full p-4 border flex items-center justify-center" [style]="{'border-color': data()?.cor }">
+                <span class="text-2xl font-medium" [style]="{'color': data()?.cor }">{{ data()?.index }}</span>
+            </div>
+        }
+        <span class="font-black text-lg text-center" [style]="{'color': data()?.cor}">{{ data()?.titulo }}</span>
+        <span class="text-sm text-gray-500 text-center">
+            {{ data()?.descricao }}
+        </span>
+    </div>
+
+} @else if (data()?.tipoCard == 2) {
+
+    <div class="flex gap-4 items-center w-full h-full p-4 shadow-lg rounded-2xl border-b-4 bg-white" [style]="{'box-shadow': '0 4px 6px 0 hsla(0, 0%, 0%, 0.2)', 'border-color': data()?.cor }">
+        @if (data()?.icone) {
+            <mat-icon class="w-12 h-12 text-5xl" [style]="{'color': data()?.cor}">{{ data()?.img }}</mat-icon>
+        } 
+        @else {
+            <img [src]="data()?.img" class="w-12">
+        }
+        <div class="flex flex-col gap-4 ">
+            <span class="font-black text-lg" [style]="{'color': data()?.cor}">{{ data()?.titulo }}</span>
+            <span class="text-sm text-gray-500">
+                {{ data()?.descricao }}
+            </span>
+        </div>
+    </div>
+    
+}

@@ -1,0 +1,173 @@
+<div class="w-full h-[34rem] p-4 md:p-16" [style]="'background-image:url(assets/images/Banner-01.png); background-repeat: no-repeat; background-size: cover; background-position: center;'">
+    
+    <div class="w-full md:w-1/2 h-full flex flex-col justify-center gap-4">
+        <h1 class="font-medium text-tertiary text-xl md:text-2xl">{{ curso()?.nome }} - ITSP</h1>
+        <span class="font-black text-primary text-4xl uppercase">Formação prática com certificações e estágio garantido</span>
+        <span class="text-sm text-gray-700">Aprenda com os melhores e comece a trabalhar ainda durante o curso!</span>
+    
+        <button class="!mt-4 text-sm group relative h-12 w-80 overflow-hidden overflow-x-hidden rounded-tl-[50px] rounded-br-[90px] bg-linear-140 from-[#65A322] to-[#0E9549] px-8 py-2 text-neutral-50 cursor-pointer">
+            <span class="relative z-10 font-medium">Quero me matricular</span>
+            <span class="absolute inset-0 overflow-hidden rounded-tl-[50px] rounded-br-[90px]">
+                <span class="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-tl-[50px] rounded-br-[90px] bg-secondary transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
+            </span>
+        </button>
+    
+        <div class="flex gap-4 w-96 h-12">
+            <div class="flex relative w-[12.5rem]">
+                @for (avatar of avatares; track $index; let i = $index) {
+                    <div 
+                        class="w-12 h-12 rounded-full border border-primary absolute" 
+                        [style]="{
+                            'left': (i * 30) + 'px',
+                            'background-image': 'url(assets/avatar/image-' + avatar + '.jpg)',
+                            'background-repeat': 'no-repeat',
+                            'background-size': 'cover'
+                        }">
+                    </div>
+                }
+    
+            </div>
+            
+            <span class="text-md font-medium text-primary">+ de 500 alunos satisfeitos</span>
+            
+        </div>
+    </div>
+
+</div>
+
+<div class="w-full flex gap-4 justify-center -mt-8">
+
+    @for (item of cardsGerais; track $index) {
+        <div class="w-72 h-72">
+            <app-card [data]="item"></app-card>
+        </div>
+    }
+
+</div>
+
+<div class="flex flex-row justify-between gap-12 mt-8">
+
+    <img src="assets/images/Enfermeiro.png" class="w-1/2">
+
+    <div class="flex flex-col w-1/2 justify-center gap-8">
+
+        <div class="flex flex-col space-y-3">
+            <span class="font-medium text-5xl">MERCADO DE TRABALHO</span>
+            <span class="font-black text-secondary text-5xl">Alta empregabilidade</span>
+
+            <span class="text-sm text-gray-500">Mais de 70% dos alunos empregados logo após o curso!</span>
+            
+            <span class="text-sm font-bold text-gray-700">Atuação em</span>
+        </div>
+
+        @for (atuacao of cardsAtuacao; track $index) {
+            <div class="flex gap-2 items-center">
+                <mat-icon class="text-secondary">task_alt</mat-icon>
+                <span class="text-sm text-gray-700">{{ atuacao.titulo }}</span>
+            </div>
+        }
+
+    </div>
+
+</div>
+
+<div class="w-full bg-white flex flex-col items-center gap-8 p-16">
+
+    <span class="font-black text-primary text-4xl uppercase">O que você vai aprender</span>
+
+    <div class="grid grid-cols-3 gap-4">
+        @for (item of cardsAprendizado; track $index) {
+            <div class="w-72 h-72">
+                <app-card [data]="item"></app-card>
+            </div>
+        }
+    </div>
+
+    <button class="!mt-4 text-sm group relative h-12 w-80 overflow-hidden overflow-x-hidden rounded-tr-[50px] rounded-bl-[90px] bg-linear-140 from-[#65A322] to-[#0E9549] px-8 py-2 text-neutral-50 cursor-pointer">
+        <span class="relative z-10 font-medium">Quero me matricular</span>
+        <span class="absolute inset-0 overflow-hidden rounded-tr-[50px] rounded-bl-[90px]">
+            <span class="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-tr-[50px] rounded-bl-[90px] bg-secondary transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
+        </span>
+    </button>
+
+</div>
+
+<div class="flex flex-row justify-between items-center p-16 gap-12 bg-linear-140 from-[#65A322] to-[#0E9549] relative">
+
+    <div class="flex flex-col w-1/2 justify-center gap-8 text-white">
+
+        <span class="font-medium text-4xl uppercase">Duração do curso</span>
+
+        <div class="flex flex-col gap-4">
+
+            @for (duracao of cardsDuracao; track $index) {
+                <div class="w-[30rem] h-32">
+                    <app-card [data]="duracao"></app-card>
+                </div>
+            }
+
+        </div>
+
+
+    </div>
+
+    <img src="assets/images/Enfermeira.png" class="h-[40rem] absolute bottom-0 right-32">
+
+</div>
+
+<div class="w-full bg-white flex flex-col items-center gap-8 p-16">
+
+    <span class="font-black text-primary text-4xl uppercase">Estrutura do ITSP</span>
+
+    <div class="grid grid-cols-4 gap-4">
+        @for (item of cardsEstrutura; track $index) {
+            <div class="w-72 h-52">
+                <app-card [data]="item"></app-card>
+            </div>
+        }
+    </div>
+
+    <app-curso-carousel></app-curso-carousel>
+
+</div>
+
+<div class="w-full flex flex-col items-center gap-8 p-16">
+
+    <span class="font-black text-primary text-4xl">Veja o que Nossos Alunos Estão Dizendo</span>
+
+    <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+    <div class="elfsight-app-a36fa6cc-8cc8-4c1c-a4e5-d3b5bd95202e h-72" data-elfsight-app-lazy></div>
+
+</div>
+
+<div class="w-full flex items-center gap-8 p-16 h-[35rem] relative img-inscrevase -z-20" 
+    [style]="'background-image:url(assets/images/enfermeiros.jpg); background-repeat: no-repeat; background-size: cover; background-position: center;'">
+    
+    <div class="w-full md:w-1/2 h-full flex flex-col justify-center gap-4">
+        <h1 class="font-medium text-white text-xl md:text-4xl">INVESTIMENTO E FACILIDADES</h1>
+        
+        <div class="flex gap-2 items-center">
+            <mat-icon class="text-secondary">task_alt</mat-icon>
+            <span class="text-sm text-white">Matrículas abertas por tempo limitado</span>
+        </div>
+    </div>
+
+    <div class="w-1/2 h-full flex flex-col justify-center gap-4 px-11 py-10" [style]="'background-image:url(assets/images/laptop.png); background-repeat: no-repeat; background-size: cover; background-position: center;'">
+        
+        <div class="flex flex-col items-center h-full w-full bg-white rounded-2xl p-8 gap-2">
+            <span class="font-black text-center text-primary text-4xl uppercase">Mensalidades acessíveis a partir de R$263</span>
+            <span class="text-sm text-gray-700 text-center">Clique no botão abaixo e fale com um de nossos consultores</span>
+            <span class="text-sm text-gray-700">Parcelamento facilitado</span>
+            <span class="text-sm text-gray-700">Matrícula simplificada e atendimento humanizado</span>
+        
+            <button class="!mt-4 text-sm group relative h-12 w-80 overflow-hidden overflow-x-hidden rounded-tl-[50px] rounded-br-[90px] bg-linear-140 from-[#65A322] to-[#0E9549] px-8 py-2 text-neutral-50 cursor-pointer">
+                <span class="relative z-10 font-medium">Garanta sua vaga agora mesmo!</span>
+                <span class="absolute inset-0 overflow-hidden rounded-tl-[50px] rounded-br-[90px]">
+                    <span class="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-tl-[50px] rounded-br-[90px] bg-secondary transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
+                </span>
+            </button>
+        </div>
+
+    </div>
+
+</div>
