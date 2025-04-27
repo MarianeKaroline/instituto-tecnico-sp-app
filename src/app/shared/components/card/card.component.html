@@ -13,7 +13,7 @@
         }
         @else {
             <div class="w-12 h-12 rounded-full p-4 border flex items-center justify-center" [style]="{'border-color': data()?.cor }">
-                <span class="text-2xl font-medium" [style]="{'color': data()?.cor }">{{ data()?.index }}</span>
+                <span class="text-2xl font-medium" [style]="{'color': data()?.cor }">{{ index() }}</span>
             </div>
         }
         <span class="font-black text-lg text-center" [style]="{'color': data()?.cor}">{{ data()?.titulo }}</span>

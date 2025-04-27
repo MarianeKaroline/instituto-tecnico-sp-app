@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
 
 import { map, filter, takeUntil, Subject } from 'rxjs';
 
@@ -7,8 +8,7 @@ import { CursoService } from './services/curso.service';
 import { ItspUtils } from '../../core/utils/itsp-utils';
 import { TipoTopicoCursoEnum } from '../../common/domain/enums/tipo-topico-curso.enum';
 import { CardComponent, DataCard } from '../../shared/components/card/card.component';
-import { TopicoModel } from '../../common/domain/models/curso/curso.model';
-import { MatIconModule } from '@angular/material/icon';
+import { CardModel } from '../../common/domain/models/curso/curso.model';
 import { CursoCarouselComponent } from './components/carousel/carousel.component';
 
 @Component({
@@ -29,10 +29,10 @@ export class CursoComponent implements OnInit, OnDestroy {
     curso = this._service.curso;
     avatares = Array.from({length: 6}, (_, i) => i + 1);
 
-    cardsGerais: TopicoModel[] | undefined;
-    cardsAtuacao: TopicoModel[] | undefined;
-    cardsAprendizado: TopicoModel[] | undefined;
-    cardsDuracao: TopicoModel[] | undefined;
+    cardsGerais: CardModel[] | undefined;
+    cardsAtuacao: CardModel[] | undefined;
+    cardsAprendizado: CardModel[] | undefined;
+    cardsDuracao: CardModel[] | undefined;
 
     cardsEstrutura: DataCard[] = [
         {
@@ -82,19 +82,19 @@ export class CursoComponent implements OnInit, OnDestroy {
 
                 this.cardsGerais = this._service.curso()?.topicos
                     .filter(t => t.tipoTopicoCursoEnum == TipoTopicoCursoEnum.Geral)
-                    .flatMap(t => t.topicos);
+                    .flatMap(t => t.cards);
 
                 this.cardsAtuacao = this._service.curso()?.topicos
                     .filter(t => t.tipoTopicoCursoEnum == TipoTopicoCursoEnum.Atuacao)
-                    .flatMap(t => t.topicos);
+                    .flatMap(t => t.cards);
 
                 this.cardsAprendizado = this._service.curso()?.topicos
                     .filter(t => t.tipoTopicoCursoEnum == TipoTopicoCursoEnum.Aprendizado)
-                    .flatMap(t => t.topicos);
+                    .flatMap(t => t.cards);
 
                 this.cardsDuracao = this._service.curso()?.topicos
                     .filter(t => t.tipoTopicoCursoEnum == TipoTopicoCursoEnum.Duracao)
-                    .flatMap(t => t.topicos);
+                    .flatMap(t => t.cards);
             });
     }
 

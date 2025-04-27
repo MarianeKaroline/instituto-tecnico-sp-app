@@ -10,12 +10,12 @@ export interface CursoModel {
 
 export interface CursoTopicoModel {
     tipoTopicoCursoEnum: TipoTopicoCursoEnum;
-    topicos: TopicoModel[];
+    cards: CardModel[];
+    storageKey?: string;
 }
 
-export interface TopicoModel {
+export interface CardModel {
     img?: string;
-    index?: number;
     titulo: string;
     descricao?: string;
     cor: string;

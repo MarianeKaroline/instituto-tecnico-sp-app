@@ -8,7 +8,6 @@ export type DataCard = {
     icone: boolean;
     cor: string;
     tipoCard: number;
-    index?: number;
 }
 
 @Component({
@@ -21,6 +20,7 @@ export type DataCard = {
 export class CardComponent implements OnInit {
 
     data = input<DataCard>();
+    index = input<number>();
 
     constructor() { }
 

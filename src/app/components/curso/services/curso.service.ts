@@ -33,7 +33,7 @@ export class CursoService {
                 topicos: [
                     {
                         tipoTopicoCursoEnum: TipoTopicoCursoEnum.Geral,
-                        topicos: [
+                        cards: [
                             {
                                 img: 'assets/icons/training.png',
                                 titulo: 'Entre Rápido no Mercado',
@@ -70,7 +70,7 @@ export class CursoService {
                     },
                     {
                         tipoTopicoCursoEnum: TipoTopicoCursoEnum.Atuacao,
-                        topicos: [
+                        cards: [
                             {
                                 cor: '#8BC34A',
                                 icone: false,
@@ -111,9 +111,8 @@ export class CursoService {
                     },
                     {
                         tipoTopicoCursoEnum: TipoTopicoCursoEnum.Aprendizado,
-                        topicos: [
+                        cards: [
                             {
-                                index: 1,
                                 titulo: 'Técnicas de Primeiros Socorros',
                                 descricao: 'Aprenda a fazer curativos, administrar medicamentos e agir em situações de emergência.',
                                 cor: '#005200',
@@ -121,7 +120,6 @@ export class CursoService {
                                 tipoCard: 1
                             },
                             {
-                                index: 2,
                                 titulo: 'Coletas e Procedimentos Clínicos',
                                 descricao: 'Domine a punção venosa, a coleta de exames e o monitoramento dos sinais vitais.',
                                 cor: '#8BC34A',
@@ -129,7 +127,6 @@ export class CursoService {
                                 tipoCard: 1
                             },
                             {
-                                index: 3,
                                 titulo: 'Vacinação e Suporte Médico',
                                 descricao: 'Aplicação de vacinas e assistência em procedimentos médicos',
                                 cor: '#005200',
@@ -137,7 +134,6 @@ export class CursoService {
                                 tipoCard: 1
                             },
                             {
-                                index: 4,
                                 titulo: 'Cuidado Humanizado com Todos os Perfis',
                                 descricao: 'Prepare-se para cuidar de idosos, gestantes, crianças e pacientes em reabilitação.',
                                 cor: '#8BC34A',
@@ -145,7 +141,6 @@ export class CursoService {
                                 tipoCard: 1
                             },
                             {
-                                index: 5,
                                 titulo: 'Atuação em Diversos Ambientes de Saúde',
                                 descricao: 'Vivencie a rotina em hospitais, clínicas, unidades básicas e no atendimento domiciliar.',
                                 cor: '#005200',
@@ -153,7 +148,6 @@ export class CursoService {
                                 tipoCard: 1
                             },
                             {
-                                index: 6,
                                 titulo: 'Fundamentos da Saúde e Ética Profissional',
                                 descricao: 'Entenda o corpo humano, a importância da ética e a humanização no atendimento.',
                                 cor: '#8BC34A',
@@ -164,7 +158,7 @@ export class CursoService {
                     },
                     {
                         tipoTopicoCursoEnum: TipoTopicoCursoEnum.Duracao,
-                        topicos: [
+                        cards: [
                             {
                                 img: 'assets/icons/clock.png',
                                 titulo: 'Formação Completa e na Medida Certa',
@@ -212,7 +206,7 @@ export class CursoService {
                 topicos: [
                     {
                         tipoTopicoCursoEnum: TipoTopicoCursoEnum.Geral,
-                        topicos: [
+                        cards: [
                             {
                                 cor: '#8BC34A',
                                 icone: false,
@@ -245,7 +239,7 @@ export class CursoService {
                     },
                     {
                         tipoTopicoCursoEnum: TipoTopicoCursoEnum.Atuacao,
-                        topicos: [
+                        cards: [
                             {
                                 cor: '#8BC34A',
                                 icone: false,
@@ -286,7 +280,7 @@ export class CursoService {
                     },
                     {
                         tipoTopicoCursoEnum: TipoTopicoCursoEnum.Aprendizado,
-                        topicos: [
+                        cards: [
                             {
                                 cor: '#8BC34A',
                                 icone: false,
@@ -333,7 +327,7 @@ export class CursoService {
                     },
                     {
                         tipoTopicoCursoEnum: TipoTopicoCursoEnum.Duracao,
-                        topicos: [
+                        cards: [
                             {
                                 cor: '#8BC34A',
                                 icone: false,

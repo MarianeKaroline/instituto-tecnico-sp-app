@@ -37,9 +37,9 @@
 
 <div class="w-full flex gap-4 justify-center -mt-8">
 
-    @for (item of cardsGerais; track $index) {
+    @for (item of cardsGerais; track $index; let i = $index;) {
         <div class="w-72 h-72">
-            <app-card [data]="item"></app-card>
+            <app-card [data]="item" [index]="i"></app-card>
         </div>
     }
 
@@ -76,9 +76,9 @@
     <span class="font-black text-primary text-4xl uppercase">O que você vai aprender</span>
 
     <div class="grid grid-cols-3 gap-4">
-        @for (item of cardsAprendizado; track $index) {
+        @for (item of cardsAprendizado; track $index; let i = $index;) {
             <div class="w-72 h-72">
-                <app-card [data]="item"></app-card>
+                <app-card [data]="item" [index]="i"></app-card>
             </div>
         }
     </div>
@@ -100,9 +100,9 @@
 
         <div class="flex flex-col gap-4">
 
-            @for (duracao of cardsDuracao; track $index) {
+            @for (duracao of cardsDuracao; track $index; let i = $index;) {
                 <div class="w-[30rem] h-32">
-                    <app-card [data]="duracao"></app-card>
+                    <app-card [data]="duracao" [index]="i"></app-card>
                 </div>
             }
 
@@ -120,9 +120,9 @@
     <span class="font-black text-primary text-4xl uppercase">Estrutura do ITSP</span>
 
     <div class="grid grid-cols-4 gap-4">
-        @for (item of cardsEstrutura; track $index) {
+        @for (item of cardsEstrutura; track $index; let i = $index;) {
             <div class="w-72 h-52">
-                <app-card [data]="item"></app-card>
+                <app-card [data]="item" [index]="i"></app-card>
             </div>
         }
     </div>
