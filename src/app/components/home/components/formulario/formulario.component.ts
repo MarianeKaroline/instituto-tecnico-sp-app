@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { trigger, transition, useAnimation } from '@angular/animations';
 
 import { filter, of, Subject, switchMap, takeUntil } from 'rxjs';
 
@@ -14,11 +15,10 @@ import { fadeInDown, fadeInUp } from 'ngx-animate';
 
 import { HomeFormularioService } from './services/formulario.service';
 import { HomeFormularioFormService } from './services/formulario-form.service';
-import { MasksDb } from '../../../common/domain/masks/masks';
+import { MasksDb } from '../../../../common/domain/masks/masks';
 import { EstadoModel } from './models/estado.model';
 import { CidadeModel } from './models/cidade.model';
-import { AnimateOnScrollDirective } from '../../../shared/directives/animate-on-scroll.directive';
-import { trigger, transition, useAnimation } from '@angular/animations';
+import { AnimateOnScrollDirective } from '../../../../shared/directives/animate-on-scroll.directive';
 
 @Component({
     selector: 'app-home-formulario',

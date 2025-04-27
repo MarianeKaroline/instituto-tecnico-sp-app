@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Observable, of } from 'rxjs';
 
-import { CursoListaModel } from '../../../../common/domain/models/curso-lista.model';
+import { CursoListaModel } from '../../../../../common/domain/models/curso-lista.model';
 
 @Injectable()
 export class HomeCursosService {

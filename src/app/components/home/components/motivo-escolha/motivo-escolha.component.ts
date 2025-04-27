@@ -6,8 +6,8 @@ import { trigger, transition, useAnimation } from '@angular/animations';
 import { fadeInUp, slideInLeft } from 'ngx-animate';
 
 import { HomeMotivoEscolhaCarouselComponent } from './carousel/carousel.component';
-import { AnimateOnScrollDirective } from '../../../shared/directives/animate-on-scroll.directive';
-import { CardComponent, DataCard } from '../../../shared/components/card/card.component';
+import { AnimateOnScrollDirective } from '../../../../shared/directives/animate-on-scroll.directive';
+import { CardComponent, DataCard } from '../../../../shared/components/card/card.component';
 
 @Component({
     selector: 'app-home-motivo-escolha',

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { PatternsDb } from '../../../../common/domain/patterns/patterns';
+import { PatternsDb } from '../../../../../common/domain/patterns/patterns';
 import { FormularioModel } from '../models/formulario.model';
 
 type formType = {

@@ -7,8 +7,8 @@ import { fadeInDown, slideInLeft } from 'ngx-animate';
 import { Subject, takeUntil } from 'rxjs';
 
 import { HomeCursosService } from './services/cursos.service';
-import { CursoListaModel } from '../../../common/domain/models/curso-lista.model';
-import { AnimateOnScrollDirective } from '../../../shared/directives/animate-on-scroll.directive';
+import { CursoListaModel } from '../../../../common/domain/models/curso-lista.model';
+import { AnimateOnScrollDirective } from '../../../../shared/directives/animate-on-scroll.directive';
 import { HomeCursosCarouselComponent } from './carousel/carousel.component';
 
 @Component({

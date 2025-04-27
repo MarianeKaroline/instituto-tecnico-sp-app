@@ -1,14 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
-import { HomeCarouselComponent } from './carousel/carousel.component';
-import { HomeCursosComponent } from './cursos/cursos.component';
-import { HomeMatriculaComponent } from './matricula/matricula.component';
-import { HomeFormularioComponent } from './formulario/formulario.component';
-import { HomeSobreNosComponent } from './sobre-nos/sobre-nos.component';
-import { HomeMotivoEscolhaComponent } from './motivo-escolha/motivo-escolha.component';
-import { HomeDepoimentosComponent } from './depoimentos/depoimentos.component';
-import { HomeSigaNosComponent } from './siga-nos/siga-nos.component';
+import { HomeCarouselComponent } from './components/carousel/carousel.component';
+import { HomeCursosComponent } from './components/cursos/cursos.component';
+import { HomeMatriculaComponent } from './components/matricula/matricula.component';
+import { HomeFormularioComponent } from './components/formulario/formulario.component';
+import { HomeSobreNosComponent } from './components/sobre-nos/sobre-nos.component';
+import { HomeMotivoEscolhaComponent } from './components/motivo-escolha/motivo-escolha.component';
+import { HomeDepoimentosComponent } from './components/depoimentos/depoimentos.component';
+import { HomeSigaNosComponent } from './components/siga-nos/siga-nos.component';
 
 @Component({
     selector: 'app-home',

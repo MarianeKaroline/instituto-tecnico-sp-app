@@ -6,7 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { EmblaCarouselDirective, EmblaCarouselType, EmblaOptionsType, EmblaEventType } from 'embla-carousel-angular';
 import Autoplay from 'embla-carousel-autoplay';
 import { fadeInUp } from 'ngx-animate';
-import { AnimateOnScrollDirective } from '../../../../shared/directives/animate-on-scroll.directive';
+import { AnimateOnScrollDirective } from '../../../../../shared/directives/animate-on-scroll.directive';
 
 @Component({
     selector: 'app-home-depoimentos-carousel',

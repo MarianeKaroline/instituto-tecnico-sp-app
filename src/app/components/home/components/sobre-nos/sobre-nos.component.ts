@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { fadeInUp, slideInRight } from 'ngx-animate';
 
-import { AnimateOnScrollDirective } from '../../../shared/directives/animate-on-scroll.directive';
-import { CountUpOnScrollDirective } from '../../../shared/directives/count-up-on-scroll.directive';
+import { AnimateOnScrollDirective } from '../../../../shared/directives/animate-on-scroll.directive';
+import { CountUpOnScrollDirective } from '../../../../shared/directives/count-up-on-scroll.directive';
 
 @Component({
     selector: 'app-home-sobre-nos',

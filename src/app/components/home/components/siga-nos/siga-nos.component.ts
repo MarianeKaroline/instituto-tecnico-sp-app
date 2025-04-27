@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { HomeSigaNosCarouselComponent } from './carousel/carousel.component';
 import { trigger, transition, useAnimation } from '@angular/animations';
+
 import { fadeInUp, slideInLeft } from 'ngx-animate';
-import { AnimateOnScrollDirective } from '../../../shared/directives/animate-on-scroll.directive';
+
+import { HomeSigaNosCarouselComponent } from './carousel/carousel.component';
+import { AnimateOnScrollDirective } from '../../../../shared/directives/animate-on-scroll.directive';
 
 @Component({
     selector: 'app-home-siga-nos',

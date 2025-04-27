@@ -5,9 +5,11 @@ import { Observable, take } from 'rxjs';
 
 import { EstadoModel } from '../models/estado.model';
 import { CidadeModel } from '../models/cidade.model';
+import { environment } from '../../../../../../environments/environment.local';
 
 const API_URL = {
-    localidade: "https://servicodados.ibge.gov.br/api/v1/localidades"
+    localidade: "https://servicodados.ibge.gov.br/api/v1/localidades",
+    home: environment.api.baseUrl + environment.api.home
 }
 
 @Injectable()

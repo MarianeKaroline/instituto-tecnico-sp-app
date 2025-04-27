@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, input, signal, viewChild } from '@a
 import { MatIconModule } from '@angular/material/icon';
 
 import { EmblaCarouselDirective, EmblaCarouselType, EmblaEventType, EmblaOptionsType } from 'embla-carousel-angular';
-import { CursoListaModel } from '../../../../common/domain/models/curso-lista.model';
+import { CursoListaModel } from '../../../../../common/domain/models/curso-lista.model';
 import { HomeCursosCardComponent } from '../card/card.component';
 
 @Component({
