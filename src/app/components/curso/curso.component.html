@@ -35,7 +35,7 @@
 
 </div>
 
-<div class="w-full flex gap-4 justify-center -mt-8">
+<div class="w-full flex flex-col md:flex-row items-center gap-4 justify-center -mt-8 px-4">
 
     @for (item of header?.cards; track $index; let i = $index;) {
         <div class="w-72 h-72">
@@ -45,27 +45,29 @@
 
 </div>
 
-<div class="flex flex-row justify-between gap-12 mt-8">
+<div class="flex w-full flex-col-reverse md:flex-row justify-between gap-12 mt-8">
 
     <img [src]="atuacao?.storageKey" class="w-1/2">
 
-    <div class="flex flex-col w-1/2 justify-center gap-8">
+    <div class="flex flex-col w-full md:w-1/2 justify-center items-center gap-8 pb-6 xl:pb-0">
 
-        <div class="flex flex-col space-y-3">
-            <span class="font-medium text-5xl">MERCADO DE TRABALHO</span>
-            <span class="font-black text-secondary text-5xl">Alta empregabilidade</span>
+        <div class="flex flex-col space-y-3 items-center">
+            <span class="font-medium text-3xl md:text-4xl xl:text-5xl">MERCADO DE TRABALHO</span>
+            <span class="font-black text-secondary text-3xl md:text-4xl xl:text-5xl">Alta empregabilidade</span>
 
             <span class="text-sm text-gray-500">Mais de 70% dos alunos empregados logo após o curso!</span>
             
             <span class="text-sm font-bold text-gray-700">Atuação em</span>
         </div>
 
-        @for (item of atuacao?.cards; track $index) {
-            <div class="flex gap-2 items-center">
-                <mat-icon class="text-secondary">task_alt</mat-icon>
-                <span class="text-sm text-gray-700">{{ item.titulo }}</span>
-            </div>
-        }
+        <div class="w-auto flex flex-col gap-2 items-start">
+            @for (item of atuacao?.cards; track $index) {
+                <div class="flex gap-2 items-center">
+                    <mat-icon class="text-secondary">task_alt</mat-icon>
+                    <span class="text-sm text-gray-700">{{ item.titulo }}</span>
+                </div>
+            }
+        </div>
 
     </div>
 
@@ -73,12 +75,12 @@
 
 <div class="w-full bg-white flex flex-col items-center gap-8 p-16">
 
-    <span class="font-black text-primary text-4xl uppercase">O que você vai aprender</span>
+    <span class="font-black text-primary text-4xl uppercase text-center">O que você vai aprender</span>
 
-    <div class="grid grid-cols-3 gap-4">
-        @for (item of aprendizado?.cards; track $index; let i = $index;) {
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        @for (item of cardsAprendizado; track $index; let i = $index;) {
             <div class="w-72 h-72">
-                <app-card [data]="item" [index]="i"></app-card>
+                <app-card [data]="item" [index]="i + 1"></app-card>
             </div>
         }
     </div>
@@ -92,34 +94,35 @@
 
 </div>
 
-<div class="flex flex-row justify-between items-center p-16 gap-12 bg-linear-140 from-[#65A322] to-[#0E9549] relative">
+<div class="flex flex-col md:flex-row justify-between items-center p-8 pb-0 md:p-8 md:pb-0 bg-linear-140 from-[#65A322] to-[#0E9549]">
 
-    <div class="flex flex-col w-1/2 justify-center gap-8 text-white">
+    <div class="flex flex-col w-full md:w-1/2 justify-center items-center gap-8 text-white pb-8">
 
         <span class="font-medium text-4xl uppercase">Duração do curso</span>
 
         <div class="flex flex-col gap-4">
 
             @for (duracao of duracao?.cards; track $index; let i = $index;) {
-                <div class="w-[30rem] h-32">
+                <div class="w-full md:w-[30rem] h-40 md:h-32 lg:">
                     <app-card [data]="duracao" [index]="i"></app-card>
                 </div>
             }
 
         </div>
 
-
     </div>
 
-    <img [src]="duracao?.storageKey" class="h-[40rem] absolute bottom-0 right-32">
+    <div class="w-full md:w-1/2 flex justify-center lg:-mb-6">
+        <img src="assets/images/Enfermeira.png" class="h-[35rem] md:h-[40rem]">
+    </div>
 
 </div>
 
 <div class="w-full bg-white flex flex-col items-center gap-8 p-16">
 
-    <span class="font-black text-primary text-4xl uppercase">Estrutura do ITSP</span>
+    <span class="font-black text-primary text-4xl uppercase text-center">Estrutura do ITSP</span>
 
-    <div class="grid grid-cols-4 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
         @for (item of cardsEstrutura; track $index; let i = $index;) {
             <div class="w-72 h-52">
                 <app-card [data]="item" [index]="i"></app-card>
@@ -140,19 +143,19 @@
 
 </div>
 
-<div class="w-full flex items-center gap-8 p-16 h-[35rem] relative img-inscrevase -z-20" 
+<div class="w-full flex flex-col md:flex-row items-center gap-8 p-4 md:p-16 h-[35rem] relative img-inscrevase -z-20" 
     [style]="'background-image:url('+ mensalidade?.storageKey +'); background-repeat: no-repeat; background-size: cover; background-position: center;'">
     
-    <div class="w-full md:w-1/2 h-full flex flex-col justify-center gap-4">
+    <div class="w-full md:w-1/2 h-full flex flex-col justify-center gap-4 text-center md:text-start">
         <h1 class="font-medium text-white text-xl md:text-4xl">INVESTIMENTO E FACILIDADES</h1>
         
-        <div class="flex gap-2 items-center">
+        <div class="flex gap-2 items-center justify-center">
             <mat-icon class="text-secondary">task_alt</mat-icon>
             <span class="text-sm text-white">Matrículas abertas por tempo limitado</span>
         </div>
     </div>
 
-    <div class="w-1/2 h-full flex flex-col justify-center gap-4 px-11 py-10" [style]="'background-image:url(assets/images/laptop.png); background-repeat: no-repeat; background-size: cover; background-position: center;'">
+    <div class="w-auto 2xl:w-1/2 md:h-full flex flex-col justify-center gap-4 px-11 py-10" [style]="'background-image:url(assets/images/laptop.png); background-repeat: no-repeat; background-size: cover; background-position: center;'">
         
         <div class="flex flex-col items-center h-full w-full bg-white rounded-2xl p-8 gap-2">
             <span class="font-black text-center text-primary text-4xl uppercase">Mensalidades acessíveis a partir de R$263</span>

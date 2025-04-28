@@ -3,10 +3,7 @@
 
     <form 
         [formGroup]="form" 
-        class="flex flex-col w-full xl:w-1/2 p-8"
-        [@fadeInDownOnEnter]="animateForm" 
-        (visible)="animateForm = 'in'"
-        appAnimateOnScroll>
+        class="flex flex-col w-full xl:w-1/2 p-8">
 
         <span class="font-black text-2xl lg:text-4xl text-center text-black">Entraremos em contato com você</span>
 
@@ -109,9 +106,6 @@
 
     <div 
         class="xl:flex hidden flex-col absolute items-center w-1/2 h-96 2xl:h-[32rem] p-8 rounded-lg top-28 2xl:top-4 -right-12" 
-        [style]="'background-image:url(assets/images/Telemarketing.jpg); background-repeat: no-repeat; background-size: cover; background-position: center;'"
-        [@fadeInUpOnEnter]="animateImage" 
-        (visible)="animateImage = 'in'"
-        appAnimateOnScroll></div>
+        [style]="'background-image:url(assets/images/Telemarketing.jpg); background-repeat: no-repeat; background-size: cover; background-position: center;'"></div>
 
 </div>

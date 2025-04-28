@@ -26,20 +26,6 @@ import { NotificationService } from '../../../../core/services/notification/noti
     selector: 'app-home-formulario',
     templateUrl: './formulario.component.html',
     styleUrl: './formulario.component.scss',
-    animations: [
-        trigger('fadeInUpOnEnter', [
-            transition('* => in', useAnimation(fadeInUp, {
-                params: { timing: '0.8' }
-            })),
-            transition('* => out', [])
-        ]),
-        trigger('fadeInDownOnEnter', [
-            transition('* => in', useAnimation(fadeInDown, {
-                params: { timing: '0.8' }
-            })),
-            transition('* => out', [])
-        ]),
-    ],
     imports: [
         CommonModule,
         MatInputModule,
@@ -48,17 +34,12 @@ import { NotificationService } from '../../../../core/services/notification/noti
         MatIconModule,
         MatSelectModule,
         NgxMaskDirective,
-        ReactiveFormsModule,
-
-        AnimateOnScrollDirective
+        ReactiveFormsModule
     ],
     providers: [HomeFormularioService, HomeFormularioFormService],
     encapsulation: ViewEncapsulation.None
 })
 export class HomeFormularioComponent implements OnInit, OnDestroy {
-
-    animateImage = 'out';
-    animateForm = 'out';
 
     public form = this._formService.form;
     public mask = MasksDb.telefone.celular.ddd;
