@@ -27,6 +27,7 @@ export class HomeCursosCarouselComponent {
 
     public emblaApi?: EmblaCarouselType
     public options: EmblaOptionsType = {
+        align: 'start',
         loop: true
     }
 

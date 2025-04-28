@@ -43,6 +43,8 @@ export class HomeDepoimentosCarouselComponent {
     selectedIndex = signal(0)
     subscribeToEvents: EmblaEventType[] = ['init', 'reInit', 'select', 'scroll'];
 
+    playedVideos: Set<string> = new Set();
+
     scrollPrev() {
         this.emblaRef()?.scrollPrev()
     }
@@ -67,6 +69,16 @@ export class HomeDepoimentosCarouselComponent {
         const tweenFactor = TWEEN_FACTOR_BASE * emblaApi.scrollSnapList().length;
         const tweenFactorScale = TWEEN_FACTOR_SCALE * emblaApi.scrollSnapList().length;
 
+        const iframes = document.querySelectorAll<HTMLIFrameElement>('.embla iframe');
+
+        iframes.forEach((iframe: HTMLIFrameElement) => {
+            if (this.playedVideos.has(iframe.src)) {
+                const src = iframe.src;
+                iframe.src = src;
+                this.playedVideos.delete(src);
+            }
+        });
+
         emblaApi.scrollSnapList().forEach((scrollSnap, snapIndex) => {
             let diffToTarget = scrollSnap - scrollProgress;
             const slidesInSnap = engine.slideRegistry[snapIndex];
@@ -76,10 +88,10 @@ export class HomeDepoimentosCarouselComponent {
                 if (engine.options.loop) {
                     engine.slideLooper.loopPoints.forEach((loopItem) => {
                         const target = loopItem.target();
-    
+
                         if (slideIndex === loopItem.index && target !== 0) {
                             const sign = Math.sign(target);
-    
+
                             if (sign === -1) {
                                 diffToTarget = scrollSnap - (1 + scrollProgress);
                             }
@@ -89,7 +101,7 @@ export class HomeDepoimentosCarouselComponent {
                         }
                     });
                 }
-    
+
                 const tweenValue = 1 - Math.abs(diffToTarget * tweenFactor);
                 const opacity = this.numberWithinRange(tweenValue, 0, 1).toString();
                 emblaApi.slideNodes()[slideIndex].style.opacity = opacity;
@@ -105,7 +117,7 @@ export class HomeDepoimentosCarouselComponent {
             });
 
         });
-        
+
         if (type === 'select' || type === 'init' || type === 'reInit') {
             this.selectedIndex?.set(emblaApi?.selectedScrollSnap())
             this.prevBtnEnabled?.set(emblaApi?.canScrollPrev())
@@ -116,6 +128,14 @@ export class HomeDepoimentosCarouselComponent {
 
     numberWithinRange(number: number, min: number, max: number): number {
         return Math.min(Math.max(number, min), max);
+    }
+
+    markVideoAsPlayed(event: Event) {
+        const iframe = event.target as HTMLIFrameElement;
+        if (iframe && iframe.src) {
+            this.playedVideos.add(iframe.src);
+            console.log(this.playedVideos)
+        }
     }
 
 }

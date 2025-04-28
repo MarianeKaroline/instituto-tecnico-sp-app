@@ -32,6 +32,14 @@ export class HomeCursosService {
                 categoria: "Saúde",
                 urlImagem: "assets/images/Radiologista-1.png",
                 nomeCursoUrl: 'tecnico-em-radiologia'
+            },
+            {
+                cursoId: 3,
+                nome: "Técnico em radiologia",
+                descricao: "Capacita profissionais para operar equipamentos de diagnóstico por imagem, como raio-X, tomografia e ressonância, com foco em segurança e precisão.",
+                categoria: "Saúde",
+                urlImagem: "assets/images/Radiologista-1.png",
+                nomeCursoUrl: 'tecnico-em-radiologia'
             }
         ];
 
