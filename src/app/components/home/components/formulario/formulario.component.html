@@ -16,7 +16,7 @@
 
                 <input matInput type="text" formControlName="nome" placeholder="Nome">
                 <mat-error *ngIf="form?.get('nome')?.touched && form?.get('nome')?.errors">
-                    {{ form.get('nome')?.errors }}
+                    Nome inválido
                 </mat-error>
 
                 <!-- Prefix - Nome icon -->
@@ -31,7 +31,7 @@
 
                 <input matInput type="text" formControlName="email" placeholder="E-mail">
                 <mat-error *ngIf="form?.get('email')?.touched && form?.get('email')?.errors">
-                    {{ form.get('email')?.errors }}
+                    E-mail inválido
                 </mat-error>
 
                 <!-- Prefix - Email icon -->
@@ -46,7 +46,7 @@
 
                 <input matInput type="text" formControlName="celular" placeholder="Celular" [mask]="mask">
                 <mat-error *ngIf="form?.get('celular')?.touched && form?.get('celular')?.errors">
-                    {{ form.get('celular')?.errors }}
+                    Número de telefone inválido
                 </mat-error>
 
                 <!-- Prefix - Celular icon -->
@@ -92,8 +92,14 @@
             </div>
         </div>
 
-        <button class="mt-6 text-sm group relative h-12 w-full md:w-52 overflow-hidden overflow-x-hidden rounded-full bg-linear-65 from-[#65A322] to-[#0E9549] px-8 py-2 text-neutral-50 cursor-pointer">
-            <span class="relative z-10 font-medium">Solicitar atendimento</span>
+        <button [disabled]="loading || form.invalid" class="flex items-center justify-center gap-2 !mt-4 text-sm group relative h-12 w-52 overflow-hidden overflow-x-hidden rounded-full bg-linear-140 from-[#65A322] to-[#0E9549] px-8 py-2 text-neutral-50 cursor-pointer" (click)="enviarEmail()">
+            
+            @if (!loading) {
+                <span class="relative z-10 font-medium">Solicitar atendimento</span>
+            } @else {
+                <mat-icon class="animate-spin">autorenew</mat-icon> <span class="relative z-10 font-medium">Enviando</span>
+            }            
+            
             <span class="absolute inset-0 overflow-hidden rounded-full">
                 <span class="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-secondary transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
             </span>

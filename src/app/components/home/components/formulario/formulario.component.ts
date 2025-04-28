@@ -8,7 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { trigger, transition, useAnimation } from '@angular/animations';
 
-import { filter, of, Subject, switchMap, takeUntil } from 'rxjs';
+import { filter, finalize, of, Subject, switchMap, takeUntil } from 'rxjs';
 
 import { NgxMaskDirective } from "ngx-mask";
 import { fadeInDown, fadeInUp } from 'ngx-animate';
@@ -19,6 +19,8 @@ import { MasksDb } from '../../../../common/domain/masks/masks';
 import { EstadoModel } from './models/estado.model';
 import { CidadeModel } from './models/cidade.model';
 import { AnimateOnScrollDirective } from '../../../../shared/directives/animate-on-scroll.directive';
+import { EnvioEmailModel } from '../../../../common/domain/models/email/envio-email.model';
+import { NotificationService } from '../../../../core/services/notification/notification.service';
 
 @Component({
     selector: 'app-home-formulario',
@@ -61,6 +63,8 @@ export class HomeFormularioComponent implements OnInit, OnDestroy {
     public form = this._formService.form;
     public mask = MasksDb.telefone.celular.ddd;
 
+    public loading: boolean = false;
+
     public estados: EstadoModel[] = [];
     public cidades: CidadeModel[] = [];
 
@@ -68,7 +72,8 @@ export class HomeFormularioComponent implements OnInit, OnDestroy {
 
     constructor(
         private _service: HomeFormularioService,
-        private _formService: HomeFormularioFormService
+        private _formService: HomeFormularioFormService,
+        private _notificationService: NotificationService
     ) { }
 
     ngOnInit() {
@@ -100,8 +105,41 @@ export class HomeFormularioComponent implements OnInit, OnDestroy {
     }
 
     // Public methods
-    public obterCidades(uf: string): void {
+    public enviarEmail(): void {
 
+        this.loading = true;
+
+        const formValue = this._formService.getValue();
+
+        var model: EnvioEmailModel = {
+            nomeCompleto: formValue.nome,
+            email: formValue.email,
+            celular: formValue.celular,
+            uf: formValue.estado,
+            cidade: formValue.cidade
+        }
+
+        this._service.enviarEmail(model)
+            .pipe(
+                finalize(() => this.loading = false),
+                takeUntil(this._unsubscribeAll)
+            )
+            .subscribe(() => {
+                this.resetarFormulario();
+                this._notificationService.message("E-mail enviado com sucesso. Em breve nossa equipe entrará em contato")
+            })
+    }
+
+    private resetarFormulario(): void {
+        this.form.reset();
+        this.form.markAsPristine();
+        this.form.markAsUntouched();
+
+        Object.keys(this.form.controls).forEach(key => {
+            this.form.controls[key].setErrors(null);
+        });
+
+        this.form.updateValueAndValidity();
     }
 
 }

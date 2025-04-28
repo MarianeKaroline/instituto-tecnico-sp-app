@@ -1,4 +1,4 @@
-@if (data()?.tipoCard == 1) {
+@if (data()?.tipoCardEnum == 1) {
 
     <div class="flex flex-col gap-4 items-center w-full h-full p-8 shadow-lg rounded-3xl border-b-4 bg-white" [style]="{'box-shadow': '0 4px 6px 0 hsla(0, 0%, 0%, 0.2)', 'border-color': data()?.cor }">
         @if (data()?.img) {
@@ -22,7 +22,7 @@
         </span>
     </div>
 
-} @else if (data()?.tipoCard == 2) {
+} @else if (data()?.tipoCardEnum == 2) {
 
     <div class="flex gap-4 items-center w-full h-full p-4 shadow-lg rounded-2xl border-b-4 bg-white" [style]="{'box-shadow': '0 4px 6px 0 hsla(0, 0%, 0%, 0.2)', 'border-color': data()?.cor }">
         @if (data()?.icone) {

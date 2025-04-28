@@ -20,5 +20,5 @@ export interface CardModel {
     descricao?: string;
     cor: string;
     icone: boolean;
-    tipoCard: number;
+    tipoCardEnum: number;
 }

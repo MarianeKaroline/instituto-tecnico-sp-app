@@ -7,7 +7,7 @@ export type DataCard = {
     descricao?: string;
     icone: boolean;
     cor: string;
-    tipoCard: number;
+    tipoCardEnum: number;
 }
 
 @Component({

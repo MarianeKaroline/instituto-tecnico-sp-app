@@ -1,13 +1,21 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
-import { Observable, of } from 'rxjs';
+import { Observable, take } from 'rxjs';
 
-import { CursoListaModel } from '../../../../../common/domain/models/curso-lista.model';
+import { CursoListaModel } from '../../../../../common/domain/models/curso/curso-lista.model';
+import { environment } from '../../../../../../environments/environment.local';
+
+const API_URL = {
+    curso: environment.api.baseUrl + environment.api.curso
+}
 
 @Injectable()
 export class HomeCursosService {
 
-    constructor() { }
+    constructor(
+        private _http: HttpClient
+    ) { }
 
     // Public methods
     public obter(): Observable<CursoListaModel[]> {
@@ -16,26 +24,11 @@ export class HomeCursosService {
 
     // Private methods
     public _obter(): Observable<CursoListaModel[]> {
-        var model: CursoListaModel[] = [
-            {
-                cursoId: 1,
-                nome: "Técnico em enfermagem",
-                descricao: "Formação prática e humanizada para atuar na promoção, prevenção e cuidados com a saúde em hospitais, clínicas e unidades de saúde.",
-                categoria: "Saúde",
-                urlImagem: "assets/images/Enfermeira-1.png",
-                nomeCursoUrl: 'tecnico-em-enfermagem'
-            },
-            {
-                cursoId: 2,
-                nome: "Técnico em radiologia",
-                descricao: "Capacita profissionais para operar equipamentos de diagnóstico por imagem, como raio-X, tomografia e ressonância, com foco em segurança e precisão.",
-                categoria: "Saúde",
-                urlImagem: "assets/images/Radiologista-1.png",
-                nomeCursoUrl: 'tecnico-em-radiologia'
-            }
-        ];
-
-        return of(model);
+        
+        return this._http.get<CursoListaModel[]>(`${API_URL.curso}`)
+            .pipe(
+                take(1)
+            );
     }
 
 }

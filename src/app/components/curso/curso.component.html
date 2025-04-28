@@ -1,4 +1,4 @@
-<div class="w-full h-[34rem] p-4 md:p-16" [style]="'background-image:url(assets/images/Banner-01.png); background-repeat: no-repeat; background-size: cover; background-position: center;'">
+<div class="w-full h-[34rem] p-4 md:p-16" [style]="'background-image:url('+ header?.storageKey +'); background-repeat: no-repeat; background-size: cover; background-position: center;'">
     
     <div class="w-full md:w-1/2 h-full flex flex-col justify-center gap-4">
         <h1 class="font-medium text-tertiary text-xl md:text-2xl">{{ curso()?.nome }} - ITSP</h1>
@@ -37,7 +37,7 @@
 
 <div class="w-full flex gap-4 justify-center -mt-8">
 
-    @for (item of cardsGerais; track $index; let i = $index;) {
+    @for (item of header?.cards; track $index; let i = $index;) {
         <div class="w-72 h-72">
             <app-card [data]="item" [index]="i"></app-card>
         </div>
@@ -47,7 +47,7 @@
 
 <div class="flex flex-row justify-between gap-12 mt-8">
 
-    <img src="assets/images/Enfermeiro.png" class="w-1/2">
+    <img [src]="atuacao?.storageKey" class="w-1/2">
 
     <div class="flex flex-col w-1/2 justify-center gap-8">
 
@@ -60,10 +60,10 @@
             <span class="text-sm font-bold text-gray-700">Atuação em</span>
         </div>
 
-        @for (atuacao of cardsAtuacao; track $index) {
+        @for (item of atuacao?.cards; track $index) {
             <div class="flex gap-2 items-center">
                 <mat-icon class="text-secondary">task_alt</mat-icon>
-                <span class="text-sm text-gray-700">{{ atuacao.titulo }}</span>
+                <span class="text-sm text-gray-700">{{ item.titulo }}</span>
             </div>
         }
 
@@ -76,7 +76,7 @@
     <span class="font-black text-primary text-4xl uppercase">O que você vai aprender</span>
 
     <div class="grid grid-cols-3 gap-4">
-        @for (item of cardsAprendizado; track $index; let i = $index;) {
+        @for (item of aprendizado?.cards; track $index; let i = $index;) {
             <div class="w-72 h-72">
                 <app-card [data]="item" [index]="i"></app-card>
             </div>
@@ -100,7 +100,7 @@
 
         <div class="flex flex-col gap-4">
 
-            @for (duracao of cardsDuracao; track $index; let i = $index;) {
+            @for (duracao of duracao?.cards; track $index; let i = $index;) {
                 <div class="w-[30rem] h-32">
                     <app-card [data]="duracao" [index]="i"></app-card>
                 </div>
@@ -111,7 +111,7 @@
 
     </div>
 
-    <img src="assets/images/Enfermeira.png" class="h-[40rem] absolute bottom-0 right-32">
+    <img [src]="duracao?.storageKey" class="h-[40rem] absolute bottom-0 right-32">
 
 </div>
 
@@ -141,7 +141,7 @@
 </div>
 
 <div class="w-full flex items-center gap-8 p-16 h-[35rem] relative img-inscrevase -z-20" 
-    [style]="'background-image:url(assets/images/enfermeiros.jpg); background-repeat: no-repeat; background-size: cover; background-position: center;'">
+    [style]="'background-image:url('+ mensalidade?.storageKey +'); background-repeat: no-repeat; background-size: cover; background-position: center;'">
     
     <div class="w-full md:w-1/2 h-full flex flex-col justify-center gap-4">
         <h1 class="font-medium text-white text-xl md:text-4xl">INVESTIMENTO E FACILIDADES</h1>
