@@ -1,5 +1,5 @@
 <section class="embla relative">
-    <div class="embla__viewport" emblaCarousel [options]="options" [plugins]="plugins" [subscribeToEvents]="subscribeToEvents" (emblaChange)="onEmblaChange($event, emblaRef()?.emblaApi!)">
+    <div class="embla__viewport" emblaCarousel [options]="options" [subscribeToEvents]="subscribeToEvents" (emblaChange)="onEmblaChange($event, emblaRef()?.emblaApi!)">
         <div class="embla__container">
             <div class="embla__slide bg-linear-140 from-[#dbe9ea] to-[#7dc387]">
                 <div class="embla__slide__number p-8 px-10">
@@ -22,9 +22,9 @@
                     </div>
 
                     <div class="w-full md:w-auto flex justify-center">
-                        <div class="ml-4 mt-4 grid items-start gap-[30px] relative z-10 h-full" [@slideInRightOnEnter]="selectedIndex() === 0 ? 'in' : 'out'" [style]="{'grid-template-columns': '1fr 1fr'}">
+                        <div class="ml-4 xl:mt-16 2xl:mt-4 grid items-start gap-[30px] relative z-10 h-full" [@slideInRightOnEnter]="selectedIndex() === 0 ? 'in' : 'out'" [style]="{'grid-template-columns': '1fr 1fr'}">
     
-                            <div class="w-[130] h-[180px] md:w-[160px] md:h-[200px] lg:w-[250px] lg:h-[300px] 2xl:w-[296px] 2xl:h-[331px] bg-primary rounded-tr-[50px] rounded-bl-[90px]" [style]="'background-image:url(assets/images/Enfermeira.png); background-repeat: no-repeat; background-size: cover;'"></div>
+                            <div class="w-[130px] h-[180px] md:w-[160px] md:h-[200px] lg:w-[250px] lg:h-[300px] 2xl:w-[296px] 2xl:h-[331px] bg-primary rounded-tr-[50px] rounded-bl-[90px]" [style]="'background-image:url(assets/images/Enfermeira.png); background-repeat: no-repeat; background-size: cover;'"></div>
     
                             <div class="w-[152px] h-[210px] md:w-[150px] md:h-[225px] lg:w-[200px] lg:h-[230px] 2xl:w-[250px] 2xl:h-[380px] bg-tertiary rounded-tl-[50px] rounded-br-[90px] my-[80px]" [style]="'background-image:url(assets/images/Radiologista.png); background-repeat: no-repeat; background-size: cover;'"></div>
     
@@ -88,7 +88,7 @@
                     <div class="w-full md:w-auto flex justify-center md:items-start mt-8">
                         <div class="md:ml-4 relative z-10 h-full flex items-center" [@fadeInOnEnter]="selectedIndex() === 2 ? 'in' : 'out'">
     
-                            <div class="bg-primary absolute -z-10 left-4 top-4 sm:top-4 lg:top-6 2xl:top-32 h-52 lg:h-72 w-full lg:w-[432px]"></div>
+                            <div class="bg-primary absolute -z-10 left-4 top-4 sm:top-4 2xl:top-5 h-52 lg:h-72 w-full lg:w-[432px]"></div>
                             <img src="assets/images/grupo-estudantes.png" alt="Grupo de estudantes" class="h-52 lg:h-72">
     
                         </div>
