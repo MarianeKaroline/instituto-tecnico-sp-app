@@ -49,7 +49,7 @@ export class HomeMotivoEscolhaComponent {
             icone: false,
             titulo: 'Laboratórios Modernos',
             descricao: 'Equipados com tecnologia de ponta para aulas práticas.',
-            img: 'assets/icons/lab.png',
+            img: 'assets/icons/lab.svg',
             tipoCardEnum: 1
         },
         {
@@ -57,7 +57,7 @@ export class HomeMotivoEscolhaComponent {
             icone: false,
             titulo: 'Professores Qualificados',
             descricao: 'Corpo docente experiente e atualizado com as demandas do mercado.',
-            img: 'assets/icons/higher-education.png',
+            img: 'assets/icons/growth.svg',
             tipoCardEnum: 1
         },
         {
@@ -65,7 +65,7 @@ export class HomeMotivoEscolhaComponent {
             icone: false,
             titulo: 'Infraestrutura Completa',
             descricao: 'Salas climatizadas e adaptadas para melhor aprendizado.',
-            img: 'assets/icons/presentation.png',
+            img: 'assets/icons/education.svg',
             tipoCardEnum: 1
         },
         {
@@ -73,7 +73,7 @@ export class HomeMotivoEscolhaComponent {
             icone: false,
             titulo: 'Conexão com o Mercado',
             descricao: 'Parcerias estratégicas para estágio e empregabilidade.',
-            img: 'assets/icons/around-the-world.png',
+            img: 'assets/icons/connection.svg',
             tipoCardEnum: 1
         }
     ]

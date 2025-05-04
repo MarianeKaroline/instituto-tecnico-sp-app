@@ -4,19 +4,22 @@ import { MatCardModule } from '@angular/material/card';
 
 import { CursoListaModel } from '../../../../../common/domain/models/curso/curso-lista.model';
 import { RouterModule } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
     selector: 'app-home-cursos-card',
     imports: [
         CommonModule,
         RouterModule,
-        MatCardModule
+        MatCardModule,
+        MatIconModule
     ],
     templateUrl: './card.component.html',
 })
 export class HomeCursosCardComponent implements OnInit {
 
     public curso = input<CursoListaModel>();
+    public index = input<number>(0);
 
     constructor() { }
 

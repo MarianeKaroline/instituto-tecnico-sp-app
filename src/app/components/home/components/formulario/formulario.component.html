@@ -89,17 +89,18 @@
             </div>
         </div>
 
-        <button [disabled]="loading || form.invalid" class="flex items-center justify-center gap-2 !mt-4 text-sm group relative h-12 w-52 overflow-hidden overflow-x-hidden rounded-full bg-linear-140 from-[#65A322] to-[#0E9549] px-8 py-2 text-neutral-50 cursor-pointer" (click)="enviarEmail()">
+        <button class="w-52 font-title font-medium text-sm group relative h-12 overflow-hidden overflow-x-hidden rounded-full bg-[#0E9549] px-8 py-2 text-neutral-50 cursor-pointer mt-4">
             
             @if (!loading) {
                 <span class="relative z-10 font-medium">Solicitar atendimento</span>
             } @else {
                 <mat-icon class="animate-spin">autorenew</mat-icon> <span class="relative z-10 font-medium">Enviando</span>
-            }            
-            
+            }
+
             <span class="absolute inset-0 overflow-hidden rounded-full">
                 <span class="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-secondary transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
             </span>
+
         </button>
 
     </form>

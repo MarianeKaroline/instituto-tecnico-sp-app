@@ -1,10 +1,10 @@
 <section class="embla relative">
     <div class="embla__viewport" emblaCarousel [options]="options" [subscribeToEvents]="subscribeToEvents" (emblaChange)="onEmblaChange($event, emblaRef()?.emblaApi!)">
         <div class="embla__container">
-            @for (curso of cursos(); track curso.cursoId) {
+            @for (curso of cursos(); track curso.cursoId; let i = $index) {
                 <div class="embla__slide">
                     <div class="embla__slide__number w-full">
-                        <app-home-cursos-card [curso]="curso"></app-home-cursos-card>
+                        <app-home-cursos-card [curso]="curso" [index]="i"></app-home-cursos-card>
                     </div>
                 </div>
             }
