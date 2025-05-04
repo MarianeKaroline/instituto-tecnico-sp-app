@@ -5,7 +5,7 @@
         --color-primary: #005200;
         --color-secondary: #8BC34A;
         --color-tertiary: #f18500;
-        --color-blue: #17254E;
+        --color-blue: #0b1225;
         --color-blue-variant: #17254E;
         --color-neutral: #F5F5F5;
         --color-neutral-variant: #9E9E9E;
@@ -13,6 +13,7 @@
 
         --font-title: 'Nunito', Roboto, "Helvetica Neue", sans-serif;
         --font-body: 'Open Sans', Roboto, "Helvetica Neue", sans-serif
+        --font-epilogue: 'Epilogue', Roboto, "Helvetica Neue", sans-serif
     }
 
     .fa,
@@ -133,12 +134,17 @@
         animation: fade-in-left 0.8s ease-out;
     }
 
+
     .font-title {
         font-family: var(--font-title);
     }
 
     .font-body {
         font-family: var(--font-body);
+    }
+
+    .font-epilogue {
+        font-family: var(--font-epilogue);
     }
 }
 

@@ -42,7 +42,7 @@
     }
 
     @media (width >= 48rem) {
-        height: 23rem;        
+        height: 25rem;        
     }
     
     @media (width >= 96rem) {
@@ -134,4 +134,12 @@
 
 .embla__dot--selected:after {
     background: #FFFFFF;
+}
+
+.polka-dots {
+    background-image: radial-gradient(
+        #005200 3px,
+        transparent 3px
+    );
+    background-size: 20px 20px;
 }

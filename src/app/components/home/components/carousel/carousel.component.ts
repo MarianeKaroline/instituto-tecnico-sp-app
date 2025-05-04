@@ -46,6 +46,8 @@ import { fadeIn, fadeInUp, slideInLeft, slideInRight } from 'ngx-animate';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeCarouselComponent {
+    
+    avatares = Array.from({length: 4}, (_, i) => i + 1);
 
     emblaRef = viewChild(EmblaCarouselDirective)
 

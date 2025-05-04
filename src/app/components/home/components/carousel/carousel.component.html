@@ -1,19 +1,19 @@
 <section class="embla relative">
-    <div class="embla__viewport" emblaCarousel [options]="options" [subscribeToEvents]="subscribeToEvents" (emblaChange)="onEmblaChange($event, emblaRef()?.emblaApi!)">
+    <div class="embla__viewport" emblaCarousel [options]="options" [plugins]="plugins" [subscribeToEvents]="subscribeToEvents" (emblaChange)="onEmblaChange($event, emblaRef()?.emblaApi!)">
         <div class="embla__container">
             <div class="embla__slide bg-linear-140 from-[#dbe9ea] to-[#7dc387]">
                 <div class="embla__slide__number p-8 px-10">
 
                     <div class="flex flex-col items-center md:items-start gap-4 w-full md:w-1/2 mt-20 md:mt-0" [@fadeInUpOnEnter]="selectedIndex() === 0 ? 'in' : 'out'">
                         <div class="flex flex-col space-y-3">
-                            <div class="font-medium text-2xl text-center lg:text-start md:text-3xl lg:text-5xl">
+                            <div class="font-medium font-epilogue text-blue text-2xl text-center lg:text-start md:text-3xl lg:text-5xl">
                                 Transforme seu <span class="font-black text-tertiary text-2xl md:text-3xl lg:text-5xl">futuro</span> com cursos técnicos de qualidade!
                             </div>
                 
-                            <span class="text-sm text-gray-800 font-medium text-center lg:text-start">Faça agora o seu cadastro e garanta uma oferta super especial para se matricular.</span>
+                            <span class="text-sm text-gray-800 font-normal text-center lg:text-start font-body">Faça agora o seu cadastro e garanta uma oferta super especial para se matricular.</span>
                         </div>
 
-                        <button class="text-sm group relative h-12 w-52 overflow-hidden overflow-x-hidden rounded-full bg-linear-65 from-[#65A322] to-[#0E9549] px-8 py-2 text-neutral-50 cursor-pointer">
+                        <button class="font-body text-sm group relative h-12 overflow-hidden overflow-x-hidden rounded-full bg-[#0E9549] px-8 py-2 text-neutral-50 cursor-pointer">
                             <span class="relative z-10 font-medium">Inscreva-se agora</span>
                             <span class="absolute inset-0 overflow-hidden rounded-full">
                                 <span class="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-secondary transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
@@ -21,13 +21,49 @@
                         </button>
                     </div>
 
-                    <div class="w-full md:w-auto flex justify-center">
+                    <div class="w-full md:w-auto flex justify-center relative">
                         <div class="ml-4 xl:mt-16 2xl:mt-4 grid items-start gap-[30px] relative z-10 h-full" [@slideInRightOnEnter]="selectedIndex() === 0 ? 'in' : 'out'" [style]="{'grid-template-columns': '1fr 1fr'}">
     
-                            <div class="w-[130px] h-[180px] md:w-[160px] md:h-[200px] lg:w-[250px] lg:h-[300px] 2xl:w-[296px] 2xl:h-[331px] bg-primary rounded-tr-[50px] rounded-bl-[90px]" [style]="'background-image:url(assets/images/Enfermeira.png); background-repeat: no-repeat; background-size: cover;'"></div>
-    
-                            <div class="w-[152px] h-[210px] md:w-[150px] md:h-[225px] lg:w-[200px] lg:h-[230px] 2xl:w-[250px] 2xl:h-[380px] bg-tertiary rounded-tl-[50px] rounded-br-[90px] my-[80px]" [style]="'background-image:url(assets/images/Radiologista.png); background-repeat: no-repeat; background-size: cover;'"></div>
-    
+                            <div class="w-[130px] h-[180px] md:w-[160px] md:h-[200px] lg:w-[172px] lg:h-[224px] 2xl:w-[296px] 2xl:h-[331px] bg-primary rounded-tr-[50px] rounded-bl-[90px]" [style]="'background-image:url(assets/images/Enfermeira.png); background-repeat: no-repeat; background-size: cover;'"></div>
+                            <div class="w-[130px] h-[180px] md:w-[160px] md:h-[200px] lg:w-[180px] lg:h-[240px] 2xl:w-[296px] 2xl:h-[331px] rounded-tr-[50px] border-t-2 border-b-2 border-tertiary rounded-bl-[90px] absolute -top-2 -z-10"></div>
+
+                            <div class="w-[152px] h-[210px] md:w-[150px] md:h-[225px] lg:w-[170px] lg:h-[253px] 2xl:w-[250px] 2xl:h-[380px] bg-tertiary rounded-tl-[50px] rounded-br-[90px] my-[80px]" [style]="'background-image:url(assets/images/Radiologista.png); background-repeat: no-repeat; background-size: cover;'"></div>
+                            <div class="w-[152px] h-[210px] md:w-[150px] md:h-[225px] lg:w-[170px] lg:h-[253px] 2xl:w-[250px] 2xl:h-[380px] rounded-tl-[50px] rounded-br-[90px] my-[80px] polka-dots absolute -bottom-4 -right-4 -z-10"></div>
+                        </div>
+
+                        <div class="bg-white shadow-lg shadow-green-800 flex flex-col absolute top-16 right-0 py-2 px-6 rounded-full z-20" [@slideInRightOnEnter]="selectedIndex() === 0 ? 'in' : 'out'">
+                            <span class="text-tertiary text-lg font-medium">500+</span>
+                            <span class="text-gray-800 font-normal text-xs">Avaliações positivas</span>
+                        </div>
+
+                        <div class="bg-white shadow-lg shadow-green-800 flex gap-4 items-center absolute bottom-16 left-0 py-2 px-6 rounded-full z-20" [@slideInRightOnEnter]="selectedIndex() === 0 ? 'in' : 'out'">
+                            <div class="flex flex-col">
+                                <span class="text-secondary text-lg font-medium">2k+</span>
+                                <span class="text-gray-800 font-normal text-xs">Alunos</span>
+                            </div>
+                            <div class="flex gap-4 w-20 h-6">
+                                <div class="flex relative w-20">
+                                    @for (avatar of avatares; track $index; let i = $index) {
+                                        <div 
+                                            class="w-6 h-6 rounded-full border border-primary absolute" 
+                                            [style]="{
+                                                'left': (i * 15) + 'px',
+                                                'background-image': 'url(assets/avatar/image-' + avatar + '.jpg)',
+                                                'background-repeat': 'no-repeat',
+                                                'background-size': 'cover'
+                                            }">
+                                        </div>
+                                    }
+                                    <div 
+                                        class="w-6 h-6 rounded-full bg-primary absolute flex justify-center items-center text-white" 
+                                        [style]="{
+                                            'left': (4 * 15) + 'px'
+                                        }">
+                                        <mat-icon class="w-3! h-3! text-[0.75rem]!">add</mat-icon>
+                                    </div>
+                        
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -39,14 +75,14 @@
 
                     <div class="flex flex-col items-center md:items-start gap-4 w-full md:w-1/2" [@slideInLeftOnEnter]="selectedIndex() === 1 ? 'in' : 'out'">
                         <div class="flex flex-col space-y-3">
-                            <div class="font-medium text-center lg:text-start text-2xl md:text-3xl lg:text-5xl">
+                            <div class="font-medium font-epilogue text-blue text-center lg:text-start text-2xl md:text-3xl lg:text-5xl">
                                 Aulas práticas, conteúdo atualizado e <span class="font-black text-tertiary text-2xl md:text-3xl lg:text-5xl">certificação reconhecida</span>
                             </div>
                 
-                            <span class="text-sm text-gray-800 font-medium text-center lg:text-start">Desenvolva habilidades reais com uma formação que valoriza o seu crescimento pessoal e profissional.</span>
+                            <span class="text-sm text-gray-800 font-normal text-center lg:text-start">Desenvolva habilidades reais com uma formação que valoriza o seu crescimento pessoal e profissional.</span>
                         </div>
 
-                        <button class="text-sm group relative h-12 w-52 overflow-hidden overflow-x-hidden rounded-full bg-linear-65 from-[#65A322] to-[#0E9549] px-8 py-2 text-neutral-50 cursor-pointer">
+                        <button class="font-body text-sm group relative h-12 overflow-hidden overflow-x-hidden rounded-full bg-[#0E9549] px-8 py-2 text-neutral-50 cursor-pointer">
                             <span class="relative z-10 font-medium">Inscreva-se agora</span>
                             <span class="absolute inset-0 overflow-hidden rounded-full">
                                 <span class="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-secondary transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
@@ -60,6 +96,11 @@
                             <img src="assets/images/Enfermeiro.png" alt="Enfermeiro" class="absolute bottom-0 h-72 lg:h-[20rem] 2xl:h-[30rem]" [@fadeInUpOnEnter]="selectedIndex() === 1 ? 'in' : 'out'">
                         </div>
 
+                        <div class="w-6 h-6 rounded-full absolute top-8 bg-primary"></div>
+                        <div class="w-4 h-4 rounded-full absolute bottom-4 right-48 bg-tertiary"></div>
+
+                        <div class="w-[152px] h-[210px] md:w-[150px] md:h-[225px] lg:w-[170px] lg:h-[253px] 2xl:w-[250px] 2xl:h-[380px] my-[80px] polka-dots absolute -bottom-4 -right-4 -z-10"></div>
+
                     </div>
 
                 </div>
@@ -70,14 +111,14 @@
 
                     <div class="flex flex-col items-center md:items-start gap-4 w-full md:w-1/2" [@fadeInUpOnEnter]="selectedIndex() === 2 ? 'in' : 'out'">
                         <div class="flex flex-col space-y-3">
-                            <div class="font-medium text-center lg:text-start text-2xl md:text-3xl lg:text-5xl">
+                            <div class="font-medium font-epilogue text-blue text-center lg:text-start text-2xl md:text-3xl lg:text-5xl">
                                 <span class="font-black text-[#bf861b] text-2xl md:text-3xl lg:text-5xl">Inscreva-se agora</span> e comece a construir sua carreira hoje mesmo!
                             </div>
                 
-                            <span class="text-sm text-gray-800 font-medium text-center lg:text-start">As vagas são limitadas! Escolha seu curso, garanta sua matrícula online e dê o primeiro passo rumo ao seu futuro profissional.</span>
+                            <span class="font-body text-sm text-gray-800 font-normal text-center lg:text-start">As vagas são limitadas! Escolha seu curso, garanta sua matrícula online e dê o primeiro passo rumo ao seu futuro profissional.</span>
                         </div>
 
-                        <button class="text-sm group relative h-12 w-52 overflow-hidden overflow-x-hidden rounded-full bg-linear-65 from-[#65A322] to-[#0E9549] px-8 py-2 text-neutral-50 cursor-pointer">
+                        <button class="font-body text-sm group relative h-12 overflow-hidden overflow-x-hidden rounded-full bg-[#0E9549] px-8 py-2 text-neutral-50 cursor-pointer">
                             <span class="relative z-10 font-medium">Inscreva-se agora</span>
                             <span class="absolute inset-0 overflow-hidden rounded-full">
                                 <span class="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-secondary transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
