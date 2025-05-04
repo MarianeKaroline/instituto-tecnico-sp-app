@@ -1,0 +1,11 @@
+<section class="w-full h-full relative">
+    
+    <button mat-icon-button class="absolute! top-4! right-4! z-20!" (click)="onNoClick()">
+        <mat-icon class="text-white!">close</mat-icon>
+    </button>
+
+    <video class="w-full h-full" controls>
+        <source [src]="data" type="video/mp4">
+        Your browser does not support HTML video.
+    </video>
+</section>

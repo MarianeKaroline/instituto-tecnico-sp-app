@@ -1,5 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
+
+import { take } from 'rxjs';
+
+import { DialogComponent } from '../../../../../shared/components/dialog/dialog.component';
 
 @Component({
     selector: 'app-home-depoimentos-avaliacoes-videos',
@@ -11,7 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class HomeDepoimentosAvaliacoesVideosComponent {
 
-    video: string = 'assets/videos/depoimento-1.mp4';
+    readonly dialog = inject(MatDialog);
 
     videos = [
         {
@@ -39,5 +44,21 @@ export class HomeDepoimentosAvaliacoesVideosComponent {
             nome: 'Aparecida'
         }
     ]
+
+    openDialogVideo(video: string): void {
+        this.dialog.open(
+            DialogComponent,
+            {
+                width: '250px',
+                data: video,
+                panelClass: 'custom'
+            }
+        )
+        .afterClosed()
+        .pipe(
+            take(1)
+        )
+        .subscribe()
+    }
 
 }

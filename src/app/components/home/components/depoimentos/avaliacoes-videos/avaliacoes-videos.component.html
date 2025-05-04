@@ -8,7 +8,9 @@
                 <div class="h-64 image rounded-2xl relative" [style]="{'background-image': 'url(' + item.img + ')'}">
                     <div class="absolute top-0 right-0 h-full w-full bg-linear-180 from-[#0E9549]/15 to-[#0E9549]/70 z-10 rounded-2xl"></div>
                     
-                    <div class="rounded-full w-16 h-16 absolute flex items-center justify-center bg-white border border-tertiary top-4 left-10 text-tertiary shadow-md z-20 cursor-pointer hover:shadow-[0_8px_8px_rgba(0,0,0,0.35)]">
+                    <div 
+                        class="rounded-full w-16 h-16 absolute flex items-center justify-center bg-white border border-tertiary top-4 left-10 text-tertiary shadow-md z-20 cursor-pointer hover:shadow-[0_8px_8px_rgba(0,0,0,0.35)]"
+                        (click)="openDialogVideo(item.video)">
                         <mat-icon class="w-8! h-8! text-[2rem]!">play_arrow</mat-icon>
                     </div>
 
