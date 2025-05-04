@@ -4,12 +4,15 @@
     :root {
         --color-primary: #005200;
         --color-secondary: #8BC34A;
-        --color-secondary-100: #B0D685;
         --color-tertiary: #f18500;
-        --color-tertiary-100: #FFC670;
+        --color-blue: #17254E;
+        --color-blue-variant: #17254E;
         --color-neutral: #F5F5F5;
         --color-neutral-variant: #9E9E9E;
         --color-danger: #f0050f;
+
+        --font-title: 'Nunito', Roboto, "Helvetica Neue", sans-serif;
+        --font-body: 'Open Sans', Roboto, "Helvetica Neue", sans-serif
     }
 
     .fa,
@@ -46,28 +49,28 @@
         border-color: var(--color-secondary) !important;
     }
 
-    .bg-secondary-100 {
-        background-color: var(--color-secondary-100) !important;
+    .bg-blue {
+        background-color: var(--color-blue) !important;
     }
 
-    .text-secondary-100 {
-        color: var(--color-secondary-100) !important;
+    .text-blue {
+        color: var(--color-blue) !important;
     }
 
-    .border-secondary-100 {
-        border-color: var(--color-secondary-100) !important;
+    .border-blue {
+        border-color: var(--color-blue) !important;
     }
 
-    .bg-tertiary-100 {
-        background-color: var(--color-tertiary-100) !important;
+    .bg-blue-variant {
+        background-color: var(--color-blue-variant) !important;
     }
 
-    .text-tertiary-100 {
-        color: var(--color-tertiary-100) !important;
+    .text-blue-variant {
+        color: var(--color-blue-variant) !important;
     }
 
-    .border-tertiary-100 {
-        border-color: var(--color-tertiary-100) !important;
+    .border-blue-variant {
+        border-color: var(--color-blue-variant) !important;
     }
 
     .bg-tertiary {
@@ -128,6 +131,14 @@
 
     .animate-fade-in-left {
         animation: fade-in-left 0.8s ease-out;
+    }
+
+    .font-title {
+        font-family: var(--font-title);
+    }
+
+    .font-body {
+        font-family: var(--font-body);
     }
 }
 

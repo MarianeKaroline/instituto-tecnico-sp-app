@@ -1,4 +1,45 @@
-<div class="flex items-center justify-between p-8 h-20 w-full text-xs shadow-md bg-white">
+<div class="bg-tertiary h-10 px-48 flex items-center justify-between relative font-title">
+    <div class="flex text-white">
+
+        <div class="flex gap-2 items-center text-xs px-4 border-r border-[#f3a341]">
+            <mat-icon class="w-4! h-4! text-[1rem]!">schedule</mat-icon>
+            <span>
+                Segunda a Sexta, 07:00h às 22:40h
+            </span>
+        </div>
+
+        <div class="flex gap-2 items-center text-xs px-4">
+            <mat-icon class="w-4! h-4! text-[1rem]!">location_on</mat-icon>
+            <span>
+                São José do Rio Preto - SP
+            </span>
+        </div>
+
+    </div>
+
+    <div class="bg-[#0E9549] flex px-4 items-center absolute top-0 right-48 h-full text-white">
+        <a class="flex gap-2 items-center text-xs px-4 border-r border-[#5daa7e] cursor-pointer">
+            <span>
+                Trabalhe Conosco
+            </span>
+        </a>
+
+        <a class="flex gap-2 items-center text-xs px-4 cursor-pointer">
+            <span>
+                Portal do aluno
+            </span>
+        </a>
+
+        <div class="border border-tertiary h-full"></div>
+    </div>
+</div>
+
+<div 
+    class="flex items-center justify-between py-8 px-48 h-20 w-full text-blue-variant text-sm shadow-md bg-white font-title font-medium"
+    [ngClass]="{ 
+        'fixed top-0 left-0 w-full z-50 bg-white shadow-md': isSticky
+    }" 
+    #stickyRef>
 
     <div class="flex gap-4 items-center">
 
@@ -6,35 +47,31 @@
             <img src="assets/logo/logotipo.png" alt="logo">
         </div>
 
-        <a class="py-2 px-4 rounded-sm hover:text-[#0E9549] cursor-pointer hidden md:block" [routerLink]="['./']">
-            <span class="uppercase">Home</span>
+        <a class="ml-8 py-2 px-4 rounded-sm hover:text-[#0E9549] cursor-pointer hidden md:block" [routerLink]="['./']">
+            <span>Home</span>
         </a>
 
-        <a class="py-2 px-4 rounded-sm hover:text-[#0E9549] cursor-pointer hidden">
-            <span class="uppercase">Cursos</span>
+        <a class="py-2 px-4 rounded-sm hover:text-[#0E9549] cursor-pointer">
+            <span>Cursos</span>
         </a>
 
-        <a class="py-2 px-4 rounded-sm hover:text-[#0E9549] cursor-pointer hidden">
-            <span class="uppercase">Editais</span>
+        <a class="py-2 px-4 rounded-sm hover:text-[#0E9549] cursor-pointer">
+            <span>Sobre Nós</span>
         </a>
 
         <a class="py-2 px-4 rounded-sm hover:text-[#0E9549] cursor-pointer hidden md:block" [routerLink]="['./contato']">
-            <span class="uppercase">Contato</span>
+            <span>Contato</span>
         </a>
 
     </div>
 
     <div class="flex items-center gap-4 md:gap-8">
         
-        <button class="hidden md:block group relative h-12 overflow-hidden overflow-x-hidden rounded-full bg-linear-65 from-[#65A322] to-[#0E9549] px-8 py-2 text-neutral-50 cursor-pointer">
+        <button class="hidden md:block group relative h-12 overflow-hidden overflow-x-hidden rounded-full bg-[#0E9549] px-8 py-2 text-neutral-50 cursor-pointer">
             <span class="relative z-10">Matricule-se</span>
             <span class="absolute inset-0 overflow-hidden rounded-full">
                 <span class="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-secondary transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
             </span>
-        </button>
-
-        <button class="hidden md:block group relative h-12 overflow-hidden overflow-x-hidden rounded-full border border-[#65A322] px-8 py-2 text-neutral-50 cursor-pointer">
-            <span class="relative z-10 text-primary font-medium">Portal do aluno</span>
         </button>
 
         <div class="block md:hidden">

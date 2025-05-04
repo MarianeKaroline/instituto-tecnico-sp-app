@@ -1,8 +1,12 @@
-<header class="z-1000 fixed w-full">
-    <app-layout-header></app-layout-header>
+<header>    
+    <app-layout-header (setIsticky)="setIsticky($event)"></app-layout-header>
 </header>
 
-<section class="relative top-20 h-[calc(100vh - 5rem)]  overflow-x-hidden">
+<section 
+    class="h-[calc(100vh - 5rem)]  overflow-x-hidden"
+    [ngClass]="{
+        'relative top-20': isSticky
+    }">
     <router-outlet></router-outlet>
     <app-layout-footer class="relative z-10"></app-layout-footer>
 </section>
