@@ -6,7 +6,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { fadeInDown, fadeInUp, slideInRight } from 'ngx-animate';
 
 import { AnimateOnScrollDirective } from '../../../../shared/directives/animate-on-scroll.directive';
-import { HomeDepoimentosCarouselComponent } from './carousel/carousel.component';
 import { HomeDepoimentosAvaliacoesComponent } from './avaliacoes/avaliacoes.component';
 import { HomeDepoimentosAvaliacoesVideosComponent } from './avaliacoes-videos/avaliacoes-videos.component';
 
@@ -55,7 +54,6 @@ import { HomeDepoimentosAvaliacoesVideosComponent } from './avaliacoes-videos/av
     imports: [
         CommonModule,
         MatIconModule,
-        HomeDepoimentosCarouselComponent,
         HomeDepoimentosAvaliacoesComponent,
         HomeDepoimentosAvaliacoesVideosComponent,
 

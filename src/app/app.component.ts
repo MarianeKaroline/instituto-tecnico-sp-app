@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 
 import { LayoutHeaderComponent } from './components/layout/header/header.component';
@@ -20,10 +20,23 @@ import { LayoutFooterComponent } from './components/layout/footer/footer.compone
     styleUrl: './app.component.scss'
 })
 export class AppComponent {
-    
+
     isSticky = false;
 
     setIsticky(isSticky: boolean): void {
         this.isSticky = isSticky;
+    }
+
+    private platformId = inject(PLATFORM_ID);
+    private router = inject(Router);
+
+    constructor() {
+        if (isPlatformBrowser(this.platformId)) {
+            this.router.events.subscribe((event) => {
+                if (event instanceof NavigationEnd) {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        }
     }
 }
