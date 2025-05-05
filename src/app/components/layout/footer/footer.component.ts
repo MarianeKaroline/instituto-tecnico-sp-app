@@ -12,5 +12,5 @@ import { RouterModule } from '@angular/router';
     ],
 })
 export class LayoutFooterComponent {
-
+    fotos = [...Array(6).keys()];
 }

@@ -1,48 +1,84 @@
-<div class="flex flex-col md:flex-row gap-28 md:gap-8 py-12 px-8 justify-center items-center text-white h-[59rem] md:h-[25rem] bg-linear-140 from-[#65A322] to-[#0E9549]">
+<div class="flex flex-col gap-12 text-white font-epilogue w-full h-[59rem] md:h-[25rem] bg-linear-140 from-[#65A322] to-[#0E9549]">
 
-    <div class="w-32 h-32 md:w-[calc(100% / 4)]">
-        <img src="assets/logo/logotipo.png" alt="logo" class="w-full h-full">
+    <div class="flex flex-row w-full">
+        <div class="border-r border-b pl-16 py-8 pr-8 flex gap-4 h-32 items-center w-[60%]">
+            <div class="rounded-full border border-white h-10 w-10 flex items-center justify-center">
+                <mat-icon class="w-4! h-4! text-[1rem]!">location_on</mat-icon> 
+            </div>
+            <div class="flex flex-col">
+                <span class="text-sm font-normal text-tertiary">Endereço:</span>
+                <span class="text-md font-medium w-full">Av. Bady Bassitt, 4000 - Centro, 15015-000</span> 
+            </div>
+        </div>
+        <div class="border-r border-b pl-16 py-8 pr-8 flex gap-4 h-32 items-center w-[50%]">
+            <div class="rounded-full border border-white h-10 w-10 flex items-center justify-center">
+                <mat-icon class="w-4! h-4! text-[1rem]!">call</mat-icon> 
+            </div>
+            <div class="flex flex-col">
+                <span class="text-sm font-normal text-tertiary">Telefone:</span>
+                <span class="text-md font-medium w-full">(17) 98106-7771</span> 
+            </div>
+        </div>
+        <div class="border-b pl-16 py-8 pr-8 flex gap-4 h-32 items-center w-[50%]">
+            <div class="rounded-full border border-white h-10 w-10 flex items-center justify-center">
+                <mat-icon class="w-4! h-4! text-[1rem]!">mail</mat-icon> 
+            </div>
+            <div class="flex flex-col">
+                <span class="text-sm font-normal text-tertiary">Email:</span>
+                <span class="text-md font-medium w-full">{{'itspriopreto@gmail.com'}}</span> 
+            </div>
+        </div>
     </div>
 
-    <div class="flex w-full md:w-[calc(100%/4)] flex-col gap-4">
-        <span class="text-sm font-medium">
-            Explorar
-        </span>
-        
-        <a class="text-sm mt-4 underline" [routerLink]="['./contato']">
-            Contato
-        </a>
-        <a class="text-sm underline">
-            Editais
-        </a>
-    </div>
+    <div class="flex items-center gap-12 px-32">
+        <div class="w-32 h-32">
+            <img src="assets/logo/logotipo.png" alt="logo" class="w-full h-full">
+        </div>
 
-    <div class="flex w-full md:w-[calc(100%/4)] flex-col gap-4">
-        <span class="text-sm font-medium">
-            Siga-nos
-        </span>
-        
-        <a href="https://www.facebook.com/itspriopreto/" target="_blank" class="text-sm text-center mt-4 underline flex gap-2 items-center">
-            <img src="assets/icons/icon-facebook-header.svg" alt="logo facebook" class="w-6 h-6 md:w-4 md:h-4"> Facebook
-        </a>
-        <a href="https://www.instagram.com/itsp_riopreto_oficial/" target="_blank" class="text-sm text-center underline flex gap-2 items-center">
-            <img src="assets/icons/icon-instagram-header.svg" alt="logo instagram" class="w-6 h-6 md:w-4 md:h-4"> Instagram
-        </a>
-    </div>
-
-    <div class="flex w-full md:w-[calc(100%/4)] flex-col gap-4">
-        <span class="text-sm flex gap-2 items-center">
-            <mat-icon class="w-6! h-6! text-[1.5rem]! material-icons-outlined">mail</mat-icon> <span class="w-[90%]">{{'itspriopreto@gmail.com'}}</span>
-        </span>
-        <span class="text-sm flex gap-2 items-center">
-            <mat-icon class="w-6! h-6! text-[1.5rem]! material-icons-outlined">call</mat-icon> <span class="w-[90%]">(17) 98106-7771</span>
-        </span>
-        <span class="text-sm flex gap-2 items-center">
-            <mat-icon class="w-6! h-6! text-[1.5rem]! material-icons-outlined">schedule</mat-icon> <span class="w-[90%]">Horário de Funcionamento: Segunda a Sexta, 07:00h às 22:40h</span>
-        </span>
-        <span class="text-sm flex gap-2 items-center">
-            <mat-icon class="w-6! h-6! text-[1.5rem]! material-icons-outlined">near_me</mat-icon> <span class="w-[90%]">Av. Bady Bassitt, 4000 - Centro, São José do Rio Preto - SP, 15015-000</span> 
-        </span>
+        <div class="flex flex-col w-full md:w-[calc(100%/4)] h-full gap-4 ml-8">
+            <span class="text-md font-medium">
+                Explorar
+            </span>
+            
+            <div class="flex flex-col h-28 gap-4 mt-4">
+                <a class="text-md underline ">
+                    Cursos
+                </a>
+                <a class="text-md underline">
+                    Sobre Nós
+                </a>
+                <a class="text-md underline" [routerLink]="['./contato']">
+                    Contato
+                </a>
+            </div>
+        </div>
+    
+        <div class="flex w-full md:w-[calc(100%/4)] h-full flex-col gap-4">
+            <span class="text-md font-medium">
+                Siga-nos
+            </span>
+            
+            <div class="flex flex-col h-28 gap-4 mt-4">
+                <a href="https://www.facebook.com/itspriopreto/" target="_blank" class="text-md text-center underline flex gap-2 items-center">
+                    <img src="assets/icons/icon-facebook-header.svg" alt="logo facebook" class="w-6 h-6 md:w-4 md:h-4"> Facebook
+                </a>
+                <a href="https://www.instagram.com/itsp_riopreto_oficial/" target="_blank" class="text-md text-center underline flex gap-2 items-center">
+                    <img src="assets/icons/icon-instagram-header.svg" alt="logo instagram" class="w-6 h-6 md:w-4 md:h-4"> Instagram
+                </a>
+            </div>
+        </div>        
+    
+        <div class="flex w-full md:w-[calc(100%/4)] h-full flex-col gap-4">
+            <span class="text-md font-medium">
+                Galeria
+            </span>
+            
+            <div class="grid grid-cols-3 gap-1">
+                @for (foto of fotos; track $index) {
+                    <img [src]="'assets/images/porque-itsp-' + (foto + 1) + '.jpg'" class="w-full h-16 rounded-md object-cover">
+                }
+            </div>
+        </div>
     </div>
 
 </div>

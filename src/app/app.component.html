@@ -3,10 +3,20 @@
 </header>
 
 <section 
-    class="h-[calc(100vh - 7.5rem)]  overflow-x-hidden"
+    class="h-[calc(100vh - 7.5rem)] overflow-x-hidden"
     [ngClass]="{
         'relative top-20': isSticky
     }">
     <router-outlet></router-outlet>
     <app-layout-footer class="relative z-10"></app-layout-footer>
+
+    <a
+        href="https://wa.me/5541995427605?text=Olá, tudo bem? Vim através do site do ITSP e gostaria de mais informações." 
+        target="_blank"
+        aria-label="WhatsApp"
+        class="fixed bottom-8 right-8 z-50 bg-green-500 p-5 rounded-full shadow-lg hover:scale-110 transition-transform"
+    >
+        <img src="assets/icons/whatsapp.svg" alt="WhatsApp" class="w-8 h-8" />
+    </a>
+
 </section>
