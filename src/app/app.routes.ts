@@ -9,8 +9,12 @@ export const routes: Routes = [
         path: 'cursos',
         children: [
             {
+                path: '',                
+                loadComponent: () => import('./components/cursos/cursos.component').then(c => c.CursosComponent),
+            },
+            {
                 path: ':nomeCurso',
-                loadComponent: () => import('./components/curso/curso.component').then(c => c.CursoComponent)
+                loadComponent: () => import('./components/cursos/curso/curso.component').then(c => c.CursoComponent)
             }
         ]
     },

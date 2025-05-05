@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 
 import { map, Observable, take } from 'rxjs';
 
-import { CursoModel } from '../../../common/domain/models/curso/curso.model';
-import { environment } from '../../../../environments/environment';
+import { CursoModel } from '../../../../common/domain/models/curso/curso.model';
+import { environment } from '../../../../../environments/environment';
 
 const API_URL = {
     curso: environment.api.baseUrl + environment.api.curso

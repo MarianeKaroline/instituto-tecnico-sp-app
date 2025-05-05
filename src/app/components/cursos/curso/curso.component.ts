@@ -5,10 +5,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { map, filter, takeUntil, Subject, switchMap } from 'rxjs';
 
 import { CursoService } from './services/curso.service';
-import { ItspUtils } from '../../core/utils/itsp-utils';
-import { TipoTopicoCursoEnum } from '../../common/domain/enums/tipo-topico-curso.enum';
-import { CardComponent, DataCard } from '../../shared/components/card/card.component';
-import { CardModel, CursoTopicoModel } from '../../common/domain/models/curso/curso.model';
+import { ItspUtils } from '../../../core/utils/itsp-utils';
+import { TipoTopicoCursoEnum } from '../../../common/domain/enums/tipo-topico-curso.enum';
+import { CardComponent, DataCard } from '../../../shared/components/card/card.component';
+import { CardModel, CursoTopicoModel } from '../../../common/domain/models/curso/curso.model';
 import { CursoCarouselComponent } from './components/carousel/carousel.component';
 
 @Component({

@@ -1,0 +1,29 @@
+<div class="flex flex-col gap-4 w-full h-80 relative p-12 rounded-3xl font-epilogue"
+    [ngClass]="{
+        'bg-[#B3C58B]': index() % 2 == 1,
+        'bg-[#EEC79A]': index() % 2 == 0,
+        'h-[25rem]!': cols() == 3
+    }">
+
+    <div 
+        class="w-1/2 flex flex-col gap-4"
+        [ngClass]="{
+            'w-full!': cols() == 3
+        }">
+        <span class="font-black text-lg">{{ curso()?.nome }}</span>
+    
+        <span class="text-sm text-gray-700 h-20 font-medium">{{ curso()?.descricao }}</span>
+
+        <button mat-button class="flex gap-2 items-center mt-4 cursor-pointer" [routerLink]="['./' + curso()?.cursoId]">
+            <span class="font-medium text-sm">Saiba mais</span>
+            <mat-icon>arrow_forward</mat-icon>
+        </button>
+    </div>
+
+    <img [src]="curso()?.urlImagem" alt="Enfermeiro" 
+        class="h-full absolute bottom-0 right-8"
+        [ngClass]="{
+            'h-[60%]!': cols() == 3
+        }">
+</div>
+
