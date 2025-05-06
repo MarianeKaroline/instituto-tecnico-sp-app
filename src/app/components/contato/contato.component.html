@@ -9,6 +9,154 @@
 
 </div>
 
-<div class="p-12 md:pl-16 md:pr-16">
-    <app-home-formulario></app-home-formulario>
+<div class="py-24 px-48 relative">
+
+    <div class="bg-[#c8dfd2] p-16 flex gap-12 rounded-md shadow-sm">
+
+        <div class="flex flex-col gap-4 w-1/2 relative">
+            <span class="text-blue text-2xl font-epilogue font-medium">Entre em Contato</span>
+
+            <span class="text-blue text-sm font-epilogue font-light">Venha fazer parte da melhor instituição de São Paulo</span>
+
+            <div class="p-10 flex flex-col gap-8 bg-white rounded-md">
+                
+                <div class="flex gap-4 items-center">
+                    <div class="rounded-full border border-primary h-10 w-10 flex items-center justify-center">
+                        <mat-icon class="w-4! h-4! text-[1rem]! text-primary">location_on</mat-icon> 
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-sm font-normal text-tertiary">Endereço:</span>
+                        <span class="text-sm font-medium w-full">Av. Bady Bassitt, 4000 - Centro, 15015-000</span> 
+                    </div>
+                </div>
+
+                <div class="flex gap-4 items-center">
+                    <div class="rounded-full border border-primary h-10 w-10 flex items-center justify-center">
+                        <mat-icon class="w-4! h-4! text-[1rem]! text-primary">schedule</mat-icon> 
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-sm font-normal text-tertiary">Horário de funcionamento:</span>
+                        <span class="text-sm font-medium w-full">Segunda a Sexta, 07:00h às 22:40h</span> 
+                    </div>
+                </div>
+
+                <div class="flex gap-4 items-center">
+                    <div class="rounded-full border border-primary h-10 w-10 flex items-center justify-center">
+                        <mat-icon class="w-4! h-4! text-[1rem]! text-primary">call</mat-icon> 
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-sm font-normal text-tertiary">Contato:</span>
+                        <span class="text-sm font-medium w-full">(17) 98106-7771</span> 
+                        <span class="text-sm font-medium w-full">{{'itspriopreto@gmail.com'}}</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="flex gap-4 absolute bottom-0">
+                <a href="https://www.facebook.com/itspriopreto/" target="_blank" class="text-md text-center underline flex gap-2 items-center">
+                    <div class="flex items-center justify-center p-4 bg-white rounded-full">
+                        <img src="assets/icons/facebook-verde.svg" alt="logo facebook" class="w-6 h-6 md:w-4 md:h-4">
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/itsp_riopreto_oficial/" target="_blank" class="text-md text-center underline flex gap-2 items-center">
+                    <div class="flex items-center justify-center p-4 bg-white rounded-full">
+                        <img src="assets/icons/instagram-verde.svg" alt="logo instagram" class="w-6 h-6 md:w-4 md:h-4">
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <form 
+            [formGroup]="form" 
+            class="flex flex-col w-full xl:w-1/2 font-body">
+
+            <!-- Nome -->
+            <div class="flex flex-col">
+                <span class="font-normal mb-2 text-sm">Nome Completo</span>
+                <mat-form-field class="flex-auto" appearance="outline">
+
+                    <input matInput type="text" formControlName="nomeCompleto" placeholder="Nome">
+                    <mat-error *ngIf="form?.get('nomeCompleto')?.touched && form?.get('nomeCompleto')?.errors">
+                        Nome inválido
+                    </mat-error>
+
+                </mat-form-field>
+            </div>
+
+            <!-- Email -->
+            <div class="flex flex-col mt-2">
+                <span class="font-normal mb-2 text-sm">E-mail</span>
+                <mat-form-field class="flex-auto" appearance="outline">
+
+                    <input matInput type="text" formControlName="email" placeholder="E-mail">
+                    <mat-error *ngIf="form?.get('email')?.touched && form?.get('email')?.errors">
+                        E-mail inválido
+                    </mat-error>
+
+                </mat-form-field>
+            </div>
+
+            <!-- Celular -->
+            <div class="flex flex-col mt-2">
+                <span class="font-normal mb-2 text-sm">Celular</span>
+                <mat-form-field class="flex-auto" appearance="outline">
+
+                    <input matInput type="text" formControlName="celular" placeholder="Celular" [mask]="mask">
+                    <mat-error *ngIf="form?.get('celular')?.touched && form?.get('celular')?.errors">
+                        Número de telefone inválido
+                    </mat-error>
+
+                </mat-form-field>
+            </div>
+
+            <!-- Assunto -->
+            <div class="flex flex-col mt-2">
+                <span class="font-normal mb-2 text-sm">Assunto</span>
+                <mat-form-field class="flex-auto" appearance="outline">
+
+                    <input matInput type="text" formControlName="assunto" placeholder="Assunto">
+                    <mat-error *ngIf="form?.get('assunto')?.touched && form?.get('assunto')?.errors">
+                        Assunto inválido
+                    </mat-error>
+
+                </mat-form-field>
+            </div>
+
+            <!-- Mensagem -->
+            <div class="flex flex-col mt-2">
+                <span class="font-normal mb-2 text-sm">Mensagem</span>
+                <mat-form-field class="flex-auto" appearance="outline">
+
+                    <textarea class="h-32!" matInput type="text" formControlName="mensagem" placeholder="Mensagem"></textarea>
+                    <mat-error *ngIf="form?.get('mensagem')?.touched && form?.get('mensagem')?.errors">
+                        Mensagem inválida
+                    </mat-error>
+
+                </mat-form-field>
+            </div>
+
+            <button class="w-52 font-title font-medium text-sm group relative h-12 overflow-hidden overflow-x-hidden rounded-full bg-[#0E9549] px-8 py-2 text-neutral-50 cursor-pointer mt-4" (click)="enviarEmail()">
+            
+                @if (!loading) {
+                    <span class="relative z-10 font-medium">Enviar</span>
+                } @else {
+                    <div class="flex items-center justify-center gap-2">
+                        <mat-icon class="animate-spin">autorenew</mat-icon> 
+                        <span class="relative z-10 font-medium">Enviando</span>
+                    </div>
+                }
+    
+                <span class="absolute inset-0 overflow-hidden rounded-full">
+                    <span class="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-secondary transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
+                </span>
+    
+            </button>
+
+        </form>
+
+    </div>
+    
+    <div class="w-[210px] h-[210px] polka-dots absolute -bottom-12 left-12 -z-10"></div>
+    
 </div>
