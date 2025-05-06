@@ -2,8 +2,10 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { Observable, take } from 'rxjs';
+
 import { ContatoModel } from '../models/contato.model';
 import { environment } from '../../../../environments/environment.local';
+import { TipoEmailEnum } from '../../../common/domain/enums/tipo-email-enum';
 
 
 const API_URL = {
@@ -25,7 +27,7 @@ export class ContatoService {
     //Private methods
     private _enviarEmail(model: ContatoModel): Observable<void> {
 
-        return this._http.post<void>(`${API_URL.home}/enviar-email`, model)
+        return this._http.post<void>(`${API_URL.home}/enviar-email/${TipoEmailEnum.EntreEmContato}`, model)
             .pipe(
                 take(1)
             );

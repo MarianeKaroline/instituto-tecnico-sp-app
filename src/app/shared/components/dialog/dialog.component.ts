@@ -2,12 +2,7 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import {
     MAT_DIALOG_DATA,
-    MatDialog,
-    MatDialogActions,
-    MatDialogClose,
-    MatDialogContent,
-    MatDialogRef,
-    MatDialogTitle,
+    MatDialogRef
 } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -15,7 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 @Component({
     selector: 'app-dialog',
     templateUrl: './dialog.component.html',
-    imports: [MatButtonModule, MatDialogActions, MatDialogClose, MatDialogTitle, MatDialogContent, MatIconModule],
+    imports: [MatButtonModule, MatIconModule],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DialogComponent {

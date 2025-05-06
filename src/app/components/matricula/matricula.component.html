@@ -1,0 +1,143 @@
+<div class="h-72 bg-linear-140 from-[#dbe9ea] to-[#7dc387] flex items-center justify-center relative">
+
+    <span class="text-blue-variant text-5xl font-epilogue font-medium">Matricule-se</span>
+
+    <div class="w-6 h-6 rounded-full absolute top-8 left-48 bg-primary"></div>
+    <div class="w-4 h-4 rounded-full absolute bottom-12 right-48 bg-tertiary"></div>
+
+    <div class="w-[210px] h-[210px] polka-dots absolute bottom-24 right-48 z-10"></div>
+
+</div>
+
+<div class="py-24 px-48 relative">
+
+    <div class="bg-[#c8dfd2] p-16 flex gap-12 rounded-md shadow-sm">
+
+        <div class="flex flex-col gap-4 w-full relative">
+            <span class="text-blue text-2xl font-epilogue font-medium">Matricule-se agora</span>
+
+            <span class="text-blue text-sm font-epilogue font-light">Venha fazer parte da melhor instituição de São Paulo</span>
+
+            <form 
+                [formGroup]="form" 
+                class="flex flex-col w-full font-body">
+
+                <!-- Nome -->
+                <div class="flex flex-col mt-4">
+                    <span class="font-normal mb-2 text-sm">Nome Completo *</span>
+                    <mat-form-field class="flex-auto" appearance="outline">
+
+                        <input matInput type="text" formControlName="nomeCompleto" placeholder="Nome">
+                        <mat-error *ngIf="form?.get('nomeCompleto')?.touched && form?.get('nomeCompleto')?.errors">
+                            Nome inválido
+                        </mat-error>
+
+                    </mat-form-field>
+                </div>
+
+                <!-- Email -->
+                <div class="flex flex-col mt-2">
+                    <span class="font-normal mb-2 text-sm">E-mail *</span>
+                    <mat-form-field class="flex-auto" appearance="outline">
+
+                        <input matInput type="text" formControlName="email" placeholder="E-mail">
+                        <mat-error *ngIf="form?.get('email')?.touched && form?.get('email')?.errors">
+                            E-mail inválido
+                        </mat-error>
+
+                    </mat-form-field>
+                </div>
+
+                <!-- Celular -->
+                <div class="flex flex-col mt-2">
+                    <span class="font-normal mb-2 text-sm">Celular *</span>
+                    <mat-form-field class="flex-auto" appearance="outline">
+
+                        <input matInput type="text" formControlName="celular" placeholder="Celular" [mask]="mask">
+                        <mat-error *ngIf="form?.get('celular')?.touched && form?.get('celular')?.errors">
+                            Número de telefone inválido
+                        </mat-error>
+
+                    </mat-form-field>
+                </div>
+
+                <!-- Estado -->
+                <div class="flex flex-col mt-2">
+                    <span class="font-normal mb-2 text-sm">Estado *</span>
+                    <mat-form-field class="flex-auto" appearance="outline">
+
+                        <mat-select formControlName="estado" placeholder="Estado">
+                            <!-- Options -->
+                            @for (estado of estados; track $index) {
+                                <mat-option [value]="estado.sigla">{{ estado.nome }}</mat-option>
+                            }
+                        </mat-select>
+                        <mat-error *ngIf="form?.get('estado')?.touched && form?.get('estado')?.errors">
+                            Estado inválido
+                        </mat-error>
+
+                    </mat-form-field>
+                </div>
+
+                <!-- Cidade -->
+                <div class="flex flex-col mt-2">
+                    <span class="font-normal mb-2 text-sm">Cidade *</span>
+                    <mat-form-field class="flex-auto" appearance="outline">
+
+                        <mat-select formControlName="cidade" placeholder="Cidade">
+                            <!-- Options -->
+                            @for (cidade of cidades; track $index) {
+                                <mat-option [value]="cidade.nome">{{ cidade.nome }}</mat-option>
+                            }
+                        </mat-select>
+                        <mat-error *ngIf="form?.get('cidade')?.touched && form?.get('cidade')?.errors">
+                            Cidade inválida
+                        </mat-error>
+
+                    </mat-form-field>
+                </div>
+
+                <!-- Cursos -->
+                <div class="flex flex-col mt-2">
+                    <span class="font-normal mb-2 text-sm">Curso *</span>
+                    <mat-form-field class="flex-auto" appearance="outline">
+
+                        <mat-select formControlName="cursoId" placeholder="Selecione um curso">
+                            <!-- Options -->
+                            @for (curso of cursos; track $index) {
+                                <mat-option [value]="curso.key">{{ curso.value }}</mat-option>
+                            }
+                        </mat-select>
+                        <mat-error *ngIf="form?.get('curso')?.touched && form?.get('curso')?.errors">
+                            Curso inválido
+                        </mat-error>
+
+                    </mat-form-field>
+                </div>
+
+                <button class="w-full font-title font-medium text-sm group relative h-12 overflow-hidden overflow-x-hidden rounded-full bg-[#0E9549] px-8 py-2 text-neutral-50 cursor-pointer mt-4" (click)="enviarEmail()">
+                
+                    @if (!loading) {
+                        <span class="relative z-10 font-medium">Enviar</span>
+                    } @else {
+                        <div class="flex items-center justify-center gap-2">
+                            <mat-icon class="animate-spin">autorenew</mat-icon> 
+                            <span class="relative z-10 font-medium">Enviando</span>
+                        </div>
+                    }
+        
+                    <span class="absolute inset-0 overflow-hidden rounded-full">
+                        <span class="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-secondary transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
+                    </span>
+        
+                </button>
+
+            </form>
+            
+        </div>        
+
+    </div>
+    
+    <div class="w-[210px] h-[210px] polka-dots absolute -bottom-12 left-12 -z-10"></div>
+    
+</div>

@@ -7,6 +7,7 @@ import { EstadoModel } from '../models/estado.model';
 import { CidadeModel } from '../models/cidade.model';
 import { environment } from '../../../../../../environments/environment.local';
 import { EnvioEmailModel } from '../../../../../common/domain/models/email/envio-email.model';
+import { TipoEmailEnum } from '../../../../../common/domain/enums/tipo-email-enum';
 
 const API_URL = {
     localidade: "https://servicodados.ibge.gov.br/api/v1/localidades",
@@ -36,7 +37,7 @@ export class HomeFormularioService {
     //Private methods
     private _enviarEmail(model: EnvioEmailModel): Observable<void> {
 
-        return this._http.post<void>(`${API_URL.home}/enviar-email`, model)
+        return this._http.post<void>(`${API_URL.home}/enviar-email/${TipoEmailEnum.EntraremosEmContato}`, model)
             .pipe(
                 take(1)
             );

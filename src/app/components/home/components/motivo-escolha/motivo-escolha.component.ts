@@ -34,7 +34,6 @@ import { CardComponent, DataCard } from '../../../../shared/components/card/card
         MatIconModule,
         AnimateOnScrollDirective,
         
-        CardComponent,
         HomeMotivoEscolhaCarouselComponent
     ]
 })

@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-home-matricula',
-    imports: [CommonModule],
     templateUrl: './matricula.component.html',
-    styleUrl: './matricula.component.scss'
+    styleUrl: './matricula.component.scss',
+    imports: [CommonModule, RouterModule],
 })
 export class HomeMatriculaComponent implements OnInit {
 
