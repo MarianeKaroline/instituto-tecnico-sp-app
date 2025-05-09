@@ -1,0 +1,18 @@
+.polka-dots {
+    background-image: radial-gradient(
+        #8BC34A 3px,
+        transparent 3px
+    );
+    background-size: 20px 20px;
+}
+
+.image {
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.custom-padding {
+    @media (width >= 160rem) {
+        padding-inline: 35rem;
+    }
+}

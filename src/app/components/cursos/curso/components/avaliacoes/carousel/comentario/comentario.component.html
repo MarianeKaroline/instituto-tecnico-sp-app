@@ -1,0 +1,20 @@
+<section class="w-full flex flex-col gap-4">
+
+    <div class="w-full flex justify-between items-center">
+        <img src="assets/icons/comment-balloon.svg" alt="icone comentario" class="w-12">
+
+        <div class="flex items-center gap-4 text-cyan-800/50">
+            <mat-icon class="w-4! h-4! text-[1rem]!">star</mat-icon>
+            <span class="font-bold text-xs">Google</span>
+        </div>
+    </div>
+
+    <div class="font-epilogue text-md font-normal">
+        {{ '"' + depoimento()?.comentario + '"' }}
+    </div>
+
+    <div class="font-epilogue text-md font-bold">
+        {{ depoimento()?.nome }}
+    </div>
+
+</section>

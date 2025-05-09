@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 
 import { map, filter, takeUntil, Subject, switchMap } from 'rxjs';
@@ -10,6 +10,7 @@ import { TipoTopicoCursoEnum } from '../../../common/domain/enums/tipo-topico-cu
 import { CardComponent, DataCard } from '../../../shared/components/card/card.component';
 import { CardModel, CursoTopicoModel } from '../../../common/domain/models/curso/curso.model';
 import { CursoCarouselComponent } from './components/carousel/carousel.component';
+import { CursoAvaliacoesComponent } from './components/avaliacoes/avaliacoes.component';
 
 @Component({
     selector: 'app-curso',
@@ -18,7 +19,9 @@ import { CursoCarouselComponent } from './components/carousel/carousel.component
     imports: [
         MatIconModule,
         CardComponent,
-        CursoCarouselComponent
+        CursoCarouselComponent,
+        CursoAvaliacoesComponent,
+        RouterModule
     ],
     providers: [CursoService]
 })
