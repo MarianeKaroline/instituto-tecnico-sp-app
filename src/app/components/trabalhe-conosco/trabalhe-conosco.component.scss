@@ -1,0 +1,23 @@
+.polka-dots {
+    background-image: radial-gradient(
+        #005200 3px,
+        transparent 3px
+    );
+    background-size: 25px 25px;
+}
+
+.mdc-text-field--outlined {
+    --mdc-outlined-text-field-container-shape: 1rem !important;
+}
+
+.mat-mdc-text-field-wrapper {
+    border-radius: 1rem !important;
+    background-color: white !important;
+    border-bottom: none !important;
+}
+
+.custom-padding {
+    @media (width >= 160rem) {
+        padding-inline: 20rem;
+    }
+}

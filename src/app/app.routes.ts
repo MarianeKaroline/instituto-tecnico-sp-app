@@ -29,5 +29,9 @@ export const routes: Routes = [
     {
         path: 'matricula',
         loadComponent: () => import('./components/matricula/matricula.component').then(c => c.MatriculaComponent)
+    },
+    {
+        path: 'trabalhe-conosco',
+        loadComponent: () => import('./components/trabalhe-conosco/trabalhe-conosco.component').then(c => c.TrabalheConoscoComponent)
     }
 ];
