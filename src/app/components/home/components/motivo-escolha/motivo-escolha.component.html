@@ -1,12 +1,12 @@
 <section class="flex flex-col gap-12 items-center">
     <h2 class="font-epilogue text-blue font-extrabold text-2xl md:text-4xl" [@fadeInUpOnEnter]="animateText" (visible)="animateText = 'in'" appAnimateOnScroll>Por Que Escolher a ITSP?</h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-32">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-8 md:px-32 lg:px-16 xl:px-32">
 
         @for (card of cards; track $index) {
 
             <div 
-                class="w-52 h-72"
+                class="w-52 2xl:w-80 h-72"
                 [@slideInLeftOnEnter]="{ value: animateCards, params: { delay: delays[$index] } }"
                 (visible)="animateCards = 'in'"
                 appAnimateOnScroll>

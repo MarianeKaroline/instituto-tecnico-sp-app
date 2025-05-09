@@ -10,3 +10,9 @@
     background-repeat: no-repeat; 
     background-size: cover;
 }
+
+.custom-padding {
+    @media (width >= 160rem) {
+        padding-inline: 35rem;
+    }
+}

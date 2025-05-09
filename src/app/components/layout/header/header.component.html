@@ -1,4 +1,4 @@
-<div class="bg-tertiary h-10 px-48 flex items-center justify-between relative font-title">
+<div class="hidden bg-tertiary h-10 md:px-4 lg:px-24 xl:px-48 md:flex items-center justify-between relative font-title custom-padding">
     <div class="flex text-white">
 
         <div class="flex gap-2 items-center text-xs px-4 border-r border-[#f3a341]">
@@ -17,7 +17,7 @@
 
     </div>
 
-    <div class="bg-[#0E9549] flex px-4 items-center absolute top-0 right-48 h-full text-white">
+    <div class="bg-[#0E9549] flex px-4 items-center absolute top-0 md:right-4 lg:right-24 xl:right-48 h-full text-white custom-position-right">
         <a class="flex gap-2 items-center text-xs px-4 border-r border-[#5daa7e] cursor-pointer">
             <span>
                 Trabalhe Conosco
@@ -35,7 +35,7 @@
 </div>
 
 <div 
-    class="flex items-center justify-between py-8 px-48 h-20 w-full text-blue-variant text-sm shadow-md bg-white font-title font-medium"
+    class="flex items-center justify-between py-8 px-8 md:px-8 lg:px-24 xl:px-48 h-20 w-full text-blue-variant text-sm shadow-md bg-white font-title font-medium custom-padding"
     [ngClass]="{ 
         'fixed top-0 left-0 w-full z-50 shadow-md': isSticky
     }" 
@@ -51,11 +51,11 @@
             <span>Home</span>
         </a>
 
-        <a class="py-2 px-4 rounded-sm hover:text-[#0E9549] cursor-pointer" [routerLink]="['./cursos']">
+        <a class="py-2 px-4 rounded-sm hover:text-[#0E9549] cursor-pointer hidden md:block" [routerLink]="['./cursos']">
             <span>Cursos</span>
         </a>
 
-        <a class="py-2 px-4 rounded-sm hover:text-[#0E9549] cursor-pointer" [routerLink]="['./sobre-nos']">
+        <a class="py-2 px-4 rounded-sm hover:text-[#0E9549] cursor-pointer hidden md:block" [routerLink]="['./sobre-nos']">
             <span>Sobre Nós</span>
         </a>
 
@@ -87,9 +87,25 @@
                     [routerLink]="['./']">
                     <mat-icon>home</mat-icon>
                     <span>Home</span>
-                </button>    
+                </button>
+                <!-- Cursos -->
+                <button 
+                    mat-menu-item
+                    [routerLink]="['./cursos']">
+                    <mat-icon>book</mat-icon>
+                    <span>Cursos</span>
+                </button>
+                <!-- Cursos -->
+                <button 
+                    mat-menu-item
+                    [routerLink]="['./sobre-nos']">
+                    <mat-icon>groups</mat-icon>
+                    <span>Sobre-nós</span>
+                </button>
                 <!-- Contato -->
-                <button mat-menu-item>
+                <button 
+                    mat-menu-item
+                    [routerLink]="['./contato']">
                     <mat-icon>headphones</mat-icon>
                     <span>Contato</span>
                 </button>
@@ -100,7 +116,7 @@
                 </button>
                 <div class="p-4">
                     <!-- Matricule-se -->
-                    <button class="hidden md:block group relative h-12 overflow-hidden overflow-x-hidden rounded-full bg-[#0E9549] px-8 py-2 text-neutral-50 cursor-pointer">
+                    <button class="block md:hidden group relative h-12 overflow-hidden overflow-x-hidden rounded-full bg-[#0E9549] px-8 py-2 text-neutral-50 cursor-pointer" [routerLink]="['./matricula']">
                         <span class="relative z-10">Matricule-se</span>
                         <span class="absolute inset-0 overflow-hidden rounded-full">
                             <span class="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-secondary transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>

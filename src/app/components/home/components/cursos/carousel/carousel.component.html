@@ -4,7 +4,7 @@
             @for (curso of cursos(); track curso.cursoId; let i = $index) {
                 <div class="embla__slide">
                     <div class="embla__slide__number w-full">
-                        <app-home-cursos-card [curso]="curso" [index]="i"></app-home-cursos-card>
+                        <app-home-cursos-card [curso]="curso" [home]="home()" [index]="i"></app-home-cursos-card>
                     </div>
                 </div>
             }

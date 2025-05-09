@@ -3,3 +3,9 @@
     background-size: cover;
     background-position: center;       
 }
+
+.custom-padding {
+    @media (width >= 160rem) {
+        padding-inline: 35rem;
+    }
+}

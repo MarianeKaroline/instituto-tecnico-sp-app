@@ -1,14 +1,14 @@
-<div class="flex flex-row justify-between gap-12 bg-white">
+<div class="flex flex-col md:flex-row justify-between gap-12 bg-white">
 
-    <img src="assets/images/foto-matricula.jpg" class="w-1/2">
+    <img src="assets/images/foto-matricula.jpg" class="w-full md:w-1/2">
 
-    <div class="flex flex-col w-1/2 justify-center gap-8">
+    <div class="flex flex-col w-full md:w-1/2 justify-center items-center md:items-start gap-8">
 
-        <div class="flex flex-col items-center space-y-3 font-epilogue">
-            <span class="font-bold text-5xl">Chegou a hora de</span>
-            <span class="font-black text-secondary text-5xl">mudar o seu futuro</span>
+        <div class="flex flex-col items-center md:items-start md:space-y-3 font-epilogue p-4 md:p-0">
+            <span class="font-bold text-2xl md:text-4xl">Chegou a hora de</span>
+            <span class="font-black text-secondary text-2xl md:text-4xl">mudar o seu futuro</span>
 
-            <span class="text-sm text-gray-500">Faça agora o seu cadastro e garanta uma oferta super especial para se matricular em qualquer uma de nossas unidades espalhadas pelo Brasil.</span>
+            <span class="text-sm text-gray-500 text-center md:text-start">Faça agora o seu cadastro e garanta uma oferta super especial para se matricular em qualquer uma de nossas unidades espalhadas pelo Brasil.</span>
         </div>
 
         <button class="w-52 font-title font-medium text-sm group relative h-12 overflow-hidden overflow-x-hidden rounded-full bg-[#0E9549] px-8 py-2 text-neutral-50 cursor-pointer" [routerLink]="['./matricula']">

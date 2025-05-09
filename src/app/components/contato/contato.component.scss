@@ -15,3 +15,9 @@
     background-color: white !important;
     border-bottom: none !important;
 }
+
+.custom-padding {
+    @media (width >= 160rem) {
+        padding-inline: 20rem;
+    }
+}

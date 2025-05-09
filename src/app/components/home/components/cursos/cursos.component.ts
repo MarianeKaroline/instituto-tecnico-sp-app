@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, input, OnDestroy, OnInit } from '@angular/core';
 import { trigger, transition, useAnimation } from '@angular/animations';
 
 import { fadeInDown, slideInLeft } from 'ngx-animate';
@@ -43,6 +43,8 @@ export class HomeCursosComponent implements OnInit, OnDestroy {
 
     animateCard = 'out';
     animateText = 'out';
+
+    home = input<boolean>(true);
 
     public cursos: CursoListaModel[] = [];
 

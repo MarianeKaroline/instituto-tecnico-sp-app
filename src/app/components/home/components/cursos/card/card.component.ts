@@ -20,6 +20,7 @@ export class HomeCursosCardComponent implements OnInit {
 
     public curso = input<CursoListaModel>();
     public index = input<number>(0);
+    public home = input<boolean>(true);
 
     constructor() { }
 

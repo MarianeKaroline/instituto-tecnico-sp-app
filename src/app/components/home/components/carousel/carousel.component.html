@@ -2,9 +2,9 @@
     <div class="embla__viewport" emblaCarousel [options]="options" [plugins]="plugins" [subscribeToEvents]="subscribeToEvents" (emblaChange)="onEmblaChange($event, emblaRef()?.emblaApi!)">
         <div class="embla__container">
             <div class="embla__slide bg-linear-140 from-[#dbe9ea] to-[#7dc387]">
-                <div class="embla__slide__number p-8 px-10">
+                <div class="embla__slide__number p-8 px-10 2xl:px-24">
 
-                    <div class="flex flex-col items-center md:items-start gap-4 w-full md:w-1/2 mt-20 md:mt-0" [@fadeInUpOnEnter]="selectedIndex() === 0 ? 'in' : 'out'">
+                    <div class="flex flex-col items-center lg:items-start gap-4 w-full md:w-1/2 mt-20 md:mt-0" [@fadeInUpOnEnter]="selectedIndex() === 0 ? 'in' : 'out'">
                         <div class="flex flex-col space-y-3">
                             <div class="font-medium font-epilogue text-blue text-2xl text-center lg:text-start md:text-3xl lg:text-5xl">
                                 Transforme seu <span class="font-black text-tertiary text-2xl md:text-3xl lg:text-5xl">futuro</span> com cursos técnicos de qualidade!
@@ -22,21 +22,21 @@
                     </div>
 
                     <div class="w-full md:w-auto flex justify-center relative">
-                        <div class="ml-4 xl:mt-16 2xl:mt-4 grid items-start gap-[30px] relative z-10 h-full" [@slideInRightOnEnter]="selectedIndex() === 0 ? 'in' : 'out'" [style]="{'grid-template-columns': '1fr 1fr'}">
+                        <div class="ml-4 md:mt-8 xl:mt-16 2xl:mt-4 grid items-start gap-[30px] relative z-10 h-full" [@slideInRightOnEnter]="selectedIndex() === 0 ? 'in' : 'out'" [style]="{'grid-template-columns': '1fr 1fr'}">
     
                             <div class="w-[130px] h-[180px] md:w-[160px] md:h-[200px] lg:w-[172px] lg:h-[224px] 2xl:w-[296px] 2xl:h-[331px] bg-primary rounded-tr-[50px] rounded-bl-[90px]" [style]="'background-image:url(assets/images/Enfermeira.png); background-repeat: no-repeat; background-size: cover;'"></div>
                             <div class="w-[130px] h-[180px] md:w-[160px] md:h-[200px] lg:w-[180px] lg:h-[240px] 2xl:w-[296px] 2xl:h-[331px] rounded-tr-[50px] border-t-2 border-b-2 border-tertiary rounded-bl-[90px] absolute -top-2 -z-10"></div>
 
                             <div class="w-[152px] h-[210px] md:w-[150px] md:h-[225px] lg:w-[170px] lg:h-[253px] 2xl:w-[250px] 2xl:h-[380px] bg-tertiary rounded-tl-[50px] rounded-br-[90px] my-[80px]" [style]="'background-image:url(assets/images/Radiologista.png); background-repeat: no-repeat; background-size: cover;'"></div>
-                            <div class="w-[152px] h-[210px] md:w-[150px] md:h-[225px] lg:w-[170px] lg:h-[253px] 2xl:w-[250px] 2xl:h-[380px] rounded-tl-[50px] rounded-br-[90px] my-[80px] polka-dots absolute -bottom-4 -right-4 -z-10"></div>
+                            <div class="w-[152px] h-[210px] md:w-[150px] md:h-[225px] lg:w-[170px] lg:h-[253px] 2xl:w-[250px] 2xl:h-[380px] rounded-tl-[50px] rounded-br-[90px] my-[80px] polka-dots absolute -bottom-4 -right-4 2xl:right-5 -z-10"></div>
                         </div>
 
-                        <div class="bg-white shadow-lg shadow-green-800 flex flex-col absolute top-16 right-0 py-2 px-6 rounded-full z-20" [@slideInRightOnEnter]="selectedIndex() === 0 ? 'in' : 'out'">
+                        <div class="bg-white shadow-lg shadow-green-800 flex flex-col absolute top-0 md:top-4 lg:top-8 xl:top-16 2xl:top-4 right-0 py-2 px-6 rounded-full z-20" [@slideInRightOnEnter]="selectedIndex() === 0 ? 'in' : 'out'">
                             <span class="text-tertiary text-lg font-medium">500+</span>
                             <span class="text-gray-800 font-normal text-xs">Avaliações positivas</span>
                         </div>
 
-                        <div class="bg-white shadow-lg shadow-green-800 flex gap-4 items-center absolute bottom-16 left-0 py-2 px-6 rounded-full z-20" [@slideInRightOnEnter]="selectedIndex() === 0 ? 'in' : 'out'">
+                        <div class="bg-white shadow-lg shadow-green-800 flex gap-4 items-center absolute bottom-20 md:bottom-16 left-0 2xl:left-12 py-2 px-6 rounded-full z-20" [@slideInRightOnEnter]="selectedIndex() === 0 ? 'in' : 'out'">
                             <div class="flex flex-col">
                                 <span class="text-secondary text-lg font-medium">2k+</span>
                                 <span class="text-gray-800 font-normal text-xs">Alunos</span>
@@ -71,9 +71,9 @@
             </div>
 
             <div class="embla__slide bg-linear-90 from-[#FFC670] to-[#B0D685]">
-                <div class="embla__slide__number gap-4 p-8 px-10">
+                <div class="embla__slide__number gap-4 p-8 px-10 2xl:px-24">
 
-                    <div class="flex flex-col items-center md:items-start gap-4 w-full md:w-1/2" [@slideInLeftOnEnter]="selectedIndex() === 1 ? 'in' : 'out'">
+                    <div class="flex flex-col items-center lg:items-start gap-4 w-full md:w-1/2" [@slideInLeftOnEnter]="selectedIndex() === 1 ? 'in' : 'out'">
                         <div class="flex flex-col space-y-3">
                             <div class="font-medium font-epilogue text-blue text-center lg:text-start text-2xl md:text-3xl lg:text-5xl">
                                 Aulas práticas, conteúdo atualizado e <span class="font-black text-tertiary text-2xl md:text-3xl lg:text-5xl">certificação reconhecida</span>
@@ -93,11 +93,11 @@
                     <div class="z-10 h-full self-center">
 
                         <div class="flex justify-center h-full w-56">
-                            <img src="assets/images/Enfermeiro.png" alt="Enfermeiro" class="absolute bottom-0 h-72 lg:h-[20rem] 2xl:h-[30rem]" [@fadeInUpOnEnter]="selectedIndex() === 1 ? 'in' : 'out'">
+                            <img src="assets/images/Enfermeiro.png" alt="Enfermeiro" class="absolute bottom-0 h-[17rem] lg:h-[20rem] 2xl:h-[30rem]" [@fadeInUpOnEnter]="selectedIndex() === 1 ? 'in' : 'out'">
                         </div>
 
-                        <div class="w-6 h-6 rounded-full absolute top-8 bg-primary"></div>
-                        <div class="w-4 h-4 rounded-full absolute bottom-4 right-48 bg-tertiary"></div>
+                        <div class="w-6 h-6 rounded-full absolute top-24 md:top-8 bg-primary"></div>
+                        <div class="w-4 h-4 rounded-full absolute bottom-4 right-8 lg:right-48 2xl:right-72 bg-tertiary"></div>
 
                         <div class="w-[152px] h-[210px] md:w-[150px] md:h-[225px] lg:w-[170px] lg:h-[253px] 2xl:w-[250px] 2xl:h-[380px] my-[80px] polka-dots absolute -bottom-4 -right-4 -z-10"></div>
 
@@ -107,9 +107,9 @@
             </div>
 
             <div class="embla__slide bg-linear-65 from-[#4a996c] to-[#a9d67a]">
-                <div class="embla__slide__number p-8 px-10">
+                <div class="embla__slide__number p-8 px-10 2xl:px-24">
 
-                    <div class="flex flex-col items-center md:items-start gap-4 w-full md:w-1/2" [@fadeInUpOnEnter]="selectedIndex() === 2 ? 'in' : 'out'">
+                    <div class="flex flex-col items-center lg:items-start gap-4 w-full md:w-1/2" [@fadeInUpOnEnter]="selectedIndex() === 2 ? 'in' : 'out'">
                         <div class="flex flex-col space-y-3">
                             <div class="font-medium font-epilogue text-blue text-center lg:text-start text-2xl md:text-3xl lg:text-5xl">
                                 <span class="font-black text-[#bf861b] text-2xl md:text-3xl lg:text-5xl">Inscreva-se agora</span> e comece a construir sua carreira hoje mesmo!

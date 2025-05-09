@@ -5,3 +5,9 @@
     );
     background-size: 25px 25px;
 }
+
+.custom-padding {
+    @media (width >= 160rem) {
+        padding-inline: 20rem;
+    }
+}

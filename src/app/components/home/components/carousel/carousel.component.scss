@@ -37,16 +37,16 @@
     --admonition-warning-rgb-value: 255, 196, 9;
     --admonition-danger-rgb-value: 220, 38, 38;
 
-    @media (width >= 412px) {
-        height: 60vh;        
+    @media (width >=412px) {
+        height: 60vh;
     }
 
-    @media (width >= 48rem) {
-        height: 25rem;        
+    @media (width >=48rem) {
+        height: 25rem;
     }
-    
-    @media (width >= 96rem) {
-        height: 35rem;        
+
+    @media (width >=96rem) {
+        height: 35rem;
     }
 }
 
@@ -76,13 +76,18 @@
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    gap: 1rem;
+    gap: 2rem;
     height: 100%;
     user-select: none;
 
     @media (width >= 48rem) {
-        flex-direction: row;  
-        align-items: center;   
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    @media (width >= 160rem) {
+        padding-inline: 20rem;
     }
 }
 
@@ -137,9 +142,7 @@
 }
 
 .polka-dots {
-    background-image: radial-gradient(
-        #005200 3px,
-        transparent 3px
-    );
+    background-image: radial-gradient(#005200 3px,
+            transparent 3px);
     background-size: 20px 20px;
 }

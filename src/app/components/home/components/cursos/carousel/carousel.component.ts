@@ -22,6 +22,7 @@ import { HomeCursosCardComponent } from '../card/card.component';
 export class HomeCursosCarouselComponent {
 
     public cursos = input<CursoListaModel[]>([]);
+    public home = input<boolean>(true);
 
     emblaRef = viewChild(EmblaCarouselDirective)
 

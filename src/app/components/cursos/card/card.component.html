@@ -1,4 +1,4 @@
-<div class="flex flex-col gap-4 w-full h-80 relative p-12 rounded-3xl font-epilogue"
+<div class="flex flex-col gap-4 w-full h-80 relative p-8 lg:p-12 rounded-3xl font-epilogue"
     [ngClass]="{
         'bg-[#B3C58B]': index() % 2 == 1,
         'bg-[#EEC79A]': index() % 2 == 0,
@@ -6,9 +6,9 @@
     }">
 
     <div 
-        class="w-1/2 flex flex-col gap-4"
+        class="w-full xl:w-1/2 flex flex-col gap-4"
         [ngClass]="{
-            'w-full!': cols() == 3
+            'md:w-full!': cols() == 3
         }">
         <span class="font-black text-lg">{{ curso()?.nome }}</span>
     
@@ -21,9 +21,9 @@
     </div>
 
     <img [src]="curso()?.urlImagem" alt="Enfermeiro" 
-        class="h-full absolute bottom-0 right-8"
+        class="h-[45%] md:h-[60%] lg:h-[50%] xl:h-full absolute bottom-0 right-8"
         [ngClass]="{
-            'h-[60%]!': cols() == 3
+            'md:h-[60%]!': cols() == 3
         }">
 </div>
 

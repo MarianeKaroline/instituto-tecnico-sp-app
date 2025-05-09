@@ -1,9 +1,13 @@
 .embla {
-    padding: 2rem;
+    padding-bottom: 2rem;
     margin: auto;
     --slide-height: 32rem;
     --slide-spacing: 1rem;
     --slide-size: 45%;
+
+    @media (width >=48rem) {
+        padding: 2rem;
+    }
 }
 
 .embla__viewport {
@@ -35,7 +39,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 20rem;
+    height: 27rem;
     user-select: none;
 
     @media (width >=48rem) {

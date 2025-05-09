@@ -1,0 +1,11 @@
+.custom-padding {
+    @media (width >= 160rem) {
+        padding-inline: 35rem;
+    }
+}
+
+.custom-position-right {
+    @media (width >= 160rem) {
+        right: 35rem
+    }
+}

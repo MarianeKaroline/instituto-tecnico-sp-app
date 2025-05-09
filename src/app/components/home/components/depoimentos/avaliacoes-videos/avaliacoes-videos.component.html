@@ -1,11 +1,11 @@
-<section class="w-full flex gap-8 items-center justify-center px-48">
+<section class="w-full flex gap-8 items-center justify-center px-8 lg:px-24 xl:px-48 custom-padding">
 
     <div class="w-full">
 
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
             @for (item of videos; track $index) {
-                <div class="h-64 image rounded-2xl relative" [style]="{'background-image': 'url(' + item.img + ')'}">
+                <div class="h-72 md:h-64 2xl:h-72 image rounded-2xl relative" [style]="{'background-image': 'url(' + item.img + ')'}">
                     <div class="absolute top-0 right-0 h-full w-full bg-linear-180 from-[#0E9549]/15 to-[#0E9549]/70 z-10 rounded-2xl"></div>
                     
                     <div 
