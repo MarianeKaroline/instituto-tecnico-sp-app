@@ -34,7 +34,8 @@ import { CardComponent, DataCard } from '../../../../shared/components/card/card
         MatIconModule,
         AnimateOnScrollDirective,
         
-        HomeMotivoEscolhaCarouselComponent
+        HomeMotivoEscolhaCarouselComponent,
+        CardComponent
     ]
 })
 export class HomeMotivoEscolhaComponent {
@@ -44,7 +45,7 @@ export class HomeMotivoEscolhaComponent {
 
     cards: DataCard[] = [
         {
-            cor: '#005200',
+            cor: '#4e9d4e',
             icone: false,
             titulo: 'Laboratórios Modernos',
             descricao: 'Equipados com tecnologia de ponta para aulas práticas.',
@@ -52,15 +53,15 @@ export class HomeMotivoEscolhaComponent {
             tipoCardEnum: 1
         },
         {
-            cor: '#8BC34A',
+            cor: '#efaf60',
             icone: false,
             titulo: 'Professores Qualificados',
             descricao: 'Corpo docente experiente e atualizado com as demandas do mercado.',
-            img: 'assets/icons/growth.svg',
+            img: 'assets/icons/educacao.png',
             tipoCardEnum: 1
         },
         {
-            cor: '#005200',
+            cor: '#4e9d4e',
             icone: false,
             titulo: 'Infraestrutura Completa',
             descricao: 'Salas climatizadas e adaptadas para melhor aprendizado.',
@@ -68,7 +69,7 @@ export class HomeMotivoEscolhaComponent {
             tipoCardEnum: 1
         },
         {
-            cor: '#8BC34A',
+            cor: '#efaf60',
             icone: false,
             titulo: 'Conexão com o Mercado',
             descricao: 'Parcerias estratégicas para estágio e empregabilidade.',

@@ -36,7 +36,7 @@
     <div class="z-10 h-full self-center">
 
         <div class="flex justify-center h-full w-72">
-            <img src="assets/images/Enfermeira-1.png" alt="Enfermeiro" class="absolute bottom-0 h-[17rem] md:h-[25rem] lg:h-[20rem] xl:h-[25rem] 2xl:h-[30rem]">
+            <img [src]="header?.storageKey" alt="Enfermeiro" class="absolute bottom-0 h-[17rem] md:h-[25rem] lg:h-[20rem] xl:h-[25rem] 2xl:h-[30rem]">
         </div>
 
         <div class="w-6 h-6 rounded-full absolute bottom-40 md:top-8 bg-primary"></div>
@@ -52,7 +52,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
         @for (item of header?.cards; track $index; let i = $index;) {
-            <div class="w-72 h-72">
+            <div class="w-72 h-80">
                 <app-card [data]="item" [index]="i"></app-card>
             </div>
         }
@@ -141,7 +141,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
         @for (item of cardsEstrutura; track $index; let i = $index;) {
-            <div class="w-72 h-52">
+            <div class="w-72 h-60">
                 <app-card [data]="item" [index]="i"></app-card>
             </div>
         }

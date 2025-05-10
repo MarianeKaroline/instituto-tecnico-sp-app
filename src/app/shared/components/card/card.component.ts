@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, input, OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -14,6 +15,7 @@ export type DataCard = {
     selector: 'app-card',
     templateUrl: './card.component.html',
     imports: [
+        CommonModule,
         MatIconModule
     ]
 })

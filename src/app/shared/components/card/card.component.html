@@ -1,21 +1,23 @@
 @if (data()?.tipoCardEnum == 1) {
 
     <div class="flex flex-col gap-4 items-center w-full h-full p-8 shadow-lg rounded-3xl border-b-4 bg-white" [style]="{'box-shadow': '0 4px 6px 0 hsla(0, 0%, 0%, 0.2)', 'border-color': data()?.cor }">
-        @if (data()?.img) {
+        <div class="border rounded-full border-dashed p-1 h-[4.75rem] w-[4.75rem] flex items-center justify-center" [style]="{'border-color': data()?.cor }">
+            <div class="flex items-center justify-center p-4 rounded-full h-[4rem] w-[4rem]" [style]="{'background-color': data()?.cor }">
+                @if (data()?.img) {
 
-            @if (data()?.icone) {
-                <mat-icon fontSet="material-symbols-rounded" class="w-12 h-12 text-5xl" [style]="{'color': data()?.cor}">{{ data()?.img }}</mat-icon>
-            } 
-            @else {
-                <img [src]="data()?.img" class="w-12">
-            }
+                    @if (data()?.icone) {
+                        <mat-icon fontSet="material-symbols-rounded" class="w-12 h-12 text-5xl text-white">{{ data()?.img }}</mat-icon>
+                    } 
+                    @else {
+                        <img [src]="data()?.img" class="w-12">
+                    }
 
-        }
-        @else {
-            <div class="w-12 h-12 rounded-full p-4 border flex items-center justify-center" [style]="{'border-color': data()?.cor }">
-                <span class="text-2xl font-medium" [style]="{'color': data()?.cor }">{{ index() }}</span>
+                }
+                @else {
+                    <span class="text-2xl font-medium text-white text-center">{{ index() }}</span>
+                }
             </div>
-        }
+        </div>
         <span class="font-black text-lg text-center" [style]="{'color': data()?.cor}">{{ data()?.titulo }}</span>
         <span class="text-sm text-gray-500 text-center">
             {{ data()?.descricao }}
@@ -25,12 +27,16 @@
 } @else if (data()?.tipoCardEnum == 2) {
 
     <div class="flex gap-4 items-center w-full h-full p-4 shadow-lg rounded-2xl border-b-4 bg-white" [style]="{'box-shadow': '0 4px 6px 0 hsla(0, 0%, 0%, 0.2)', 'border-color': data()?.cor }">
-        @if (data()?.icone) {
-            <mat-icon fontSet="material-symbols-rounded" class="w-12 h-12 text-5xl" [style]="{'color': data()?.cor}">{{ data()?.img }}</mat-icon>
-        } 
-        @else {
-            <img [src]="data()?.img" class="w-12">
-        }
+        <div class="border rounded-full border-dashed h-[4.75rem] w-[4.75rem] p-1" [style]="{'border-color': data()?.cor }">
+            <div class="flex items-center justify-center h-16 min-w-16 p-4 rounded-full" [style]="{'background-color': data()?.cor }">
+                @if (data()?.icone) {
+                    <mat-icon fontSet="material-symbols-rounded" class="w-12 h-12 text-5xl" [style]="{'color': data()?.cor}">{{ data()?.img }}</mat-icon>
+                } 
+                @else {
+                    <img [src]="data()?.img" class="w-12">
+                }
+            </div>
+        </div>
         <div class="flex flex-col gap-2 md:gap-4">
             <span class="font-black text-lg" [style]="{'color': data()?.cor}">{{ data()?.titulo }}</span>
             <span class="text-sm text-gray-500">

@@ -45,28 +45,28 @@ export class CursoComponent implements OnInit, OnDestroy {
 
     cardsEstrutura: DataCard[] = [
         {
-            cor: '#005200',
+            cor: '#4e9d4e',
             icone: false,
             titulo: 'Salas modernas com recursos multimídia',
-            img: 'assets/icons/presentation.png',
+            img: 'assets/icons/education.svg',
             tipoCardEnum: 1
         },
         {
-            cor: '#8BC34A',
+            cor: '#efaf60',
             icone: false,
             titulo: 'Laboratórios de anatomia, fisiologia e simulação realística',
-            img: 'assets/icons/lab.png',
+            img: 'assets/icons/lab.svg',
             tipoCardEnum: 1
         },
         {
-            cor: '#005200',
+            cor: '#4e9d4e',
             icone: false,
             titulo: 'Professores experientes e atuantes no mercado',
-            img: 'assets/icons/higher-education.png',
+            img: 'assets/icons/educacao.png',
             tipoCardEnum: 1
         },
         {
-            cor: '#8BC34A',
+            cor: '#efaf60',
             icone: false,
             titulo: ' Estágios garantidos em instituições parceiras',
             img: 'assets/icons/around-the-world.png',

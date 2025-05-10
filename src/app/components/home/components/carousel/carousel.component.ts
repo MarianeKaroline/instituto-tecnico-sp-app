@@ -2,6 +2,7 @@ import { trigger, transition, useAnimation } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, signal, viewChild } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
 
 import { EmblaCarouselDirective, EmblaCarouselType, EmblaEventType, EmblaOptionsType } from 'embla-carousel-angular';
 import Autoplay from 'embla-carousel-autoplay'
@@ -40,6 +41,7 @@ import { fadeIn, fadeInUp, slideInLeft, slideInRight } from 'ngx-animate';
     ],
     imports: [
         CommonModule,
+        RouterModule,
         EmblaCarouselDirective,
         MatIconModule
     ],
