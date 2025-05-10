@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { trigger, transition, useAnimation } from '@angular/animations';
 
@@ -8,6 +8,7 @@ import { fadeInUp, slideInLeft } from 'ngx-animate';
 import { HomeMotivoEscolhaCarouselComponent } from './carousel/carousel.component';
 import { AnimateOnScrollDirective } from '../../../../shared/directives/animate-on-scroll.directive';
 import { CardComponent, DataCard } from '../../../../shared/components/card/card.component';
+import { ScreenSizeService } from '../../../../common/core/services/screen-size.service';
 
 @Component({
     selector: 'app-home-motivo-escolha',
@@ -40,6 +41,9 @@ import { CardComponent, DataCard } from '../../../../shared/components/card/card
 })
 export class HomeMotivoEscolhaComponent {
 
+    private screen = inject(ScreenSizeService);
+
+    isMobile = this.screen.isMobile;
     animateText = 'out';
     animateCards = 'out';
 
