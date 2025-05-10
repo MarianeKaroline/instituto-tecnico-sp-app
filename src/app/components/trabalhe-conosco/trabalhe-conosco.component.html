@@ -1,6 +1,6 @@
 <div class="h-72 bg-linear-140 from-[#dbe9ea] to-[#7dc387] flex items-center justify-center relative">
 
-    <span class="text-blue-variant text-5xl font-epilogue font-medium">Trabalhe Conosco</span>
+    <span class="text-blue-variant text-5xl font-epilogue font-medium text-center">Trabalhe Conosco</span>
 
     <div class="w-6 h-6 rounded-full absolute top-8 left-48 bg-primary"></div>
     <div class="w-4 h-4 rounded-full absolute bottom-12 right-48 bg-tertiary"></div>
@@ -44,7 +44,7 @@
                             <input matInput [matDatepicker]="picker" formControlName="dataNascimento">
                             <mat-hint>MM/DD/YYYY</mat-hint>
                             <mat-datepicker-toggle matIconSuffix [for]="picker">
-                                <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                                <mat-icon fontSet="material-symbols-rounded" matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
                             </mat-datepicker-toggle>
                             <mat-datepicker #picker></mat-datepicker>
                             <mat-error *ngIf="form?.get('dataNascimento')?.touched && form?.get('dataNascimento')?.errors">
@@ -147,7 +147,7 @@
                     [color]="'primary'"
                     (click)="fileInput.click()"
                     class="w-50">
-                    <mat-icon>attach_file</mat-icon>
+                    <mat-icon fontSet="material-symbols-rounded">attach_file</mat-icon>
                     <span class="ml-2 mr-1 hidden lg:block">Anexar Curriculo</span>
                 </button>
 
@@ -157,7 +157,7 @@
                         <span class="relative z-10 font-medium">Enviar</span>
                     } @else {
                         <div class="flex items-center justify-center gap-2">
-                            <mat-icon class="animate-spin">autorenew</mat-icon> 
+                            <mat-icon fontSet="material-symbols-rounded" class="animate-spin">autorenew</mat-icon> 
                             <span class="relative z-10 font-medium">Enviando</span>
                         </div>
                     }

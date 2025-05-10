@@ -4,7 +4,7 @@
         @if (data()?.img) {
 
             @if (data()?.icone) {
-                <mat-icon class="w-12 h-12 text-5xl" [style]="{'color': data()?.cor}">{{ data()?.img }}</mat-icon>
+                <mat-icon fontSet="material-symbols-rounded" class="w-12 h-12 text-5xl" [style]="{'color': data()?.cor}">{{ data()?.img }}</mat-icon>
             } 
             @else {
                 <img [src]="data()?.img" class="w-12">
@@ -26,7 +26,7 @@
 
     <div class="flex gap-4 items-center w-full h-full p-4 shadow-lg rounded-2xl border-b-4 bg-white" [style]="{'box-shadow': '0 4px 6px 0 hsla(0, 0%, 0%, 0.2)', 'border-color': data()?.cor }">
         @if (data()?.icone) {
-            <mat-icon class="w-12 h-12 text-5xl" [style]="{'color': data()?.cor}">{{ data()?.img }}</mat-icon>
+            <mat-icon fontSet="material-symbols-rounded" class="w-12 h-12 text-5xl" [style]="{'color': data()?.cor}">{{ data()?.img }}</mat-icon>
         } 
         @else {
             <img [src]="data()?.img" class="w-12">

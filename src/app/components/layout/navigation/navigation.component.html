@@ -1,0 +1,98 @@
+<div 
+    class="flex items-center justify-between h-20 w-full text-blue-variant text-sm shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] bg-white font-title font-medium custom-padding fixed bottom-0 left-0">
+
+    <div class="flex gap-4 items-center justify-center w-full h-full">
+
+        <a class="py-2 px-2 cursor-pointer flex flex-col items-center gap-2" [routerLink]="['./']" [ngClass]="{'text-primary font-bold' : isHome()}">
+            
+            @if (isHome()) {
+                <mat-icon fontSet="material-symbols-rounded" class="symbol-filled">home</mat-icon>
+            } @else {
+                <mat-icon fontSet="material-symbols-rounded">home</mat-icon>
+            }
+
+            <span>Home</span>
+        </a>
+
+        <a class="py-2 px-2 cursor-pointer flex flex-col items-center gap-2" [routerLink]="['./cursos']" routerLinkActive="text-primary font-bold">
+
+            @if (isCurso()) {
+                <mat-icon fontSet="material-symbols-rounded" class="symbol-filled">book</mat-icon>
+            } @else {
+                <mat-icon fontSet="material-symbols-rounded">book</mat-icon>
+            }
+
+            <span>Cursos</span>
+        </a>
+
+        <div class="py-2 px-4"></div>
+
+        <div #expandMenu class="flex gap-4 items-center justify-center absolute -top-24 bg-white rounded-4xl transition-all duration-300 ease-in-out origin-bottom"
+            [ngClass]="{
+                'opacity-100 scale-100 pointer-events-auto translate-y-0': expand(),
+                'opacity-0 scale-90 pointer-events-none -translate-y-4': !expand()
+            }">
+
+            <a class="py-2 px-2 cursor-pointer flex flex-col items-center gap-2" [routerLink]="['./trabalhe-conosco']" routerLinkActive="text-primary font-bold" (click)="setExpand(false)">
+
+                @if (isTrabalheConosco()) {
+                    <mat-icon fontSet="material-symbols-rounded" class="symbol-filled">work</mat-icon>
+                } @else {
+                    <mat-icon fontSet="material-symbols-rounded">work</mat-icon>
+                }
+
+                <span>Trabalhe Conosco</span>
+            </a>
+
+            <a class="py-2 px-2 cursor-pointer flex flex-col items-center gap-2" [routerLink]="['./sobre-nos']" routerLinkActive="text-primary font-bold"(click)="setExpand(false)">
+
+                @if (isSobreNos()) {
+                    <mat-icon fontSet="material-symbols-rounded" class="symbol-filled">groups</mat-icon>
+                } @else {
+                    <mat-icon fontSet="material-symbols-rounded">groups</mat-icon>
+                }
+
+                <span>Sobre Nós</span>
+            </a>
+
+            <a class="py-2 px-2 cursor-pointer flex flex-col items-center gap-2" [routerLink]="['./matricula']" routerLinkActive="text-primary font-bold"(click)="setExpand(false)">
+
+                @if (isMatriculeSe()) {
+                    <mat-icon fontSet="material-symbols-rounded" class="symbol-filled">person_add</mat-icon>
+                } @else {
+                    <mat-icon fontSet="material-symbols-rounded">person_add</mat-icon>
+                }
+
+                <span>Matricule-se</span>
+            </a>
+
+        </div>
+
+        <div class="absolute -top-4" #expandButton>
+            <button mat-icon-button
+                    class="bg-primary rounded-full! text-white! w-16! h-16! flex! justify-center! items-center! transition-transform duration-300"
+                    (click)="setExpand(!expand())"
+                    [ngClass]="{'rotate-45': expand()}">
+                <mat-icon fontSet="material-symbols-rounded" class="w-8! h-8! text-[2rem]! transition-transform duration-100">add</mat-icon>
+            </button>
+        </div>
+
+        <a class="py-2 px-2 cursor-pointer flex flex-col items-center gap-2" [routerLink]="['./contato']" routerLinkActive="text-primary font-bold">
+
+            @if (isContato()) {
+                <mat-icon fontSet="material-symbols-rounded" class="symbol-filled">headphones</mat-icon>
+            } @else {
+                <mat-icon fontSet="material-symbols-rounded">headphones</mat-icon>
+            }
+            
+            <span>Contato</span>
+        </a>
+
+        <a class="py-2 px-2 cursor-pointer flex flex-col items-center gap-2" href="https://itspensino.com.br/login" target="_blank">
+            <mat-icon fontSet="material-symbols-rounded">school</mat-icon>
+            <span>Portal</span>
+        </a>
+
+    </div>
+
+</div>

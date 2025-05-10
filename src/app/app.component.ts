@@ -5,6 +5,8 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { LayoutHeaderComponent } from './components/layout/header/header.component';
 import { LayoutFooterComponent } from './components/layout/footer/footer.component';
+import { ScreenSizeService } from './common/core/services/screen-size.service';
+import { LayoutNavigationComponent } from './components/layout/navigation/navigation.component';
 
 @Component({
     selector: 'app-root',
@@ -14,21 +16,28 @@ import { LayoutFooterComponent } from './components/layout/footer/footer.compone
         MatIconModule,
 
         LayoutHeaderComponent,
-        LayoutFooterComponent
+        LayoutFooterComponent,
+        LayoutNavigationComponent
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent {    
+
+    private screen = inject(ScreenSizeService);
+    private platformId = inject(PLATFORM_ID);
+    private router = inject(Router);
+
+    breakpoint = this.screen.breakpoint;
+    isMobile = this.screen.isMobile;
+    isTablet = this.screen.isTablet;
+    isDesktop = this.screen.isDesktop;
 
     isSticky = false;
 
     setIsticky(isSticky: boolean): void {
         this.isSticky = isSticky;
     }
-
-    private platformId = inject(PLATFORM_ID);
-    private router = inject(Router);
 
     constructor() {
         if (isPlatformBrowser(this.platformId)) {

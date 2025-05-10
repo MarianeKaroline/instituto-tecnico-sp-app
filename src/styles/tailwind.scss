@@ -12,8 +12,7 @@
         --color-danger: #f0050f;
 
         --font-title: 'Nunito', Roboto, "Helvetica Neue", sans-serif;
-        --font-body: 'Open Sans', Roboto, "Helvetica Neue", sans-serif
-        --font-epilogue: 'Epilogue', Roboto, "Helvetica Neue", sans-serif
+        --font-body: 'Open Sans', Roboto, "Helvetica Neue", sans-serif --font-epilogue: 'Epilogue', Roboto, "Helvetica Neue", sans-serif
     }
 
     .fa,
@@ -145,6 +144,11 @@
 
     .font-epilogue {
         font-family: var(--font-epilogue);
+    }
+
+    // Icons
+    .symbol-filled {
+        font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24 !important;
     }
 }
 

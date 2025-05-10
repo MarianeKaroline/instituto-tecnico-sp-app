@@ -1,11 +1,14 @@
-<header>    
-    <app-layout-header (setIsticky)="setIsticky($event)"></app-layout-header>
-</header>
+@if (!isMobile()) {
+    <header>
+        <app-layout-header (setIsticky)="setIsticky($event)"></app-layout-header>
+    </header>
+}
 
 <section 
     class="h-[calc(100vh - 7.5rem)] overflow-x-hidden"
     [ngClass]="{
-        'relative top-20': isSticky
+        'relative top-20': isSticky,
+        'pb-20': isMobile()
     }">
     <router-outlet></router-outlet>
     <app-layout-footer class="relative z-10"></app-layout-footer>
@@ -15,8 +18,15 @@
         target="_blank"
         aria-label="WhatsApp"
         class="fixed bottom-8 right-8 z-50 bg-green-500 p-5 rounded-full shadow-lg hover:scale-110 transition-transform"
+        [ngClass]="{
+            'bottom-28': isMobile
+        }"
     >
         <img src="assets/icons/whatsapp.svg" alt="WhatsApp" class="w-8 h-8" />
     </a>
 
 </section>
+
+@if (isMobile()) {
+    <app-layout-navigation class="relative z-50"></app-layout-navigation>
+}
