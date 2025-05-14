@@ -2,8 +2,8 @@
 
     <div class="w-full md:w-1/2 h-full flex flex-col justify-center gap-4">
         <h1 class="font-medium text-tertiary text-xl md:text-2xl">{{ curso()?.nome }} - ITSP</h1>
-        <span class="font-black text-primary text-2xl lg:text-4xl uppercase">Formação prática com certificações e estágio garantido</span>
-        <span class="text-sm text-gray-700">Aprenda com os melhores e comece a trabalhar ainda durante o curso!</span>
+        <p class="font-black text-primary text-2xl lg:text-4xl uppercase">Formação prática com certificações e estágio garantido</p>
+        <p class="text-sm text-gray-700">Aprenda com os melhores e comece a trabalhar ainda durante o curso!</p>
 
         <button class="font-title font-medium text-sm group relative h-12 w-80 overflow-hidden overflow-x-hidden rounded-full bg-[#0E9549] px-8 py-2 text-neutral-50 cursor-pointer" [routerLink]="['../../matricula']">
             <span class="relative z-10 font-medium">Quero me matricular</span>
@@ -69,10 +69,10 @@
     <div class="flex flex-col w-full md:w-1/2 justify-center items-center md:items-start gap-8 pb-6 py-8 px-8 lg:px-24 xl:px-48 xl:pb-0">
 
         <div class="flex flex-col space-y-3 items-center md:items-start">
-            <span class="font-medium text-center md:text-start text-2xl md:text-4xl xl:text-5xl">MERCADO DE TRABALHO</span>
-            <span class="font-black text-secondary text-2xl md:text-4xl xl:text-5xl">Alta empregabilidade</span>
+            <h1 class="font-medium text-center md:text-start text-2xl md:text-4xl xl:text-5xl">MERCADO DE TRABALHO</h1>
+            <h2 class="font-black text-secondary text-2xl md:text-4xl xl:text-5xl">Alta empregabilidade</h2>
 
-            <span class="text-sm text-gray-500">Mais de 70% dos alunos empregados logo após o curso!</span>
+            <p class="text-sm text-gray-500">Mais de 70% dos alunos empregados logo após o curso!</p>
             
             <span class="text-sm font-bold text-gray-700">Atuação em</span>
         </div>
@@ -92,7 +92,7 @@
 
 <div class="w-full bg-white flex flex-col items-center gap-8 py-8 px-8 lg:px-24 xl:px-48 custom-padding">
 
-    <span class="font-black text-primary text-2xl md:text-4xl uppercase text-center">O que você vai aprender</span>
+    <h1 class="font-black text-primary text-2xl md:text-4xl uppercase text-center">O que você vai aprender</h1>
 
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         @for (item of aprendizado?.cards; track $index; let i = $index;) {
@@ -115,7 +115,7 @@
 
     <div class="flex flex-col w-full md:w-1/2 justify-center items-center md:items-end gap-8 text-white py-8 px-8 lg:px-0">
 
-        <span class="font-medium text-2xl md:text-4xl uppercase text-center md:text-start">Duração do curso</span>
+        <h1 class="font-medium text-2xl md:text-4xl uppercase text-center md:text-start">Duração do curso</h1>
 
         <div class="flex flex-col gap-4">
 
@@ -137,7 +137,7 @@
 
 <div class="w-full bg-white flex flex-col items-center gap-8 py-8 px-8 lg:px-24 xl:px-12 2xl:px-48 custom-padding">
 
-    <span class="font-black text-primary text-2xl md:text-4xl uppercase text-center">Estrutura do ITSP</span>
+    <h1 class="font-black text-primary text-2xl md:text-4xl uppercase text-center">Estrutura do ITSP</h1>
 
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
         @for (item of cardsEstrutura; track $index; let i = $index;) {
@@ -173,10 +173,10 @@
     </div>
         
     <div class="flex flex-col items-center justify-center h-full w-full md:w-1/2 bg-white rounded-2xl p-8 md:p-16 gap-2 border-8">
-        <span class="font-black text-center text-primary text-4xl uppercase">Mensalidades acessíveis a partir de R$263</span>
-        <span class="text-sm text-gray-700 text-center">Clique no botão abaixo e fale com um de nossos consultores</span>
-        <span class="text-sm text-gray-700">Parcelamento facilitado</span>
-        <span class="text-sm text-gray-700 text-center">Matrícula simplificada e atendimento humanizado</span>
+        <h1 class="font-black text-center text-primary text-4xl uppercase">Mensalidades acessíveis a partir de R$263</h1>
+        <p class="text-sm text-gray-700 text-center">Clique no botão abaixo e fale com um de nossos consultores</p>
+        <p class="text-sm text-gray-700">Parcelamento facilitado</p>
+        <p class="text-sm text-gray-700 text-center">Matrícula simplificada e atendimento humanizado</p>
 
         <button class="font-title font-medium text-sm group relative h-12 md:w-80 overflow-hidden overflow-x-hidden rounded-full bg-[#0E9549] px-8 py-2 text-neutral-50 cursor-pointer" [routerLink]="['../../matricula']">
             <span class="relative z-10 font-medium">Garanta sua vaga agora mesmo!</span>

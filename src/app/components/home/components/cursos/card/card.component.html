@@ -5,9 +5,9 @@
     }">
 
     <div class="w-full xl:w-1/2 flex flex-col gap-4">
-        <span class="font-black text-lg">{{ curso()?.nome }}</span>
+        <h1 class="font-black text-lg">{{ curso()?.nome }}</h1>
     
-        <span class="text-sm text-gray-700 h-20 font-medium">{{ curso()?.descricao }}</span>
+        <p class="text-sm text-gray-700 h-20 font-medium">{{ curso()?.descricao }}</p>
 
         <button mat-button class="flex gap-2 items-center mt-4 cursor-pointer" [routerLink]="[home() ? './cursos/' + curso()?.cursoId : '../cursos/' + curso()?.cursoId]">
             <span class="font-medium text-sm">Saiba mais</span>
