@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -11,6 +11,7 @@ import { CardComponent, DataCard } from '../../../shared/components/card/card.co
 import { CardModel, CursoTopicoModel } from '../../../common/domain/models/curso/curso.model';
 import { CursoCarouselComponent } from './components/carousel/carousel.component';
 import { CursoAvaliacoesComponent } from './components/avaliacoes/avaliacoes.component';
+import { Title } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-curso',
@@ -26,6 +27,9 @@ import { CursoAvaliacoesComponent } from './components/avaliacoes/avaliacoes.com
     providers: [CursoService]
 })
 export class CursoComponent implements OnInit, OnDestroy {
+
+    private _activatedRoute = inject(ActivatedRoute);
+    private _titleService = inject(Title);
 
     private _unsubscribeAll = new Subject<void>();
 
@@ -75,8 +79,7 @@ export class CursoComponent implements OnInit, OnDestroy {
     ]
 
     constructor(
-        private _service: CursoService,
-        private _activatedRoute: ActivatedRoute,
+        private _service: CursoService
     ) { }
 
     ngOnInit() {
@@ -88,6 +91,10 @@ export class CursoComponent implements OnInit, OnDestroy {
                 takeUntil(this._unsubscribeAll)
             )
             .subscribe(() => {
+
+                const nomeCurso = this._service.curso()?.nome;
+                const titulo = `Curso ${nomeCurso} | ITSP`;
+                this._titleService.setTitle(titulo);
 
                 this.header = this._service.curso()?.topicos
                     .find(t => t.tipoTopicoCursoEnum == TipoTopicoCursoEnum.Header);
