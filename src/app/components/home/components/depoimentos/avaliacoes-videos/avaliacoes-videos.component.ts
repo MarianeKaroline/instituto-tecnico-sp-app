@@ -5,12 +5,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { take } from 'rxjs';
 
 import { DialogComponent } from '../../../../../shared/components/dialog/dialog.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-home-depoimentos-avaliacoes-videos',
     templateUrl: './avaliacoes-videos.component.html',
     styleUrl: './avaliacoes-videos.component.scss',
     imports: [
+        CommonModule,
         MatIconModule
     ]
 })
@@ -42,6 +44,12 @@ export class HomeDepoimentosAvaliacoesVideosComponent {
             video: 'assets/videos/depoimento-4.mp4',
             depoimento: 'Chegando aqui no Instituto São Paulo, fui bem recebida, muito bem acolhida pelas professoras, pela direção...',
             nome: 'Aparecida'
+        },
+        {
+            img: 'assets/images/depoimento-5.png',
+            video: 'assets/videos/depoimento-5.mp4',
+            depoimento: 'Eu amo a ITSP pra falar a verdade pra vocês. Eu pesquisei muito antes de chegar aqui...',
+            nome: 'Priscila'
         }
     ]
 

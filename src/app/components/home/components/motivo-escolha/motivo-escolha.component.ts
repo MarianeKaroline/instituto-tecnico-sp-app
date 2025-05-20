@@ -57,7 +57,7 @@ export class HomeMotivoEscolhaComponent {
             tipoCardEnum: 1
         },
         {
-            cor: '#efaf60',
+            cor: '#287A23',
             icone: false,
             titulo: 'Professores Qualificados',
             descricao: 'Corpo docente experiente e atualizado com as demandas do mercado.',
@@ -73,7 +73,7 @@ export class HomeMotivoEscolhaComponent {
             tipoCardEnum: 1
         },
         {
-            cor: '#efaf60',
+            cor: '#287A23',
             icone: false,
             titulo: 'Conexão com o Mercado',
             descricao: 'Parcerias estratégicas para estágio e empregabilidade.',

@@ -56,7 +56,7 @@ export class CursoComponent implements OnInit, OnDestroy {
             tipoCardEnum: 1
         },
         {
-            cor: '#efaf60',
+            cor: '#287A23',
             icone: false,
             titulo: 'Laboratórios de anatomia, fisiologia e simulação realística',
             img: 'assets/icons/lab.svg',
@@ -70,7 +70,7 @@ export class CursoComponent implements OnInit, OnDestroy {
             tipoCardEnum: 1
         },
         {
-            cor: '#efaf60',
+            cor: '#287A23',
             icone: false,
             titulo: ' Estágios garantidos em instituições parceiras',
             img: 'assets/icons/around-the-world.png',

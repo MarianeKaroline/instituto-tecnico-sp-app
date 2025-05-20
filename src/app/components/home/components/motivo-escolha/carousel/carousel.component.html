@@ -4,7 +4,7 @@
             @for (slide of slides; track $index; let i = $index ) {
                 <div class="embla__slide">
                     <div class="embla__slide__number">
-                        <img [src]="'assets/images/porque-itsp-' + (slide + 1) + '.jpg'" class="w-full h-full rounded-md object-cover">
+                        <img [src]="'assets/images/porque-itsp-' + (slide + 1) + ((slide + 1) < 32 ? '.jpg' : '.jpeg')" class="w-full h-full rounded-md object-cover">
                     </div>
                 </div>
             }
