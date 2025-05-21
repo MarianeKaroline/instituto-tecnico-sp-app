@@ -4,7 +4,10 @@
         
         <div 
             class="w-[152px] h-[210px] 2xl:w-52 2xl:h-72 bg-tertiary rounded-3xl image relative z-10 shadow-lg" 
-            [style]="'background-image:url(assets/images/estudante-comemorando.png);'">
+            [style]="'background-image:url(assets/images/estudante-comemorando.png);'"
+            [@slideInLeftOnEnter]="animateCards"
+            (visible)="animateCards = 'in'"
+            appAnimateOnScroll>
 
             <div class="rounded-full w-16 h-16 2xl:w-24 2xl:h-24 absolute flex items-center justify-center bg-white border border-tertiary -top-8 left-10 2xl:-top-12 2xl:left-[3.5rem] text-tertiary shadow-md">
                 <mat-icon fontSet="material-symbols-rounded" class="symbol-filled">person</mat-icon>
@@ -23,7 +26,11 @@
 
         <div class="polka-dots absolute bottom-24 left-24 w-[210px] h-[210px] 2xl:w-64 2xl:h-64 rotate-45"></div>
         
-        <div class="w-[152px] h-[210px] 2xl:w-52 2xl:h-72  bg-primary rounded-3xl text-white/65 py-12 px-4 flex flex-col gap-4 ml-auto relative shadow-lg">
+        <div 
+            class="w-[152px] h-[210px] 2xl:w-52 2xl:h-72  bg-primary rounded-3xl text-white/65 py-12 px-4 flex flex-col gap-4 ml-auto relative shadow-lg"
+            [@slideInRightOnEnter]="animateCards"
+            (visible)="animateCards = 'in'"
+            appAnimateOnScroll>
 
             <div class="rounded-full w-16 h-16 2xl:w-24 2xl:h-24 absolute flex items-center justify-center bg-white border border-primary -top-8 right-11 2xl:-top-12 2xl:right-[3.5rem] text-primary shadow-md">
                 <mat-icon fontSet="material-symbols-rounded" class="symbol-filled">star</mat-icon>

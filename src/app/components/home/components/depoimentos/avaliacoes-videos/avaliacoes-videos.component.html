@@ -4,13 +4,16 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-            @for (item of videos; track $index; let last = $last) {
+            @for (item of videos; track $index; let i = $index; let last = $last) {
                 <div 
                     class="h-72 md:h-64 2xl:h-72 image rounded-2xl relative"
                     [ngClass]="{
                         'md:col-span-2': last
                     }"
-                    [style]="{'background-image': 'url(' + item.img + ')'}">
+                    [style]="{'background-image': 'url(' + item.img + ')'}"
+                    [@slideInLeftOnEnter]="{ value: animateCards, params: { delay: isMobile() ?  delays[videos.length - (i+1)] : delays[$index] } }"
+                    (visible)="isMobile() ? animateCards = 'in' : animateCards = 'out'"
+                    appAnimateOnScroll>
                     <div class="absolute top-0 right-0 h-full w-full bg-linear-180 from-[#0E9549]/15 to-[#0E9549]/70 z-10 rounded-2xl"></div>
                     
                     <div 

@@ -1,24 +1,49 @@
 import { Component, inject } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
+import { trigger, transition, useAnimation } from '@angular/animations';
+
+import { slideInRight, slideInLeft } from 'ngx-animate';
 
 import { take } from 'rxjs';
 
 import { DialogComponent } from '../../../../../shared/components/dialog/dialog.component';
-import { CommonModule } from '@angular/common';
+import { AnimateOnScrollDirective } from '../../../../../shared/directives/animate-on-scroll.directive';
+import { ScreenSizeService } from '../../../../../common/core/services/screen-size.service';
 
 @Component({
     selector: 'app-home-depoimentos-avaliacoes-videos',
     templateUrl: './avaliacoes-videos.component.html',
     styleUrl: './avaliacoes-videos.component.scss',
+    animations: [
+        trigger('slideInRightOnEnter', [
+            transition('* => in', useAnimation(slideInRight, {
+                params: { timing: '0.8', easing: 'ease-out' }
+            })),
+            transition('* => out', [])
+        ]),
+        trigger('slideInLeftOnEnter', [
+            transition('* => in', useAnimation(slideInLeft, {
+                params: { timing: '0.8', easing: 'ease-out' }
+            })),
+            transition('* => out', [])
+        ])
+    ],
     imports: [
         CommonModule,
+        AnimateOnScrollDirective,
         MatIconModule
     ]
 })
 export class HomeDepoimentosAvaliacoesVideosComponent {
+    
+    animateCards = 'out';
 
     readonly dialog = inject(MatDialog);
+
+    private screen = inject(ScreenSizeService);
+    isMobile = this.screen.isMobile;
 
     videos = [
         {
@@ -68,5 +93,7 @@ export class HomeDepoimentosAvaliacoesVideosComponent {
         )
         .subscribe()
     }
+
+    delays = this.videos.map((_, i) => i * 0.2).sort((a, b) => b - a);
 
 }

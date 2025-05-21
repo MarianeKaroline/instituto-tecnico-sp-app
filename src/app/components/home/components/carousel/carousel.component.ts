@@ -1,6 +1,6 @@
 import { trigger, transition, useAnimation } from '@angular/animations';
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, signal, viewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, ElementRef, signal, viewChild } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 
@@ -64,7 +64,11 @@ export class HomeCarouselComponent {
     prevBtnEnabled = signal(false)
     nextBtnEnabled = signal(false)
     selectedIndex = signal(0)
-    subscribeToEvents: EmblaEventType[] = ['init', 'reInit', 'select', 'scroll']
+    subscribeToEvents: EmblaEventType[] = ['init', 'reInit', 'select', 'scroll'];
+
+    isActiveSlide = (index: number) => {
+        return computed(() => this.selectedIndex() === index);
+    };
 
     scrollPrev() {
         this.emblaRef()?.scrollPrev()
@@ -79,6 +83,8 @@ export class HomeCarouselComponent {
     }
 
     onEmblaChange(type: EmblaEventType, emblaApi: EmblaCarouselType) {
+        this.emblaApi = emblaApi;
+
         if (type === 'init') {
             this.scrollSnaps?.set(emblaApi?.scrollSnapList())
         }
@@ -89,6 +95,17 @@ export class HomeCarouselComponent {
             this.nextBtnEnabled?.set(emblaApi?.canScrollNext())
             return
         }
+    }
+
+    observeElement(el: ElementRef, callback: () => void) {
+        const observer = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) {
+            callback();
+            observer.unobserve(entry.target);
+            }
+        }, { threshold: 0.3 });
+
+        observer.observe(el.nativeElement);
     }
 
 }

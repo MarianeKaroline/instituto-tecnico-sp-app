@@ -7,8 +7,8 @@
 
             <div 
                 class="w-72 xl:w-64 2xl:w-80 h-72"
-                [@slideInLeftOnEnter]="{ value: animateCards, params: { delay: isMobile() ?  delays[cards.length - (i+1)] : delays[$index] } }"
-                (visible)="animateCards = 'in'"
+                [@slideInLeftOnEnter]="{ value: animateCards, params: { delay : delays[$index] } }"
+                (visible)="!isMobile() ? animateCards = 'in': animateCards = 'out'"
                 appAnimateOnScroll>
 
                 <app-card [data]="card" [index]="i"></app-card>

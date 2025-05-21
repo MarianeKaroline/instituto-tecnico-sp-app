@@ -1,10 +1,10 @@
 import { Component, input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
-
-import { CursoListaModel } from '../../../../../common/domain/models/curso/curso-lista.model';
 import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
+
+import { CursoListaModel } from '../../../../../common/domain/models/curso/curso-lista.model';
 
 @Component({
     selector: 'app-home-cursos-card',

@@ -1,6 +1,11 @@
 @if (data()?.tipoCardEnum == 1) {
 
-    <div class="flex flex-col gap-4 items-center w-full h-full p-8 shadow-lg rounded-3xl border-b-4 bg-white" [style]="{'box-shadow': '0 4px 6px 0 hsla(0, 0%, 0%, 0.2)', 'border-color': data()?.cor }">
+    <div 
+        class="flex flex-col gap-4 items-center w-full h-full p-8 shadow-lg rounded-3xl border-b-4 bg-white" 
+        [style]="{'box-shadow': '0 4px 6px 0 hsla(0, 0%, 0%, 0.2)', 'border-color': data()?.cor }"
+        [@slideInLeftOnEnter]="{ value: animateCards, params: { delay: '0.3' } }"
+        (visible)="isMobile() ? animateCards = 'in' : animateCards = 'out'"
+        appAnimateOnScroll>
         <div class="border rounded-full border-dashed p-1 h-[4.75rem] w-[4.75rem] flex items-center justify-center" [style]="{'border-color': data()?.cor }">
             <div class="flex items-center justify-center p-4 rounded-full h-[4rem] w-[4rem]" [style]="{'background-color': data()?.cor }">
                 @if (data()?.img) {
