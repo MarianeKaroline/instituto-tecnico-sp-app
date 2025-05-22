@@ -1,10 +1,10 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
-import { trigger, transition, useAnimation } from '@angular/animations';
+import { trigger, transition, useAnimation, animate, style } from '@angular/animations';
 
-import { slideInRight, slideInLeft } from 'ngx-animate';
+import { slideInLeft, slideInRight, fadeInUp } from 'ngx-animate';
 
 import { take } from 'rxjs';
 
@@ -17,17 +17,18 @@ import { ScreenSizeService } from '../../../../../common/core/services/screen-si
     templateUrl: './avaliacoes-videos.component.html',
     styleUrl: './avaliacoes-videos.component.scss',
     animations: [
-        trigger('slideInRightOnEnter', [
-            transition('* => in', useAnimation(slideInRight, {
-                params: { timing: '0.8', easing: 'ease-out' }
-            })),
-            transition('* => out', [])
-        ]),
-        trigger('slideInLeftOnEnter', [
-            transition('* => in', useAnimation(slideInLeft, {
-                params: { timing: '0.8', easing: 'ease-out' }
-            })),
-            transition('* => out', [])
+        trigger('universalEnter', [
+            transition('* => in', [
+                style({ opacity: 0, transform: '{{transform}}' }),
+                animate('{{timing}} {{easing}}', style({ opacity: 1, transform: 'none' }))
+            ], 
+            { params: { 
+                timing: '0.8s', 
+                easing: 'ease-out', 
+                transform: 'translateX(0)',
+                delay: '{{ delay }}',
+            } 
+        })
         ])
     ],
     imports: [
@@ -37,7 +38,7 @@ import { ScreenSizeService } from '../../../../../common/core/services/screen-si
     ]
 })
 export class HomeDepoimentosAvaliacoesVideosComponent {
-    
+
     animateCards = 'out';
 
     readonly dialog = inject(MatDialog);
@@ -87,11 +88,11 @@ export class HomeDepoimentosAvaliacoesVideosComponent {
                 panelClass: 'custom'
             }
         )
-        .afterClosed()
-        .pipe(
-            take(1)
-        )
-        .subscribe()
+            .afterClosed()
+            .pipe(
+                take(1)
+            )
+            .subscribe()
     }
 
     delays = this.videos.map((_, i) => i * 0.2).sort((a, b) => b - a);

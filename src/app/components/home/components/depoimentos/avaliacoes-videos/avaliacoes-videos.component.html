@@ -11,8 +11,18 @@
                         'md:col-span-2': last
                     }"
                     [style]="{'background-image': 'url(' + item.img + ')'}"
-                    [@slideInLeftOnEnter]="{ value: animateCards, params: { delay: isMobile() ?  delays[videos.length - (i+1)] : delays[$index] } }"
-                    (visible)="isMobile() ? animateCards = 'in' : animateCards = 'out'"
+                    [@universalEnter]="{ 
+                        value: animateCards, 
+                        params: { 
+                            delay: isMobile() ?  delays[videos.length - (i+1)] : delays[$index],
+                            transform: isMobile() 
+                                        ? 'translateX(-50px)' 
+                                        : i % 2 == 0 
+                                            ? 'translateX(50px)' 
+                                            : 'translateY(50px)'
+                        } 
+                    }"
+                    (visible)="animateCards = 'in'"
                     appAnimateOnScroll>
                     <div class="absolute top-0 right-0 h-full w-full bg-linear-180 from-[#0E9549]/15 to-[#0E9549]/70 z-10 rounded-2xl"></div>
                     

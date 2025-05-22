@@ -23,7 +23,8 @@ export type DataCard = {
             transition('* => in', useAnimation(slideInLeft, {
                 params: { 
                     timing: '0.8',
-                    delay: '{{ delay }}'
+                    delay: '{{ delay }}',
+                    easing: 'ease-out'
                 }
             })),
             transition('* => out', [])
