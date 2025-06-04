@@ -4,10 +4,10 @@
         'bg-[#EEC79A]': index() % 2 == 0
     }">
 
-    <div class="w-full xl:w-1/2 flex flex-col gap-4">
+    <div class="w-full flex flex-col gap-4">
         <h1 class="font-black text-lg">{{ curso()?.nome }}</h1>
     
-        <p class="text-sm text-gray-700 h-20 font-medium">{{ curso()?.descricao }}</p>
+        <p class="text-sm text-gray-700 h-20 md:h-12 font-medium">{{ curso()?.descricao }}</p>
 
         <button mat-button class="flex gap-2 items-center mt-4 cursor-pointer" [routerLink]="[home() ? './cursos/' + curso()?.cursoId : '../cursos/' + curso()?.cursoId]">
             <span class="font-medium text-sm">Saiba mais</span>
@@ -15,6 +15,6 @@
         </button>
     </div>
 
-    <img loading="lazy" [src]="curso()?.urlImagem" alt="Enfermeiro" class="h-[50%] md:h-[60%] lg:h-[50%] xl:h-full absolute bottom-0 right-8">
+    <img loading="lazy" [src]="curso()?.urlImagem" alt="Enfermeiro" class="h-[50%] md:h-[60%] absolute bottom-0 right-8">
 </div>
 

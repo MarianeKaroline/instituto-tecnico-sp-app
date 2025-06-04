@@ -1,6 +1,6 @@
 .embla {
     margin: auto;
-    height: 85vh;
+    height: 60vh;
     --slide-height: 19rem;
     --slide-spacing: 1rem;
     --slide-size: 100%;
@@ -37,7 +37,7 @@
     --admonition-warning-rgb-value: 255, 196, 9;
     --admonition-danger-rgb-value: 220, 38, 38;
 
-    @media (width >=412px) {
+    @media (width >= 412px) {
         height: 60vh;
     }
 

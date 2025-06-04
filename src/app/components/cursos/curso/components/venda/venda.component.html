@@ -1,0 +1,234 @@
+<!-- Sessao 1 -->
+<div class="w-full h-[50rem] md:h-[30rem] p-4 px-8 lg:px-24 xl:px-12 2xl:px-48 relative flex flex-col md:flex-row justify-start items-center gap-8 bg-linear-140 from-[#dbe9ea] to-[#7dc387]">
+
+    <div class="w-full md:w-1/2 h-full flex flex-col justify-center gap-4 relative lg:px-8">
+        <h1 class="font-black text-primary text-2xl lg:text-4xl uppercase">{{ sessao1?.titulo }}</h1>
+        <p class="text-sm text-gray-700">{{ sessao1?.descricao }}</p>
+
+        <button class="font-title font-medium text-sm group relative h-12 w-80 overflow-hidden overflow-x-hidden rounded-full bg-[#0E9549] px-8 py-2 text-neutral-50 cursor-pointer" (click)="scrollToSection('sessao_compra')">
+            <span class="relative z-10 font-medium">QUERO GARANTIR MINHA VAGA</span>
+            <span class="absolute inset-0 overflow-hidden rounded-full">
+                <span class="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-secondary transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
+            </span>
+        </button>
+    
+        <div class="flex gap-4 w-96 h-12">
+            <div class="flex relative w-[12.5rem]">
+                @for (avatar of avatares(); track $index; let i = $index) {
+                    <div 
+                        class="w-12 h-12 rounded-full border border-primary absolute" 
+                        [style]="{
+                            'left': (i * 30) + 'px',
+                            'background-image': 'url(assets/avatar/image-' + avatar + '.jpg)',
+                            'background-repeat': 'no-repeat',
+                            'background-size': 'cover'
+                        }">
+                    </div>
+                }
+    
+            </div>
+            
+            <span class="text-md font-medium text-primary">+ de 700 alunos satisfeitos</span>
+            
+        </div>
+    </div>
+
+    <div class="z-10 h-full self-center">
+
+        @for (conteudo of sessao1?.conteudos; track $index) {
+            <div class="absolute w-full md:w-1/2 h-[25rem] top-10 right-4 rounded-2xl flex justify-end overflow-hidden cursor-pointer image -z-10" [style]="'background-image: url('+ conteudo.image +')'">            
+                <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
+                    <div 
+                        class="rounded-full w-16 h-16 absolute flex items-center justify-center bg-white border border-tertiary text-tertiary shadow-md z-20 cursor-pointer hover:shadow-[0_8px_8px_rgba(0,0,0,0.35)]"
+                        (click)="openDialogVideo(conteudo.video, conteudo.alt)">
+                        <mat-icon fontSet="material-symbols-rounded" class="symbol-filled w-8! h-8! text-[2rem]!">play_arrow</mat-icon>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+
+</div>
+
+<!-- Sessao 2 -->
+<div class="w-full flex flex-col items-center gap-8 py-8 px-8 lg:px-24 xl:px-12 2xl:px-48 custom-padding">
+
+    <h1 class="font-black text-primary text-2xl md:text-4xl uppercase text-center">{{ sessao2?.titulo }}</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+        @for (item of cardsHeader; track $index; let i = $index;) {
+            <div class="w-72 h-80">
+                <app-card [data]="item" [index]="i"></app-card>
+            </div>
+        }
+    </div>
+
+</div>
+
+<!-- Sessao 3 -->
+<div class="w-full flex flex-col items-center py-8 bg-white">
+
+    <h1 class="font-black text-primary text-2xl md:text-4xl px-4 uppercase text-center">{{ sessao3?.titulo }}</h1>
+    <p class="text-sm text-gray-700 my-8 px-4 text-center">{{ sessao3?.descricao }}</p>
+
+    @for (conteudo of sessao3?.conteudos; track $index; let even = $even; let odd = $odd) {
+        <div class="w-full lg:h-[30rem] 2xl:h-[50rem] relative flex"
+            [ngClass]="{
+                'h-[63rem] flex-col-reverse justify-start items-end md:flex-row md:justify-end md:items-center': even,
+                'h-[50rem] flex-col md:flex-row-reverse justify-end items-center': odd,
+            }">
+            <div [class]="'w-full md:w-1/2 md:h-full absolute top-0 flex items-center justify-center'" 
+                [ngClass]="{
+                    '-left-0 h-[40%]': even,
+                    '-right-0 h-1/2': odd
+                }"
+                [ngStyle]="{'background-color': conteudo.cor}">
+                <img class="w-80" [src]="conteudo.image" [alt]="conteudo.alt">
+            </div>
+
+            <div class="w-full md:w-1/2 px-4 py-8 md:py-0 xl:px-20" [innerHTML]="conteudo.descricao"></div>
+
+        </div>
+    }
+
+</div>
+
+<div class="w-full flex flex-col items-center gap-8 py-8 px-8 xl:px-12 2xl:px-48 custom-padding">    
+
+    <h1 class="font-black text-primary text-2xl md:text-4xl text-center my-4">{{ sessao4?.titulo }}</h1>
+
+    <button class="font-title font-medium text-sm group relative h-12 w-80 overflow-hidden overflow-x-hidden rounded-full bg-[#0E9549] px-8 py-2 text-neutral-50 cursor-pointer" (click)="scrollToSection('sessao_compra')">
+        <span class="relative z-10 font-medium">QUERO GARANTIR MINHA VAGA</span>
+        <span class="absolute inset-0 overflow-hidden rounded-full">
+            <span class="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-secondary transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
+        </span>
+    </button>
+
+    <app-curso-carousel></app-curso-carousel>
+
+</div>
+
+<div class="flex w-full flex-col justify-between items-center gap-4 py-8 px-4 lg:px-8 xl:px-12 2xl:px-48 lg:gap-4 bg-linear-140 from-[#65A322] to-[#0E9549]">
+
+    <h1 class="font-black text-white text-2xl md:text-4xl uppercase text-center my-4">{{ sessao5?.titulo }}</h1>
+
+    <div class="flex flex-col md:flex-row justify-center items-center gap-8 2xl:gap-20 w-full">
+    
+        <div class="w-full md:w-[65rem] lg:w-[28rem] 2xl:w-[35rem] rounded-tr-[50px] rounded-bl-[90px] h-[29rem] 2xl:h-[40rem] overflow-hidden flex justify-center items-center">
+            <img [src]="image5" [alt]="alt5" class="h-full w-full object-cover">
+        </div>
+
+        <div class="flex flex-col w-full md:w-1/2 2xl:w-auto justify-center items-center md:items-end gap-8 text-white py-8 px-4 md:px-8 lg:px-0">
+    
+            <div class="flex flex-col gap-4">
+    
+                @for (item of cardsEntrarNoCurso; track $index; let i = $index;) {
+                    <div class="w-full md:w-[20rem] lg:w-[30rem] h-64 lg:h-36">
+                        <app-card [data]="item" [index]="i"></app-card>
+                    </div>
+                }
+    
+            </div>
+    
+        </div>
+
+    </div>
+
+    <button class=" mt-8 self-center font-title font-medium text-sm group relative h-16 w-80 overflow-hidden overflow-x-hidden rounded-full bg-tertiary px-8 py-2 text-neutral-50 cursor-pointer" (click)="scrollToSection('sessao_compra')">
+        <span class="relative z-10 font-medium">QUERO GARANTIR MINHA VAGA</span>
+        <span class="absolute inset-0 overflow-hidden rounded-full">
+            <span class="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-[#f1b161] transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
+        </span>
+    </button>
+
+</div>
+
+<div class="w-full flex flex-col items-center gap-8 py-8 px-8 lg:px-24 xl:px-12 2xl:px-48 custom-padding">
+
+    <h1 class="font-black text-primary text-2xl md:text-4xl uppercase text-center">{{ sessao6?.titulo }}</h1>
+
+    <app-curso-carousel-modulos [modulos]="curso()?.modulos"></app-curso-carousel-modulos>
+
+</div>
+
+<div class="w-full h-[40rem] 2xl:h-[50rem] flex flex-col items-center gap-8 py-8 bg-white">
+
+    <h1 class="font-black text-primary text-2xl md:text-4xl uppercase text-center">{{ sessao7?.titulo }}</h1>
+    <p class="text-sm text-gray-700">{{ sessao7?.descricao }}</p>
+
+    <div class="z-10 h-full w-full self-center relative">
+
+        @for (conteudo of sessao7?.conteudos; track $index) {
+
+            <div class="absolute w-full h-full top-0 right-0 flex justify-end overflow-hidden cursor-pointer image -z-10" [style]="'background-image: url('+ conteudo.image +')'">            
+                <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
+                    <div 
+                        class="rounded-full w-16 h-16 absolute flex items-center justify-center bg-white border border-tertiary text-tertiary shadow-md z-20 cursor-pointer hover:shadow-[0_8px_8px_rgba(0,0,0,0.35)]"
+                        (click)="openDialogVideo(conteudo.video, conteudo.alt)">
+                        <mat-icon fontSet="material-symbols-rounded" class="symbol-filled w-8! h-8! text-[2rem]!">play_arrow</mat-icon>
+                    </div>
+                </div>
+            </div>
+
+        }
+
+    </div>
+
+</div>
+
+<div class="w-full 2xl:h-[50rem] flex flex-col items-center gap-8 py-8 px-8 lg:px-24 xl:px-12 2xl:px-48 lg:gap-4 custom-padding bg-white" id="sessao_compra">
+
+    <div class="flex flex-col lg:flex-row justify-center items-center gap-28 w-full">
+
+        <div class="w-full md:w-[35rem] lg:w-[50rem] xl:w-[29rem] h-[30rem] 2xl:h-[40rem]">
+            <div class="w-full h-full relative image" [style]="'background-image: url('+ image +')'"></div>
+        </div>
+
+        <div class="bg-primary border-4 border-secondary w-full h-full md:w-[28rem] rounded-2xl text-white p-8 flex flex-col items-center justify-center gap-4">
+            <h1 class="font-bold text-2xl text-center">{{ sessao8?.titulo }}</h1>
+            <p class="text-sm font-normal text-center">{{ sessao8?.descricao }}</p>
+
+            @for (conteudo of conteudo8; track $index) {
+
+                <div class="flex flex-col items-center justify-center gap-4 my-4">
+                    <h3 class="font-medium text-2xl text-center"><s>{{ conteudo.subtitulo }}</s></h3>
+                    <h2 class="font-bold text-5xl text-center">{{ conteudo.titulo }}</h2>
+                    <p class="text-sm font-normal text-center">{{ conteudo.descricao }}</p>
+                </div>
+
+                <a class="flex items-center justify-center font-title font-medium text-sm group relative h-12 w-64 lg:w-80 overflow-hidden overflow-x-hidden rounded-full bg-tertiary px-8 py-2 text-neutral-50 cursor-pointer" [href]="conteudo.linkVenda" target="_blank">
+                    <span class="relative z-10 font-medium text-center">QUERO GARANTIR MINHA VAGA</span>
+                    <span class="absolute inset-0 overflow-hidden rounded-full">
+                        <span class="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-[#f1b161] transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
+                    </span>
+                </a>
+    
+                <img [src]="conteudo.image" [alt]="conteudo.alt" class="h-16">
+            }
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="w-full flex flex-col items-center gap-8 py-8 2xl:py-20 px-8 lg:px-24 xl:px-12 2xl:px-48 custom-padding">
+
+    <h1 class="font-black text-primary text-2xl md:text-4xl uppercase text-center">{{ sessao9?.titulo }}</h1>
+    <p class="text-sm text-gray-700">{{ sessao9?.descricao }}</p>
+
+    <mat-accordion multi>
+        
+        @for (question of curso()?.faq; track $index; let i = $index;) {
+            <mat-expansion-panel>
+                <mat-expansion-panel-header class="!h-24 !flex !items-center !justify-center">
+                    <mat-panel-title>{{ question.pergunta }}</mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <p class="text-gray-500 text-sm font-medium">{{ question.resposta }}</p>
+            </mat-expansion-panel>
+        }
+    </mat-accordion>
+
+</div>

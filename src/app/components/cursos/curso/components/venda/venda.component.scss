@@ -1,0 +1,28 @@
+.image {
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+
+    @media (width >= 48rem) {
+        background-position-x: 100%;
+        background-position-y: 50%;
+    }
+}
+
+.polka-dots {
+    background-image: radial-gradient(#005200 3px,
+            transparent 3px);
+    background-size: 20px 20px;
+}
+
+.custom-padding {
+    @media (width >= 160rem) {
+        padding-inline: 35rem;
+    }
+}
+
+.custom-height {
+    @media (width >= 160rem) {
+        height: 45rem;
+    }
+}

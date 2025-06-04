@@ -4,8 +4,20 @@
         <mat-icon fontSet="material-symbols-rounded" class="text-white!">close</mat-icon>
     </button>
 
-    <video class="w-full h-full" controls>
-        <source [src]="data" type="video/mp4">
-        Your browser does not support HTML video.
-    </video>
+    @if (data.youtube) {
+        <iframe 
+            class="w-full h-full" 
+            [src]="safeVideoUrl" 
+            [title]="data.title" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen></iframe>
+    } 
+    @else {
+        <video class="w-full h-full" controls>
+            <source [src]="data" type="video/mp4">
+            Your browser does not support HTML video.
+        </video>
+    }
 </section>

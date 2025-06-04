@@ -2,12 +2,12 @@
     <div class="embla__viewport" emblaCarousel [options]="options" [plugins]="plugins" [subscribeToEvents]="subscribeToEvents" (emblaChange)="onEmblaChange($event, emblaRef()?.emblaApi!)">
         <div class="embla__container">
             <div class="embla__slide bg-linear-140 from-[#dbe9ea] to-[#7dc387]">
-                <div class="embla__slide__number p-8 px-10 2xl:px-24">
+                <div class="embla__slide__number p-8 px-4 sm:px-10 2xl:px-24">
 
                     <div class="flex flex-col items-center lg:items-start gap-4 w-full md:w-1/2 mt-20 md:mt-0" [@fadeInUpOnEnter]="isActiveSlide(0)() ? 'in' : 'out'">
                         <div class="flex flex-col space-y-3">
-                            <h1 class="font-medium font-epilogue text-blue text-2xl text-center lg:text-start md:text-3xl lg:text-5xl">
-                                Transforme seu <span class="font-black text-tertiary text-2xl md:text-3xl lg:text-5xl">futuro</span> com cursos técnicos de qualidade!
+                            <h1 class="font-medium font-epilogue text-blue text-xl sm:text-2xl text-center lg:text-start md:text-3xl lg:text-5xl">
+                                Transforme seu <span class="font-black text-tertiary text-xl sm:text-2xl md:text-3xl lg:text-5xl">futuro</span> com cursos técnicos de qualidade!
                             </h1>
                 
                             <p class="text-sm text-gray-800 font-normal text-center lg:text-start font-body">Faça agora o seu cadastro e garanta uma oferta super especial para se matricular.</p>
@@ -25,15 +25,15 @@
                         <div class="ml-4 md:mt-8 xl:mt-16 2xl:mt-4 grid items-start gap-[30px] relative z-10 h-full" [@slideInRightOnEnter]="isActiveSlide(0)() ? 'in' : 'out'" [style]="{'grid-template-columns': '1fr 1fr'}">
     
                             @if (isActiveSlide(0)()) {
-                                <div class="w-[130px] h-[180px] md:w-[160px] md:h-[200px] lg:w-[172px] lg:h-[224px] 2xl:w-[296px] 2xl:h-[331px] bg-primary rounded-tr-[50px] rounded-bl-[90px]" [style]="'background-image:url(assets/images/enfermeira.png); background-repeat: no-repeat; background-size: cover;'"></div>
-                                <div class="w-[130px] h-[180px] md:w-[160px] md:h-[200px] lg:w-[180px] lg:h-[240px] 2xl:w-[296px] 2xl:h-[331px] rounded-tr-[50px] border-t-2 border-b-2 border-tertiary rounded-bl-[90px] absolute -top-2 -z-10"></div>
+                                <div class="w-[106px] h-[171px] md:w-[160px] md:h-[200px] lg:w-[172px] lg:h-[224px] 2xl:w-[296px] 2xl:h-[331px] bg-primary rounded-tr-[50px] rounded-bl-[90px]" [style]="'background-image:url(assets/images/enfermeira.png); background-repeat: no-repeat; background-size: cover;'"></div>
+                                <div class="w-[106px] h-[171px] md:w-[160px] md:h-[200px] lg:w-[180px] lg:h-[240px] 2xl:w-[296px] 2xl:h-[331px] rounded-tr-[50px] border-t-2 border-b-2 border-tertiary rounded-bl-[90px] absolute -top-2 -z-10"></div>
     
-                                <div class="w-[152px] h-[210px] md:w-[150px] md:h-[225px] lg:w-[170px] lg:h-[253px] 2xl:w-[250px] 2xl:h-[380px] bg-tertiary rounded-tl-[50px] rounded-br-[90px] my-[80px]" [style]="'background-image:url(assets/images/radiologista.png); background-repeat: no-repeat; background-size: cover;'"></div>
-                                <div class="w-[152px] h-[210px] md:w-[150px] md:h-[225px] lg:w-[170px] lg:h-[253px] 2xl:w-[250px] 2xl:h-[380px] rounded-tl-[50px] rounded-br-[90px] my-[80px] polka-dots absolute -bottom-4 -right-4 2xl:right-5 -z-10"></div>
+                                <div class="w-[126px] h-[175px] md:w-[150px] md:h-[225px] lg:w-[170px] lg:h-[253px] 2xl:w-[250px] 2xl:h-[380px] bg-tertiary rounded-tl-[50px] rounded-br-[90px] my-[55px]" [style]="'background-image:url(assets/images/radiologista.png); background-repeat: no-repeat; background-size: cover;'"></div>
+                                <div class="w-[126px] h-[175px] md:w-[150px] md:h-[225px] lg:w-[170px] lg:h-[253px] 2xl:w-[250px] 2xl:h-[380px] rounded-tl-[50px] rounded-br-[90px] my-[55px] polka-dots absolute -bottom-4 -right-4 2xl:right-5 -z-10"></div>
                             }
                         </div>
 
-                        <div class="bg-white shadow-lg shadow-green-800 flex flex-col absolute top-0 md:top-4 lg:top-8 xl:top-16 2xl:top-4 right-0 py-2 px-6 rounded-full z-20" [@slideInRightOnEnter]="isActiveSlide(0)() ? 'in' : 'out'">
+                        <div class="bg-white shadow-lg shadow-green-800 flex flex-col absolute -top-2 md:top-4 lg:top-8 xl:top-16 2xl:top-4 right-0 py-2 px-6 rounded-full z-20" [@slideInRightOnEnter]="isActiveSlide(0)() ? 'in' : 'out'">
                             <span class="text-tertiary text-lg font-medium">500+</span>
                             <span class="text-gray-800 font-normal text-xs">Avaliações positivas</span>
                         </div>
@@ -73,18 +73,18 @@
             </div>
 
             <div class="embla__slide bg-linear-90 from-[#FFC670] to-[#B0D685]">
-                <div class="embla__slide__number gap-4 p-8 px-10 2xl:px-24">
+                <div class="embla__slide__number gap-4 p-8 px-4 sm:px-10 2xl:px-24">
 
                     <div class="flex flex-col items-center lg:items-start gap-4 w-full md:w-1/2" [@slideInLeftOnEnter]="isActiveSlide(1)() ? 'in' : 'out'">
                         <div class="flex flex-col space-y-3">
-                            <h1 class="font-medium font-epilogue text-blue text-center lg:text-start text-2xl md:text-3xl lg:text-5xl">
-                                Aulas práticas, conteúdo atualizado e <span class="font-black text-tertiary text-2xl md:text-3xl lg:text-5xl">certificação reconhecida</span>
+                            <h1 class="font-medium font-epilogue text-blue text-center lg:text-start text-xl sm:text-2xl md:text-3xl lg:text-5xl">
+                                Aulas práticas, conteúdo atualizado e <span class="font-black text-tertiary text-xl sm:text-2xl md:text-3xl lg:text-5xl">certificação reconhecida</span>
                             </h1>
                 
                             <p class="text-sm text-gray-800 font-normal text-center lg:text-start">Desenvolva habilidades reais com uma formação que valoriza o seu crescimento pessoal e profissional.</p>
                         </div>
 
-                        <button class="font-title font-medium text-sm group relative h-12 overflow-hidden overflow-x-hidden rounded-full bg-[#0E9549] px-8 py-2 text-neutral-50 cursor-pointer" [routerLink]="['./matricula']">
+                        <button class="font-title font-medium text-sm group relative z-20 h-12 overflow-hidden overflow-x-hidden rounded-full bg-[#0E9549] px-8 py-2 text-neutral-50 cursor-pointer" [routerLink]="['./matricula']">
                             <span class="relative z-10 font-medium">Inscreva-se agora</span>
                             <span class="absolute inset-0 overflow-hidden rounded-full">
                                 <span class="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-secondary transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
@@ -95,10 +95,10 @@
                     <div class="z-10 h-full self-center">
 
                         <div class="flex justify-center h-full w-56">
-                            <img [src]="'assets/images/enfermeiro.png'" alt="Enfermeiro" loading="lazy" class="absolute bottom-0 h-[17rem] lg:h-[20rem] 2xl:h-[30rem]" [@fadeInUpOnEnter]="isActiveSlide(1)() ? 'in' : 'out'">
+                            <img [src]="'assets/images/enfermeiro.png'" alt="Enfermeiro" loading="lazy" class="absolute bottom-0 h-[15rem] lg:h-[20rem] 2xl:h-[30rem]" [@fadeInUpOnEnter]="isActiveSlide(1)() ? 'in' : 'out'">
                         </div>
 
-                        <div class="w-6 h-6 rounded-full absolute top-24 md:top-8 bg-primary"></div>
+                        <div class="w-6 h-6 rounded-full absolute top-48 left-8 md:top-8 bg-primary"></div>
                         <div class="w-4 h-4 rounded-full absolute bottom-4 right-8 lg:right-48 2xl:right-72 bg-tertiary"></div>
 
                         <div class="w-[152px] h-[210px] md:w-[150px] md:h-[225px] lg:w-[170px] lg:h-[253px] 2xl:w-[250px] 2xl:h-[380px] my-[80px] polka-dots absolute -bottom-4 -right-4 -z-10"></div>
@@ -109,12 +109,12 @@
             </div>
 
             <div class="embla__slide bg-linear-65 from-[#4a996c] to-[#a9d67a]">
-                <div class="embla__slide__number p-8 px-10 2xl:px-24">
+                <div class="embla__slide__number p-8 px-4 sm:px-10 2xl:px-24 !gap-0">
 
                     <div class="flex flex-col items-center lg:items-start gap-4 w-full md:w-1/2" [@fadeInUpOnEnter]="isActiveSlide(2)() ? 'in' : 'out'">
                         <div class="flex flex-col space-y-3">
-                            <h1 class="font-medium font-epilogue text-blue text-center lg:text-start text-2xl md:text-3xl lg:text-5xl">
-                                <span class="font-black text-[#bf861b] text-2xl md:text-3xl lg:text-5xl">Inscreva-se agora</span> e comece a construir sua carreira hoje mesmo!
+                            <h1 class="font-medium font-epilogue text-blue text-center lg:text-start text-xl sm:text-2xl md:text-3xl lg:text-5xl">
+                                <span class="font-black text-[#bf861b] text-xl sm:text-2xl md:text-3xl lg:text-5xl">Inscreva-se agora</span> e comece a construir sua carreira hoje mesmo!
                             </h1>
                 
                             <p class="font-body text-sm text-gray-800 font-normal text-center lg:text-start">As vagas são limitadas! Escolha seu curso, garanta sua matrícula online e dê o primeiro passo rumo ao seu futuro profissional.</p>
@@ -142,7 +142,7 @@
         </div>
     </div>
 
-    <div class="embla__controls absolute top-20 right-0">
+    <div class="embla__controls absolute top-20 -right-2 md:right-0">
         <div class="embla__dots flex flex-col">
             @for (item of scrollSnaps(); track item) {
                 <button [ngClass]="'embla__dot'.concat($index === selectedIndex() ? ' embla__dot--selected' : '')" type="button" (click)="scrollTo($index)"></button>

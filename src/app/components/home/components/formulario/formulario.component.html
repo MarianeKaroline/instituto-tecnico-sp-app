@@ -94,7 +94,10 @@
             @if (!loading) {
                 <span class="relative z-10 font-medium">Solicitar atendimento</span>
             } @else {
-                <mat-icon fontSet="material-symbols-rounded" class="animate-spin">autorenew</mat-icon> <span class="relative z-10 font-medium">Enviando</span>
+                <div class="flex items-center justify-center gap-2">
+                    <mat-icon fontSet="material-symbols-rounded" class="animate-spin">autorenew</mat-icon> 
+                    <span class="relative z-10 font-medium">Enviando</span>
+                </div>
             }
 
             <span class="absolute inset-0 overflow-hidden rounded-full">
