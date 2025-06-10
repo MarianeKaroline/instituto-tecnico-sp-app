@@ -1,3 +1,4 @@
+import { CommonModule, DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
@@ -7,10 +8,11 @@ import { RouterModule } from '@angular/router';
     templateUrl: './footer.component.html',
     styleUrl: './footer.component.scss',
     imports: [
+        CommonModule,
         MatIconModule,
         RouterModule
-    ],
+    ]
 })
 export class LayoutFooterComponent {
-    fotos = [...Array(6).keys()];
+    data = new Date();
 }

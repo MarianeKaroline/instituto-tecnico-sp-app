@@ -1,4 +1,4 @@
-import { Component, inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, computed, inject, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { Title } from '@angular/platform-browser';
@@ -13,7 +13,7 @@ import { CursoVendaComponent } from './components/venda/venda.component';
 @Component({
     selector: 'app-curso',
     templateUrl: './curso.component.html',
-    styleUrls: ['./curso.component.scss'],
+    styleUrls: [],
     imports: [
         MatIconModule,
         CursoDetalheComponent,
@@ -32,7 +32,7 @@ export class CursoComponent implements OnInit, OnDestroy {
 
     curso = this._service.curso;
     avatares = Array.from({length: 6}, (_, i) => i + 1);
-    detalhe = true;
+    detalhe = computed(() => this._service.curso()?.topicos?.length !== 0);
 
     constructor(
         private _service: CursoService
@@ -51,9 +51,6 @@ export class CursoComponent implements OnInit, OnDestroy {
                 const nomeCurso = this._service.curso()?.nome;
                 const titulo = `Curso ${nomeCurso} | ITSP`;
                 this._titleService.setTitle(titulo);
-
-                console.log(this._service.curso())
-                this.detalhe = this._service.curso()?.topicos.length != 0;
             });
     }
 

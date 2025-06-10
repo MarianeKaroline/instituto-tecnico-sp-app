@@ -1,11 +1,11 @@
-import { Component, input, OnInit } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 
 import { CardComponent, DataCard } from '../../../../../shared/components/card/card.component';
 import { CursoAvaliacoesComponent } from '../avaliacoes/avaliacoes.component';
 import { CursoCarouselComponent } from '../carousel/carousel.component';
-import { CardModel, CursoModel, CursoTopicoModel } from '../../../../../common/domain/models/curso/curso.model';
+import { CardModel, CursoModel } from '../../../../../common/domain/models/curso/curso.model';
 import { TipoTopicoCursoEnum } from '../../../../../common/domain/enums/tipo-topico-curso.enum';
 
 @Component({
@@ -20,7 +20,7 @@ import { TipoTopicoCursoEnum } from '../../../../../common/domain/enums/tipo-top
         RouterModule
     ]
 })
-export class CursoDetalheComponent implements OnInit {
+export class CursoDetalheComponent {
 
     curso = input<CursoModel | null>();
     avatares = input<number[]>();
@@ -30,11 +30,11 @@ export class CursoDetalheComponent implements OnInit {
     cardsAprendizado: CardModel[] | undefined;
     cardsDuracao: CardModel[] | undefined;
 
-    header: CursoTopicoModel | undefined;
-    atuacao: CursoTopicoModel | undefined;
-    aprendizado: CursoTopicoModel | undefined;
-    duracao: CursoTopicoModel | undefined;
-    mensalidade: CursoTopicoModel | undefined;
+    header = computed(() => this.curso()?.topicos.find(t => t.tipoTopicoCursoEnum == TipoTopicoCursoEnum.Header));
+    atuacao = computed(() => this.curso()?.topicos.find(t => t.tipoTopicoCursoEnum == TipoTopicoCursoEnum.Atuacao));
+    aprendizado = computed(() => this.curso()?.topicos.find(t => t.tipoTopicoCursoEnum == TipoTopicoCursoEnum.Aprendizado));
+    duracao = computed(() => this.curso()?.topicos.find(t => t.tipoTopicoCursoEnum == TipoTopicoCursoEnum.Duracao));
+    mensalidade = computed(() => this.curso()?.topicos.find(t => t.tipoTopicoCursoEnum == TipoTopicoCursoEnum.Mensalidade));
     
     cardsEstrutura: DataCard[] = [
         {
@@ -54,7 +54,7 @@ export class CursoDetalheComponent implements OnInit {
         {
             cor: '#4e9d4e',
             icone: false,
-            titulo: 'Professores experientes e atuantes no mercado',
+            titulo: 'Professores, mestres e doutores experientes e atuantes no mercado de trabalho',
             img: 'assets/icons/educacao.png',
             tipoCardEnum: 1
         },
@@ -66,24 +66,5 @@ export class CursoDetalheComponent implements OnInit {
             tipoCardEnum: 1
         }
     ]
-
-    constructor() { }
-
-    ngOnInit() {
-        this.header = this.curso()?.topicos
-            .find(t => t.tipoTopicoCursoEnum == TipoTopicoCursoEnum.Header);
-        
-        this.atuacao = this.curso()?.topicos
-            .find(t => t.tipoTopicoCursoEnum == TipoTopicoCursoEnum.Atuacao);
-
-        this.aprendizado = this.curso()?.topicos
-            .find(t => t.tipoTopicoCursoEnum == TipoTopicoCursoEnum.Aprendizado);
-
-        this.duracao = this.curso()?.topicos
-            .find(t => t.tipoTopicoCursoEnum == TipoTopicoCursoEnum.Duracao);
-
-        this.mensalidade = this.curso()?.topicos
-            .find(t => t.tipoTopicoCursoEnum == TipoTopicoCursoEnum.Mensalidade);
-    }
 
 }

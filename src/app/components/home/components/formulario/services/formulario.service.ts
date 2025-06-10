@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { Observable, take } from 'rxjs';
+import { map, Observable, take } from 'rxjs';
 
 import { EstadoModel } from '../models/estado.model';
 import { CidadeModel } from '../models/cidade.model';
@@ -27,7 +27,10 @@ export class HomeFormularioService {
     }
 
     public obterEstados(): Observable<EstadoModel[]> {
-        return this._obterEstados();
+        return this._obterEstados()            
+            .pipe(
+                map(estados => estados.sort((a,b) => a.nome.localeCompare(b.nome)))
+            );
     }
     
     public obterCidades(estadoId: number): Observable<CidadeModel[]> {

@@ -35,7 +35,7 @@
             <img src="assets/logo/logotipo.png" alt="logo" class="w-full h-full">
         </div>
 
-        <div class="flex flex-col w-full md:w-[calc(100%/4)] h-full gap-4 md:ml-8">
+        <div class="flex flex-col w-full md:w-[calc(100%/4)] h-full gap-4 md:ml-8 items-center md:items-start text-center md:text-start">
             <span class="text-md font-medium">
                 Explorar
             </span>
@@ -53,7 +53,7 @@
             </div>
         </div>
     
-        <div class="flex w-full md:w-[calc(100%/4)] h-full flex-col gap-4">
+        <div class="flex w-full md:w-[calc(100%/4)] h-full flex-col gap-4 items-center md:items-start text-center md:text-start">
             <span class="text-md font-medium">
                 Siga-nos
             </span>
@@ -66,23 +66,33 @@
                     <img src="assets/icons/icon-instagram-header.svg" alt="logo instagram" class="w-6 h-6 md:w-4 md:h-4"> Instagram
                 </a>
             </div>
-        </div>        
+        </div>
     
-        <div class="flex w-full md:w-[calc(100%/4)] h-full flex-col gap-4">
-            <span class="text-md font-medium">
-                Galeria
-            </span>
-            
-            <div class="grid grid-cols-3 gap-1">
-                @for (foto of fotos; track $index) {
-                    <img [src]="'assets/images/porque-itsp-' + (foto + 1) + '.jpg'" class="w-full h-16 rounded-md object-cover">
-                }
+        <div class="flex w-full md:w-[calc(100%/4)] h-full flex-col gap-4 items-center md:items-start text-center md:text-start">
+            <div class="flex flex-col gap-2">
+                <span class="text-md font-medium">
+                    Horário de funcionamento
+                </span>
+                
+                <span class="text-md flex gap-2">
+                    Segunda a Sexta, 07:00h às 22:40h
+                </span>
+            </div>
+
+            <div class="flex flex-col gap-2 mt-4">
+                <span class="text-md font-medium">
+                    Horário de atendimento
+                </span>
+                
+                <span class="text-md flex gap-2">
+                    Segunda a Sexta, 07:00h às 20:00h
+                </span>
             </div>
         </div>
     </div>
 
     <div class="flex justify-center items-center h-12 bg-primary w-full absolute bottom-0">
-        <span class="text-sm text-center">ITSP - Instituto Técnico São Paulo © 2025 • Todos os direitos reservados • CNPJ: 44.595.159/0001-71</span>
+        <span class="text-sm text-center">ITSP - Instituto Técnico São Paulo © {{ data | date:'yyyy' }} • Todos os direitos reservados • CNPJ: 44.595.159/0001-71</span>
     </div>
 
 </div>
